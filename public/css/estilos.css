@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
+
+/*BARRA NAVEGACION*/
+.logo{
+     width:90px;
+     height: 36px;
+}
+
+.barra-entera{
+    background-color: #fff;
+    display:flex;
+    flex-wrap: wrap;
+    color: #000;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.barra-izquierda{
+    display:flex;
+    flex-wrap:nowrap;
+    list-style-type: none;
+}
+.barra-izquierda li{
+    margin:5px;
+    
+}
+
+.fa-bars{
+    display: inline-block;
+    line-height: inherit;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+.barra-derecha{
+    display:flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-left: 20px;
+}
+.barra-derecha li{
+    margin:10px;
+}
+
+.barra-buscadora{
+    display:none;
+}
+.menu-productos{
+    list-style-type: none;
+    display:none;
+}
+
+/*MAIN*/
