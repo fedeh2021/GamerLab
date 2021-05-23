@@ -1,0 +1,47 @@
+.barra-izquierda{
+    display:flex;
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.fa-bars{
+    text-align: left;
+    position: relative;
+    left:-25px;
+}
+
+.barra-derecha{
+    display:flex;
+    flex-wrap: wrap;
+    margin-top:10px;
+    list-style-type: none;
+}
+.barra-derecha li{
+    padding:0vw 3vw;
+    color: #000;
+}
+
+.barra-buscadora{
+    display:none;
+}
+.menu-productos{
+    list-style-type: none;
+    display:none;
+}
+
+
+.menu-productos li a{
+    text-decoration: none;
+    color: #000;
+}
+
+hr{
+    position: relative;
+    top:-50px;
+    border-top: 2px solid black;
+}
+/*MAIN*/
+
+main{
+    background-color: #000;
+}
