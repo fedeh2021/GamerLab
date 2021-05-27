@@ -6,10 +6,13 @@ const path = require("path");
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
-    const pathHtml = path.join (__dirname, "/views/home.html")
+    const pathHtml = path.join (__dirname, "/views/index.html")
     res.sendFile(pathHtml)
 });
-
+app.get("/carrito", (req, res) => {
+    const pathHtml = path.join (__dirname, "/views/carrito.html")
+    res.sendFile(pathHtml)
+});
 
 
 app.listen(3002, () =>{
