@@ -408,8 +408,38 @@ a.btn{
 }
 
 
+.formulario-login {
+    font-size: 20px;
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    background-color: #143663;
+    margin: 250px 250px;
+    max-width: 90vw;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 20px;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    display: flex;    
+}
+.usuario,.contraseña,.cumpleaños,.email {
+    margin-bottom: 2vw;
+    justify-content: center;
+    display: flex;
+}
 
 
+.usuariologin i {
+    color: white;
+    font-size: 60px;
+    margin-bottom: 2vw;
+}
+
+.usuariologo i {
+    color: white;
+    font-size: 100px;
+    margin-bottom: 4vw;
+}
 
 
 /*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*/
