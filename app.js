@@ -24,6 +24,11 @@ app.get("/registro", (req, res) => {
     res.sendFile(pathHtml)
 });
 
+app.get("/producto", (req, res) => {
+    const pathHtml = path.join (__dirname, "/views/producto.html")
+    res.sendFile(pathHtml)
+});
+
 app.listen(3002, () =>{
     console.log("servidor corriendo")
 });
