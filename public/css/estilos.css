@@ -25,7 +25,6 @@ body{
     justify-content: space-between;
     background-color: #010b17;
     width: 100vw;
-    border:1px solid red;
 }
 .menu-productos li{
     display:none;
@@ -424,7 +423,7 @@ a.btn{
     padding: 50px;
     color: #fff;
     background-color: #143663;
-    margin: 250px 250px;
+    margin: 20vh 20vw;
     max-width: 90vw;
     box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 20px;
     flex-direction: column;
