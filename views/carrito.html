@@ -9,15 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="/css/estilos.css">
 </head>
 <body>
     <header>
         <nav class="barra-entera">
+             
+            <ul class="barra-izquierda">
              <a class="icono-burger"><i class="fas fa-bars fa-2x"></i></a>
              <img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab">
-            <ul class="barra-izquierda">
-                <ul class="menu-productos">
+               <!--<ul class="menu-productos">
                    <li><a href="#Notebooks">Notebooks</a></li>
                    <li><a href="#Monitores">Monitores</a></li>
                    <li><a href="#TecladosYMouses">Teclados y mouses</a</li>
@@ -25,18 +26,19 @@
                    <li><a href="#PlacaDeVideo">Placa de video</a</li>
                    <li><a href="#ArmaTuPC">Armá tu PC</a</li>
                    <li><a href="#Mobiliario">Sillas y escritorios</a</li>
-                </ul>
+                </ul>-->
             </ul>
             
             <ul class="barra-derecha">
                 <a><input type="text" class="barra-buscadora"></a>
                 <li><i class="fas fa-search"></i></li>
-                <li><i class="fas fa-user-circle"></i></li>
-                <li><i class="fas fa-shopping-cart"></i></li>
+                <li><a href="/views/login"><i class="fas fa-user-circle"></i></a></li>
+                <li><a href="/views/carrito"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>        
         </nav>
         <hr class="hr-nav">
     </header>
+
     <main>
         <h3 class="carrito-titulo">Carrito de compras</h3>
 
@@ -75,32 +77,38 @@
             <h6 class="item-titulo">Item</h6>
             <hr class="divisor">
             
-            <img src="/img/teclado.jpg"  class="teclado" alt="Teclado Gamer">
-            <p class="teclado-datos">Teclado Gamer Redragon Shiva K512rgb</p>
+            <div class="contenedor-teclado">
+              <img src="/img/teclado.jpg"  class="teclado" alt="Teclado Gamer">
+              <p class="teclado-datos">Teclado Gamer Redragon Shiva K512rgb</p>
 
-            <div class="datos-pago">
+              <div class="datos-pago">
                 <div class="lista-nido">
-                    <ul class="inside-precio">
+                      <ul class="inside-precio">
                         <li>Precio:</li>
                         <li>$5.000</li>
-                    </ul>
-                    <ul class="inside-cantidad">
+                      </ul>
+                      <ul class="inside-cantidad">
                         <li><label for="cantidad">Cantidad:</label></li>
                         <li><input type="number" id="cantidad" name="cantidad" value="1" min="1" max="5"></li>
-                    </ul>
-                    <ul class="inside-subtotal">
+                      </ul>
+                      <ul class="inside-subtotal">
                         <li>Subtotal:</li>
                         <li>$5.000</li>
-                    </ul>
+                      </ul>
                 </div>
-                <input type="button" value="Editar" name="editar" id="Editar">
-                <input type="button" value="Remover item" name="remover" id="remover">
+                
+                <div class="botones-carrito">
+                    <input type="button" value="Editar" name="editar" id="Editar">
+                    <input type="button" value="Remover item" name="remover" id="remover">
+                </div> 
+
+              </div>
             </div>
 
             <hr class="divisor">
-            
+         <div class="contenedor-monitor">
             <img src="/img/monitor.jpg"  class="monitor" alt="Monitor Gamer">
-            <p class="monitor-datos">Gezatek Monitor Gamer LG 24GL600F 24 144Hz</p>
+            <p class="monitor-datos">Gezatek Monitor Gamer LG 24GL6 24 </p>
 
             <div class="datos-pago">
                 <div class="lista-nido">
@@ -120,10 +128,8 @@
                 <input type="button" value="Editar" name="editar" id="Editar">
                 <input type="button" value="Remover item" name="remover" id="remover">
             </div>
+            
         </div>
-        
-        
-
     </main>
 
     <footer>

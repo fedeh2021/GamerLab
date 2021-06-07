@@ -22,9 +22,10 @@ body{
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     background-color: #010b17;
     width: 100vw;
+    border:1px solid red;
 }
 .menu-productos li{
     display:none;
@@ -39,14 +40,19 @@ body{
     display:flex;
     justify-content: flex-end;
     color:#fff;
-    margin-top:15px;
-    margin-right: 2vw;
+    margin-top:2vh;
+    margin-right: 6vw;
 }
 .barra-derecha li{
     padding: 0 3px;
 }
 .barra-derecha li:hover{
     color:#143663;
+}
+.barra-izquierda{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5vh;
 }
 .fa-bars{
     color:#143663;
@@ -260,6 +266,7 @@ a.btn{
     font-weight: 200;
     font-size: 0.90rem;
     list-style-type: none;
+    justify-content: space-between;
 }
 
 .titulo-resumen{
@@ -320,6 +327,7 @@ a.btn{
     width: 15vw;
     height: auto;
     display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 5px 20px;
 }
 .teclado-datos{
     display: inline-block;
@@ -332,12 +340,14 @@ a.btn{
     color:#fff;
     font-weight: 200;
     margin-left: 0.5vw;
+
 }
 .monitor{
     margin-left: 2vw;
     width: 15vw;
     height: auto;
     display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 5px 20px;
 }
 .item-titulo{
     color:#fff;
@@ -613,7 +623,8 @@ a.btn{
 
 
 /*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*/
-@media(min-width:361px){
+
+@media(min-width:480px){
     .barra-entera{
         width:100vw;
     }
@@ -621,8 +632,7 @@ a.btn{
         display: flex;
         border-radius: 8px;
     }
-}
-@media(min-width:480px){
+
     .prod-content form {
         font-size: 1.8em;
     }
@@ -672,6 +682,26 @@ a.btn{
     }
     .prod-buttons {
         font-size: 1.75em;
+    }
+    .contenedor-teclado{
+        display: flex;
+        flex-direction: row;
+        margin-left:10vw;
+        align-items: center;
+    }
+    .contenedor-monitor{
+        display: flex;
+        flex-direction: row;
+        margin-left:8vw;
+        align-items: center;
+    }
+    
+    .datos-pago{
+        justify-content: flex-end;
+        margin-left: 15vw;
+    }
+    .botones-carrito{
+        display: flex;
     }
 }
 
