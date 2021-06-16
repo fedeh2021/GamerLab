@@ -72,3 +72,6 @@ app.get("/views/producto", (req, res) =>
 app.listen(3002, () =>{
     console.log("servidor corriendo")
 });
+
+/*MOTOR DE PLANTILLAS*/
+app.set("view engine", "ejs");
