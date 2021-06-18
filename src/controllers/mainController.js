@@ -1,6 +1,6 @@
 const mainControlador = {
     index: (req, res) => {
-        res.sendFile("./views/index.html")
+        res.render("index")
     }
 };
 
