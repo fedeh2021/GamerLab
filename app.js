@@ -1,27 +1,33 @@
 /*ARCHIVOS DEL EXPRESS GENERATOR*/
-
 const express = require("express");
-const app = express();
 const path = require("path");
-const router = require("./src/routes/mainRoute");
-const userRouter = require("./src/routes/userRoute");
-//const productRouter = require ("./src/routes/productsRoute")
-app.use(express.static(path.join(__dirname + "/public")));
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+const app = express();
 
-/*ESTRUCTURA DE NUESTROS SPRINTS PREVIOS*/ 
 
-app.use(express.static(__dirname + "/public"));
+const router = require("./src/routes/mainRouter");
+const usersRouter = require("./src/routes/usersRouter");
+const productsRouter = require ("./src/routes/productsRouter")
+
 
 //VISTAS
 app.use("/", router);
+app.use("/users", usersRouter);
+app.use("/products", productsRouter);
 
-app.use("/users", userRouter);
 
-//app.use("/products", productRouter);
+app.use(express.static(path.resolve(__dirname, "./public")));
+//app.use(express.static(path.join(__dirname + "/public")));
+
+
+// view engine setup
+//app.set('views', path.resolve(__dirname, './views'));
+//app.set('views', path.join(__dirname + '/views'));
+
+app.set('view engine', 'ejs');
+
+/*ESTRUCTURA DE NUESTROS SPRINTS PREVIOS*/ 
+//app.use(express.static(__dirname + "/public"));
 
 
 //SERVER
