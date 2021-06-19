@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamerLab</title>
+    <link rel="icon" type="./img/png" href="./img/logoGamerLab.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -12,34 +13,8 @@
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
-    <header>
-        <nav class="barra-entera">
-             
-            <ul class="barra-izquierda">
-             <a class="icono-burger"><i class="fas fa-bars fa-2x"></i></a>
-             <img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab">
-               <!--<ul class="menu-productos">
-                   <li><a href="#Notebooks">Notebooks</a></li>
-                   <li><a href="#Monitores">Monitores</a></li>
-                   <li><a href="#TecladosYMouses">Teclados y mouses</a</li>
-                   <li><a href="#Audio">Audio</a</li>
-                   <li><a href="#PlacaDeVideo">Placa de video</a</li>
-                   <li><a href="#ArmaTuPC">Armá tu PC</a</li>
-                   <li><a href="#Mobiliario">Sillas y escritorios</a</li>
-                </ul>-->
-            </ul>
-            
-            <ul class="barra-derecha">
-                <a><input type="text" class="barra-buscadora"></a>
-                <li><i class="fas fa-search"></i></li>
-                <li><a href="/views/login"><i class="fas fa-user-circle"></i></a></li>
-                <li><a href="/views/carrito"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>        
-        </nav>
-        <hr class="hr-nav">
-    </header>
-    
-    <main>
+    <%- include('./../views/partials/header') %>
+<main>
         <div class="banner1">
             <img class= "hp-omen" src="/img/omen.jpg" alt="HP Omen Gaming">
         </div>
@@ -65,76 +40,6 @@
             </div>
         </section>
     </main>
-    <footer>
-        <section class="social"> 
-            <p>Seguí a GamerLab</p>
-            <div class="links">
-                <a href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#">
-                    <i class="fa fa-envelope"></i>
-                </a>
-            </div>
-        </section >
-        
-        <hr class="hr-footer">
-        <section class="main-footer">
-            <div class="footer-container">
-                <ul class="columna1">
-                    <li>
-                        <a href="#">
-                            <h3>Seguimiento de compras</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Cambios y devoluciones</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Formas de pago</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Información sobre envíos</h3>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="columna2">
-                    <li>
-                        <a href="#">
-                            <h3>Sobre nosotros</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Trabajá con nosotros</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Sucursales</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Política</h3>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-         <h3 class="copy">
-             GamberLab Copyrights
-           <i class="far fa-registered"></i>
-        </h3>       
-        </section>
-        
-    </footer>
+    <%- include('./../views/partials/footer') %>
 </body>
 </html>

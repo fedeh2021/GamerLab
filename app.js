@@ -4,8 +4,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const router = require("./src/routes/mainRoute");
-const userRouter = require("./src/routes/users");
-const productController = require ("./src/routes/productsRouter")
+const userRouter = require("./src/routes/userRoute");
+//const productRouter = require ("./src/routes/productsRoute")
 app.use(express.static(path.join(__dirname + "/public")));
 
 // view engine setup
@@ -21,10 +21,10 @@ app.use("/", router);
 
 app.use("/users", userRouter);
 
-app.use("/products", productsRouter);
+//app.use("/products", productRouter);
 
 
 //SERVER
-app.listen(3002, () =>{
+app.listen(3077, () =>{
     console.log("servidor corriendo")
 });
