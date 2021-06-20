@@ -10,3 +10,6 @@ Recurrir al propio grupo para sacarnos las dudas que vayan surgiendo. Esto mejor
 
 ¿Qué hacer menos?
 Menos nervios. Los momentos cercanos a la entrega del sprint debemos tomarlos con más calma y no desesperar ya que eso se ve reflejado en nuestro código.
+
+En una nueva reunión para el siguiente sprint, ya no sentimos los nervios por la entrega y saber como proceder, lo que lleva a que decidamos con más libertad y creatividad para llegar al mejor resultado. Algo importante que tenemos como grupo es que nos comunicamos continuamente y a la hora de las reuniones, somos expeditivos. 
+Algo para continuar haciendo es comunicarnos para colaborarnos y sacarnos las dudas. En cambio, algo para seguir tratando de mejorar son los tiempos para las entregas, tener el sprint terminado con algunos dias de sobra, nos dará más tiempo para pulir detalles.
