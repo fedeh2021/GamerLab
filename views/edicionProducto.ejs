@@ -14,37 +14,55 @@
 <%- include('./../views/partials/header') %>
 
 <body>
+    <form action="/creacion-producto" method="POST" class="formulario-login">
+        
+    <h1 class="titulo-formulario">EDICIÓN DE PRODUCTO</h1>
 
-    <form action="/edicion-producto" method="POST" class="formulario-login">
-        <div class="usuariologo"><i class="far fa-user-circle"></i></div>
-   
-    <div class="control-formulario">
-        <label>Nombre de Usuario:</label>
-        <input type="text" name="usuario" class="usuario" placeholder="Nombre de usuario">
+    <div class="formulario-producto">
+        <label>Imagen del producto:</label>
+        <input type="file" name="usuario" class="usuario" id="foto-producto">
     </div>
 
-    <div class="control-formulario">
-        <label>Cumpleaños:</label>
-        <input type="date" name="cumpleaños" class="cumpleaños">
+    <div class="formulario-producto">
+        <label>Nombre del producto:</label>
+        <input type="text" name="usuario" class="usuario" placeholder="Nombre del producto" id="formulario-text">
+    </div>    
+    
+    <div class="formulario-producto">
+        <label>Descripción:</label>
+        <textarea rows="4" cols="40" id="formulario-text"></textarea>
     </div>
 
-    <div class="control-formulario">
-        <label>Dirección de email:</label>
-        <input type="email" name="email" class="email" placeholder="email">
+    <div class="formulario-producto">
+        <label>Precio:</label>
+        <input type="text" name="usuario" class="usuario" placeholder="$" id="formulario-text">
     </div>
 
-    <div class="control-formulario">
-        <label>Contraseña:</label>
-        <input type="password" name="contraseña" class="contraseña" placeholder="Contraseña">
+    <div class="formulario-producto">
+        <label>Descuento:</label>
+        <input type="text" name="usuario" class="usuario" placeholder="%" id="formulario-text">
     </div>
 
-    <div class="control-formulario">
-        <label>Repetir contraseña:</label>
-        <input type="password" name="contraseña" class="contraseña" placeholder="Repetir contraseña">
+    <div class="formulario-producto">
+        <label>Stock:</label>
+        <input type="number" name="usuario" class="usuario" id="formulario-text">
     </div>
 
-    <button type="submit" class="boton-formulario">Registrarme</button>
 
+    <div class="formulario-producto">
+        <label for="categoria">Categoría del producto:</label>
+            <select id="categoria" name="categoria" class="formulario-text">
+                <option value="notebooks">Notebooks</option>
+                <option value="monitores">Monitores</option>
+                <option value="accesorios">Teclados y mouses</option>
+                <option value="audio">Audio</option>
+                <option value="placa">Placa de video</option>
+                <option value="pc">Armá tu PC</option>
+                <option value="muebleria">Sillas y escritorios</option>
+            </select>
+    </div>
+
+    <button type="submit" class="formulario-boton">Modificar producto</button>
 </form>
 
 </main>

@@ -16,49 +16,53 @@
 <body>
     <form action="/creacion-producto" method="POST" class="formulario-login">
         
-    <div class="control-formulario">
+    <h1 class="titulo-formulario">CREACIÓN DE PRODUCTO</h1>
+
+    <div class="formulario-producto">
         <label>Imagen del producto:</label>
-        <input type="file" name="usuario" class="usuario">
+        <input type="file" name="usuario" class="usuario" id="foto-producto">
     </div>
 
-    <div class="control-formulario">
+    <div class="formulario-producto">
         <label>Nombre del producto:</label>
-        <input type="text" name="usuario" class="usuario" placeholder="Nombre del producto">
+        <input type="text" name="usuario" class="usuario" placeholder="Nombre del producto" id="formulario-text">
     </div>    
     
-    <div class="control-formulario">
+    <div class="formulario-producto">
         <label>Descripción:</label>
-        <textarea rows="4" cols="50"></textarea>
+        <textarea rows="4" cols="40" id="formulario-text"></textarea>
     </div>
 
-    <div class="control-formulario">
+    <div class="formulario-producto">
         <label>Precio:</label>
-        <input type="text" name="usuario" class="usuario" placeholder="$">
+        <input type="text" name="usuario" class="usuario" placeholder="$" id="formulario-text">
     </div>
 
-    <div class="control-formulario">
-        <label>Tiene descuento?</label>
-        <input type="checkbox" name="usuario" class="usuario">
+    <div class="formulario-producto">
         <label>Descuento:</label>
-        <input type="text" name="usuario" class="usuario" placeholder="%">
+        <input type="text" name="usuario" class="usuario" placeholder="%" id="formulario-text">
     </div>
 
-    <div class="control-formulario">
+    <div class="formulario-producto">
         <label>Stock:</label>
-        <input type="number" name="usuario" class="usuario">
+        <input type="number" name="usuario" class="usuario" id="formulario-text">
     </div>
 
 
-    <div class="control-formulario">
-        <label for="categoria">Cateogoría del producto:</label>
-            <select id="categoria" name="categoria">
-                <option value="componentes">Componentes</option>
-                <option value="accesorios">Accesorios</option>
-                 <option value="pc">PC Gamer</option>
+    <div class="formulario-producto">
+        <label for="categoria">Categoría del producto:</label>
+            <select id="categoria" name="categoria" class="formulario-text">
+                <option value="notebooks">Notebooks</option>
+                <option value="monitores">Monitores</option>
+                <option value="accesorios">Teclados y mouses</option>
+                <option value="audio">Audio</option>
+                <option value="placa">Placa de video</option>
+                <option value="pc">Armá tu PC</option>
+                <option value="muebleria">Sillas y escritorios</option>
             </select>
     </div>
 
-    <button type="submit" class="boton-formulario">Crear producto</button>
+    <button type="submit" class="formulario-boton">Crear producto</button>
 </form>
 
 </main>

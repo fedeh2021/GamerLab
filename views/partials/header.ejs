@@ -1,10 +1,10 @@
 <header class=main-header>
-    <div class="main-header-top-bar">
+    <nav class="main-header-top-bar">
          
         <div class="barra-izquierda">
-         <a class="icono-burger"><i class="fas fa-bars fa-2x"></i></a>
-         <a href="/views/index"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
 
+            <a class="icono-burger"><i class="fas fa-bars fa-2x"></i></a>
+            
             <ul class="menu-productos">
                <li><a href="#Notebooks">Notebooks</a></li>
                <li><a href="#Monitores">Monitores</a></li>
@@ -15,15 +15,16 @@
                <li><a href="#Mobiliario">Sillas y escritorios</a</li>
             </ul>
 
+            <a href="#"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
+            
         </div>
         
         <div class="barra-derecha">
 
-
             <div class="searchbar">
-                <form action="/search" method="GET">
+                <form action="/search" method="GET" class="search-form">
                     <input type="text" class="barra-buscadora" placeholder="Busca productos">
-                    <button type="submit">
+                    <button class="search-button" type="submit">
                         <i class="fas fa-search"></i>
                     </button> 
                 </form>
@@ -31,7 +32,8 @@
 
             <li><a href="/users/login"><i class="fas fa-user-circle fa-2x"></i></a></li>
             <li><a href="/products/carrito"><i class="fas fa-shopping-cart fa-2x"></i></a></li>
-        </div>        
+        </div>  
+
     </nav>
-    <hr class="hr-nav">
+
 </header>
