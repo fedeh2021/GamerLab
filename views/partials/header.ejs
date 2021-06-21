@@ -1,10 +1,11 @@
-<header>
-    <nav class="barra-entera">
+<header class=main-header>
+    <div class="main-header-top-bar">
          
-        <ul class="barra-izquierda">
+        <div class="barra-izquierda">
          <a class="icono-burger"><i class="fas fa-bars fa-2x"></i></a>
          <a href="/views/index"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
-           <!--<ul class="menu-productos">
+
+            <ul class="menu-productos">
                <li><a href="#Notebooks">Notebooks</a></li>
                <li><a href="#Monitores">Monitores</a></li>
                <li><a href="#TecladosYMouses">Teclados y mouses</a</li>
@@ -12,15 +13,25 @@
                <li><a href="#PlacaDeVideo">Placa de video</a</li>
                <li><a href="#ArmaTuPC">Armá tu PC</a</li>
                <li><a href="#Mobiliario">Sillas y escritorios</a</li>
-            </ul>-->
-        </ul>
+            </ul>
+
+        </div>
         
-        <ul class="barra-derecha">
-            <a><input type="text" class="barra-buscadora"></a>
-            <li><i class="fas fa-search"></i></li>
-            <li><a href="/users/login"><i class="fas fa-user-circle"></i></a></li>
-            <li><a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a></li>
-        </ul>        
+        <div class="barra-derecha">
+
+
+            <div class="searchbar">
+                <form action="/search" method="GET">
+                    <input type="text" class="barra-buscadora" placeholder="Busca productos">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button> 
+                </form>
+            </div>
+
+            <li><a href="/users/login"><i class="fas fa-user-circle fa-2x"></i></a></li>
+            <li><a href="/products/carrito"><i class="fas fa-shopping-cart fa-2x"></i></a></li>
+        </div>        
     </nav>
     <hr class="hr-nav">
 </header>
