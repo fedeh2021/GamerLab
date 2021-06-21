@@ -489,7 +489,8 @@ a.btn{
 .copy{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
+    padding-left: 50px;
     align-items: center;
     color:#fff;
     font-size: 0.75rem;
