@@ -497,7 +497,10 @@ a.btn{
 .fa-registered{
     margin-left: 0.55vw;
 }
+
+
 /*LOGIN*//*LOGIN*//*LOGIN*//*LOGIN*/
+
 .formulario-login {
     font-size: 20px;
     text-align: center;
@@ -510,7 +513,7 @@ a.btn{
     flex-direction: column;
     align-items: center;
     align-content: center;
-    display: flex;    
+    display: flex;
 }
 
 .usuario,.contraseña,.cumpleaños,.email {
@@ -705,6 +708,22 @@ a.btn{
 
 
 /*FORMULARIOS DE PRODUCTO*//*FORMULARIOS DE PRODUCTO*//*FORMULARIOS DE PRODUCTO*/
+
+.formulario-prod{
+    font-size: 20px;
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    background-color: #143663;
+    margin: 20vh 20vw;
+    max-width: 90vw;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 20px;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    display: flex; 
+}
+
 .titulo-formulario{
     margin-bottom: 60px;
 }

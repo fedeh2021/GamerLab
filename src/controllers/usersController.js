@@ -10,7 +10,11 @@ const usersController =
  
     perfil: (req, res)=>{
         res.render("perfil") //esta vista no existe
-    }     
+    },     
+
+    carrito: (req, res)=>{
+        res.render("carrito") 
+    }
 }
 
 module.exports = usersController;
