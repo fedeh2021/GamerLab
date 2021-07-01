@@ -1,0 +1,56 @@
+[
+{
+    "id": 1,
+    "name": "Silla Gamer Dooku Black & Red",
+    "price": 35.999,
+    "discount": 10,
+    "category": "sillas",
+    "description": "Butaca de ecocuero en color rojo. Soporta hasta 150kg y tiene altura regulable y gira 360º. Totalmente reclinable 180º ",
+    "image": "silla-gamer.jpg"
+},
+{
+    "id": 2,
+    "name": "Parlante Bomber Party",
+    "price": 19000,
+    "discount": 0,
+    "category": "parlantes",
+    "description": "Parlante de alta potencia, con conexión bluetooth y AUX 3.5mm. Duración de la bateria: 6hs ",
+    "image": "parlante.jpg"
+},
+{
+    "id": 3,
+    "name": "Curved Gamer Monitor",
+    "price": 49000,
+    "discount": 10,
+    "category": "monitores",
+    "description": "Monitor curvo para una experiencia totalmente inmersiva ",
+    "image": "monitor.jpg"
+},
+{
+    "id": 4,
+    "name": "Curved Gamer Monitor",
+    "price": 79000,
+    "discount": 5,
+    "category": "monitores",
+    "description": "Monitor curvo para una experiencia totalmente inmersiva ",
+    "image": "monitor1.jpg"
+},
+{
+    "id": 5,
+    "name": "Teclado Gamer Revenge",
+    "price": 39000,
+    "discount": 5,
+    "category": "teclados",
+    "description": "Teclado QWERTY retroiluminado ",
+    "image": "teclado.jpg"
+},
+{
+    "id": 6,
+    "name": "Teclado Gamer ",
+    "price": 59000,
+    "discount": 15,
+    "category": "teclados",
+    "description": "Teclado QWERTY retroiluminado ",
+    "image": "teclado1.jpg"
+}
+]
