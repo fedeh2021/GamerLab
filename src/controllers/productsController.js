@@ -9,7 +9,7 @@ const productsController =
     },
 
     creacionProducto:(req, res) => {
-        res.render("creacionProducto") /*no existe esta vista*/ 
+        res.render("creacionProducto") 
     },
 
     edicionProducto:(req, res) => {
