@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerLab</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    <%- include('./../views/partials/header') %>
+    <main>
+
+<div class="product-container">
+    <div class="prod-box">
+        <div class="prod-img-container">
+            <div class="prod-big-img">
+                <img src="/img/auriculares-1.jpg">
+            </div>
+            <div class="prod-small-img">
+                <img src="/img/auriculares-2.jpg">
+                <img src="/img/auriculares-3.jpg">
+                <img src="/img/auriculares-4.jpg">
+            </div> 
+        </div> 
+        <div class="prod-content">
+            <p>Categoria</p>
+            <h3 class="prod-title">AURICULARES GAMER</h3>
+            <div class="prod-price">$13.500</div>
+            <form action="">
+                <div class="prod-options">
+                    <span>Elegí el color:</span>
+                    <select name="" id="">
+                        <option value="negro">Negro</option>
+                        <option value="azul">Azul</option>
+                        <option value="verde">Verde</option>
+                    </select>
+                </div>
+                <div class="prod-options"> 
+                    <span>Cuantas unidades:</span>
+                    <input type="number" value="1">
+                </div>
+            </form>
+            <div class="prod-buttons">
+                <button class="prod-add-to-cart" href="#">Agregar al carrito</button>
+                <button class="prod-buy" href="#">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+<%- include('./../views/partials/footer') %>
+</body>
+</html>

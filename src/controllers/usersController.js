@@ -9,7 +9,7 @@ const usersController =
     },
  
     perfil: (req, res)=>{
-        res.render("perfil") //esta vista no existe
+        res.render("perfil") 
     },     
 
     carrito: (req, res)=>{

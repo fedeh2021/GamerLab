@@ -1,11 +1,11 @@
 const productsController = 
 {
     listadoProductos: (req, res) => {
-        res.render("listadoProductos") /*no existe esta vista*/ 
+        res.render("producto")
     },
 
     detalleProductos: (req, res) => {
-        res.render("producto")
+        res.render("detail")
     },
 
     creacionProducto:(req, res) => {
@@ -13,7 +13,7 @@ const productsController =
     },
 
     edicionProducto:(req, res) => {
-        res.render("edicionProducto") /*no existe esta vista*/ 
+        res.render("edicionProducto") 
     }
 };
 

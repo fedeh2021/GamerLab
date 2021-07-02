@@ -18,7 +18,7 @@ const uploadFile = multer({ storage: multerDS });
 
 
 //RUTEO
-router.get("/list", productsController.listadoProductos); //no existe
+router.get("/producto", productsController.listadoProductos); 
 
 router.get("/detail/:id", productsController.detalleProductos);
 
