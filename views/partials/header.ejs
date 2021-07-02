@@ -1,40 +1,31 @@
 <header class=main-header>
-    <nav class="main-header-top-bar">
-         
-        <div class="barra-izquierda">
-
-            <a class="icono-burger"><i class="fas fa-bars fa-2x"></i></a>
-            
-            <ul class="menu-productos">
-               <li><a href="#Notebooks">Notebooks</a></li>
-               <li><a href="#Monitores">Monitores</a></li>
-               <li><a href="#TecladosYMouses">Teclados y mouses</a</li>
-               <li><a href="#Audio">Audio</a</li>
-               <li><a href="#PlacaDeVideo">Placa de video</a</li>
-               <li><a href="#ArmaTuPC">Armá tu PC</a</li>
-               <li><a href="#Mobiliario">Sillas y escritorios</a</li>
-            </ul>
-
-            <a href="/"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
-            
-        </div>
+    <div class="main-header-top-bar">
+         <a href="/"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
         
-        <div class="barra-derecha">
-
-            <div class="searchbar">
                 <form action="/search" method="GET" class="search-form">
-                    <input type="text" class="barra-buscadora" placeholder="Busca productos">
+                    <input type="text" class="search-form-input" placeholder="Busca productos">
                     <button class="search-button" type="submit">
-                        <i class="fas fa-search"></i>
+                        <div class="icono-lupa"><i class="fas fa-search"></i></div>
                     </button> 
                 </form>
             </div>
+            </div>
+         <a href="#" class="icono-burger">
+             <i class="fas fa-bars fa-2x"></i></a>
 
+        <nav class="menu-productos">
+            <ul class="barra-izquierda">
+               <li><a href="#Notebooks">Notebooks</a></li>
+               <li><a href="#Monitores">Monitores</a></li>
+               <li><a href="#TecladosYMouses">Teclados y mouses</a</li>
+               <li><a href="#ArmaTuPC">Armá tu PC</a</li>
+               <li><a href="#Mobiliario">Sillas y escritorios</a</li>
+                <li><a href="todoslosproductos">Todos los productos</a</li>
+            </ul>
+        <div class="barra-derecha">
+            <li><a href="/users/registro"><i class="fas fa-sign-in-alt"></i></a></li>
             <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
             <li><a href="/users/carrito"><i class="fas fa-shopping-cart fa-2x"></i></a></li>
-            <li><a href="###"><i class="fas fa-search icono-lupa fa-2x"></i></a></li>
-        </div>  
-
-    </nav>
-
+        </div>
+        </nav>
 </header>

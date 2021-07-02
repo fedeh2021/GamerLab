@@ -28,6 +28,6 @@ router.put("/edit/:id", productsController.edicionProducto); //cambiar metodo
 router.get("/create", productsController.creacionProducto);
 router.post("/create", productsController.creacionProducto); //cambiar metodo
 
-router.delete(--)
+//router.delete(--)
 
 module.exports = router;
