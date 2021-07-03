@@ -12,27 +12,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/css/estilos.css">
 </head>
+
 <body>
     <%- include('./../views/partials/header') %>
-  <form action="/inicio-usuario" method="POST" class="formulario-login">
-  <div class="izq">
-      <div class="usuariologin"><i class="fas fa-sign-in-alt"></i></div>
-    <div class="control-formulario">
-        <label>Nombre de Usuario:</label>
-        <input type="text" name="usuario" class="usuario" placeholder="Nombre de usuario">
-    </div>
-    <div class="control-formulario">
-        <label>Contraseña:</label>
-        <input type="password" name="contraseña" class="contraseña" placeholder="Contraseña">
-    </div>
+
+<main>
+  
+    <form action="/users/profile" method="POST" class="formulario-login">
+        <div class="izq">
+            <div class="usuariologin"><i class="fas fa-sign-in-alt"></i></div>
+
+            <div class="control-formulario">
+                <label>Nombre de Usuario:</label>
+                <input type="text" name="usuario" class="usuario" placeholder="Nombre de usuario">
+            </div>
+            
+            <div class="control-formulario">
+                <label>Contraseña:</label>
+                <input type="password" name="contraseña" class="contraseña" placeholder="Contraseña">
+            </div>
        
-    <button type="submit" class="boton-formulario">Iniciar Sesión</button>
- </div>
- <div class="derecha">
-     <img src="/img/img-login.jpg" alt="img-login" class="img-login">
- </div>
-  </form>
+            <button type="submit" class="boton-formulario">Iniciar Sesión</button>
+        </div>
+ 
+        <div class="derecha">
+            <img src="/img/img-login.jpg" alt="img-login" class="img-login">
+        </div>
+
+    </form>
+
 </main>
+
 <%- include('./../views/partials/footer') %>
+
 </body>
+
 </html>

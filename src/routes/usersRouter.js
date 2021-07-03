@@ -1,16 +1,40 @@
-const usersController = require('../controllers/usersController');
-
+// ************ Require's ************
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const path = require('path');
 
-/* GET users listing. */
+// ************ Multer ************
+const multerDS = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, path.join(__dirname, '../../public/img'));
+    },
+    filename: function(req, file, cb){
+        let nameImage = Date.now() + path.extname(file.originalname);
+        cb(null, nameImage);
+    }
+});
 
-router.get('/login',usersController.login);
+const uploadFile = multer({ storage: multerDS });
 
-router.get('/register',usersController.registro);
+// ************ Controller Require ************
+const usersController = require('../controllers/usersController');
 
-router.get('/profile',usersController.perfil);
+// ************ Views ************
 
+/*** LOGIN DE USUARIO EXISTENTE ***/
+router.get('/login', usersController.login);
+
+/*** REGISTRAR UN NUEVO USUARIO ***/
+router.get('/register', usersController.registro);
+router.post('/register', usersController.store);
+
+/*** VER TU INFORMACION Y EDITAR ***/ 
+router.get('/profile/:id', usersController.perfil);
+router.put('/profile/:id', usersController.update);
+
+/*** VER EL CARRITO ***/
 router.get('/cart',usersController.carrito);
+
 
 module.exports = router;
