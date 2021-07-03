@@ -11,6 +11,6 @@ router.get('/register',usersController.registro);
 
 router.get('/profile',usersController.perfil);
 
-router.get('/carrito',usersController.carrito);
+router.get('/cart',usersController.carrito);
 
 module.exports = router;
