@@ -214,7 +214,7 @@ main{
 }
 
 .product-title {        
-    font-size: 2.4em;
+    font-size: 2.1em;
     font-weight: 400;
     color: blue;
 }
@@ -222,12 +222,16 @@ main{
 .product-box {
     background-color: #fff;
     border-radius: 5px;
-    margin: 20px 0;
+    margin: 20px 5px;
+    box-shadow: rgba(103, 150, 177, 0.733) 0px 7px 20px 0px;
   }
-
+  .product-box:hover{
+    box-shadow: rgba(65, 157, 211, 0.877) 0px 7px 29px 0px;
+  }
   .product-box img{
         margin-top: 10px;
         height: 250px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
   
   .product-box a {
