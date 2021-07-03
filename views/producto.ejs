@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamerLab</title>
+    <link rel="icon" type="./img/png" href="./img/logoGL.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -14,26 +15,31 @@
 <body>
     <%- include('./../views/partials/header') %>
     <main>
-        <h2 class="products-title">Todos los productos</h2>
-    
-<% for(let i=0;i<productos.length;i++) { %> 
+        <div>
+            <img class="banner" src="/img/omen.jpg" alt="HP Omen Gaming">
+        </div>
+        <div c.lass="container products-wrapper">
+            <div class="col-12">
+        <h2 class="titulos">Todos los productos</h2>
+            </div>
+    <div class="row">
+    <% for(let i=0; i < productos.length; i++) { %> 
     <div class="col-12 col-sm-6 col-lg-3">
         <section class="product-box">
-            <a href="/products/detail/<%=productos[i].id %>">
+            <a href="/products/<%=productos[i].id %>">
                 <figure class="product-box_image">
-                    <img src="/images/products/<%=productos[i].image %>" alt="imagen de producto">
+                    <img src="/img/<%=productos[i].image %>" alt="imagen de producto">
                 </figure>
                 <article class="product-box_data">
-                    <h2>$<%=productos[i].price %> </h2>
-                    <span><%=productos[i].discount %>% </span>
-                    <p><%=productos[i].name %></p>
-                    <i class="fas fa-truck"></i>
+                    <h4 class="product-title">$<%=productos[i].price %> </h4>
+                    <h3 class="product-price"><%=productos[i].name %></h3>
                 </article>
             </a>
         </section>
     </div>
-
     <% } %>
+        </div>
+    </div>
 
         
     </main>
