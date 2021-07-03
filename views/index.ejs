@@ -26,61 +26,25 @@
         </div>
             
             <div class="row">
-                <% for (let i =0; i < productos.length; i++) { %> 
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <section class="product-box">
-                        <a href="/products/<%= productos[i].id  %>">
-                            <figure class="product-box_image">
-                                <img src="/img/<%= productos[i].image  %>">
-                            </figure>
-                            <article class="product-box_data"></article>
-                                <h4 class="product-title"><%= productos[i].name %></h4>
-                                <h3 class="product-price">$<%= productos[i].price %></h3>
-                            </article>
-                        </a>
-                    </section>
-                </div>
-                <% } %> 
-
-
-
-<!--
-        <div class="productos">
-            <div class="primerosDos">
-                <a href="/products/detalle">
-                <div class="producto1 productoSilla">
-                <img src="/img/silla-gamer.jpg" class="silla-gamer" alt="Silla Gamer">
-                <h4 class="nombre">Silla Gamer Razor XLR</h4>
-                <h3 class="precio">$31999</h3>
-            </a>
+               <!--SI SE ELIMINAMOS EL FOR FUNCIONA LA VISTA, EL PROBLEMA ESTÁ ACÁ--> 
+               
+                 <% for (let i =0; i < productos.length; i++) { %> 
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <section class="product-box">
+                            <a href="/products/<%= productos[i].id  %>">
+                                <figure class="product-box_image">
+                                    <img src="/img/<%= productos[i].image  %>">
+                                </figure>
+                                <article class="product-box_data"></article>
+                                    <h4 class="product-title"><%= productos[i].name %></h4>
+                                    <h3 class="product-price">$<%= productos[i].price %></h3>
+                                </article>
+                            </a>
+                        </section>
+                    </div>
+                    <% } %>
             </div>
-          <div class="producto1 productoParlante">
-                <a href="/products/detalle">
-                <img src="/img/parlante.jpg" class="parlante" alt="Parlante">
-                <h4 class="nombre">Parlante Bomber Party</h4>
-                <h3 class="precio">$19.000</h3>
-            </a>
-            </div>
-          </div>
-
-          <div class="segundosDos">
-            <a href="/products/detalle">
-            <div class="producto1 productoMonitor">
-                <img src="/img/monitor1.jpg" class="monitor" alt="Monitor">
-                <h4 class="nombre">Curved Gamer Monitor</h4>
-                <h3 class="precio">$79.000</h3>
-            </a>
-            </div>
-            <div class="producto1 productoTeclado">
-                <a href="/products/detalle">
-                <img src="/img/teclado1.jpg" class="teclado" alt="Teclado">
-                <h4 class="nombre">Teclado Gamer Revenge</h4>
-                <h3 class="precio">$49.000</h3>
-               </a>
-            </div>
-          </div>
--->
-        </div>
+    </div>
 
         <section class="noticia">
             <h3 class="noticias">NOTICIAS</h3>
