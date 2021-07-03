@@ -20,26 +20,27 @@
         </div>
         
 
-    <div class="container products-wrapper">
+    <div c.lass="container products-wrapper">
         <div class="col-12">
             <h3 class="titulos">NOVEDADES</h3>
         </div>
             
             <div class="row">
-
+                <% for (let i =0; i < productos.length; i++) { %> 
                 <div class="col-12 col-sm-6 col-lg-3">
                     <section class="product-box">
-                        <a href="/products/detalle">
+                        <a href="/products/<%= productos[i].id  %>">
                             <figure class="product-box_image">
-                                <img src="/img/teclado1.jpg">
+                                <img src="/img/<%= productos[i].image  %>">
                             </figure>
                             <article class="product-box_data"></article>
-                                <h4 class="product-title">Silla Gamer Dooku Black & Red</h4>
-                                <h3 class="product-price">$35.999</h3>
+                                <h4 class="product-title"><%= productos[i].name %></h4>
+                                <h3 class="product-price">$<%= productos[i].price %></h3>
                             </article>
                         </a>
                     </section>
                 </div>
+                <% } %> 
 
 
 
@@ -49,12 +50,11 @@
                 <a href="/products/detalle">
                 <div class="producto1 productoSilla">
                 <img src="/img/silla-gamer.jpg" class="silla-gamer" alt="Silla Gamer">
-                <h4 class="nombre">Silla Gamer Dooku Black & Red</h4>
-                <h3 class="precio">$35.999</h3>
+                <h4 class="nombre">Silla Gamer Razor XLR</h4>
+                <h3 class="precio">$31999</h3>
             </a>
             </div>
-
-            <div class="producto1 productoParlante">
+          <div class="producto1 productoParlante">
                 <a href="/products/detalle">
                 <img src="/img/parlante.jpg" class="parlante" alt="Parlante">
                 <h4 class="nombre">Parlante Bomber Party</h4>
@@ -76,7 +76,7 @@
                 <img src="/img/teclado1.jpg" class="teclado" alt="Teclado">
                 <h4 class="nombre">Teclado Gamer Revenge</h4>
                 <h3 class="precio">$49.000</h3>
-            </a>
+               </a>
             </div>
           </div>
 -->

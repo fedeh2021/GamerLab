@@ -18,6 +18,9 @@ const uploadFile = multer({ storage: multerDS });
 
 
 //RUTEO
+
+router.get('/', productsController.index); 
+
 router.get("/producto", productsController.listadoProductos); 
 
 router.get("/detail/:id", productsController.detalleProductos);
