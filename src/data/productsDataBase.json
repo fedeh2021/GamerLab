@@ -19,7 +19,7 @@
 },
 {
     "id": 3,
-    "name": "Curved Gamer Monitor",
+    "name": "Gamer Monitor",
     "price": 49000,
     "discount": 10,
     "category": "monitores",
@@ -52,5 +52,23 @@
     "category": "teclados",
     "description": "Teclado QWERTY retroiluminado ",
     "image": "teclado1.jpg"
+},
+{
+    "id": 7,
+    "name": "Auriculares Inmersive k5 ",
+    "price": 27000,
+    "discount": 15,
+    "category": "audio",
+    "description": "Auriculares inmersivos con bluetooth ",
+    "image": "auriculares-1-fondo-blanco.jpg"
+},
+{
+    "id": 8,
+    "name": "Mouse WT4 ",
+    "price": 10500,
+    "discount": 15,
+    "category": "mouses",
+    "description": "mouse con luces ",
+    "image": "mouse.jpg"
 }
 ]

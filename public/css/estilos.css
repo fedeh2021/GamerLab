@@ -211,10 +211,11 @@ main{
 .products-wrapper {
     margin-top: 30px;
     margin-bottom: 30px;
+    
 }
 
 .product-title {        
-    font-size: 2.1em;
+    font-size: 1.8em;
     font-weight: 400;
     color: blue;
 }
@@ -222,7 +223,7 @@ main{
 .product-box {
     background-color: #fff;
     border-radius: 5px;
-    margin: 20px 5px;
+    margin: 4% 10%;
     box-shadow: rgba(103, 150, 177, 0.733) 0px 7px 20px 0px;
   }
   .product-box:hover{
@@ -232,6 +233,7 @@ main{
         margin-top: 10px;
         height: 250px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        max-width: 90%;
   }
   
   .product-box a {
@@ -960,6 +962,9 @@ a.btn{
         min-width: 80px;
         height: 40px;
     }
+    .product-box {
+        margin: 4% 2%;
+      }
     .prod-content input {
         width: 80px;
         min-width: 80px;
