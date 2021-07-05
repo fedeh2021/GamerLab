@@ -25,12 +25,13 @@ router.get("/producto", productsController.listadoProductos);
 
 router.get("/detail/:id", productsController.detalleProductos);
 
-router.get("/edit/", productsController.edicionProducto);
+router.get("/edit/:id", productsController.edicionProducto);
 router.put("/edit/:id", productsController.edicionProducto); //cambiar metodo
 
 router.get("/create", productsController.creacionProducto);
 router.post("/create", productsController.creacionProducto); //cambiar metodo
 
+//router.delete("/delete/:id", productsController.delete)
 //router.delete(--)
 
 module.exports = router;

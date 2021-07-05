@@ -46,8 +46,14 @@
                 </div>
             </form>
             <div class="prod-buttons">
-                <button class="prod-add-to-cart" href="#">Agregar al carrito</button>
-                <button class="prod-buy" href="#">Comprar</button>
+                <div class="row-1">
+                   <button class="prod-add-to-cart" href="#">Agregar al carrito</button>
+                   <button class="prod-buy" href="#">Comprar</button>
+                </div>
+                <div class="row-2">
+                   <a class="prod-edit" href="/products/edit/<%=productoEnDetalle.id%>">Editar</a>
+                   <button class="prod-delete" href="/products/delete/<%=productoEnDetalle.id%>">Eliminar</button>
+                </div>
             </div>
         </div>
     </div>

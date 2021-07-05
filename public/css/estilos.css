@@ -219,7 +219,10 @@ main{
     font-weight: 400;
     color: blue;
 }
-
+.row{
+    width:90%;
+    margin:auto;
+}
 .product-box {
     background-color: #fff;
     border-radius: 5px;
@@ -413,7 +416,7 @@ a.btn{
 
 .links a i{
     font-size:2rem;
-    color:#fff
+    color:#fff;
 }
 
 .links a i:hover{
@@ -836,28 +839,62 @@ a.btn{
 }
 
 .prod-buttons {
-    height: auto;
-    width: auto;
     border: none;
     font-size: 1.4em;
     margin-top: 1.5em;
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: space-between;
 }
-
+.row-1{
+    display: flex;
+    flex-direction: row;
+}
+.row-2{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+}
 .prod-add-to-cart {
     background-color: #28aee2;
-    border: 5px solid #28aee2;
+    border: 2px solid #28aee2;
     border-radius: 4px;
+    margin-right: 2%;
+}
+.prod-add-to-cart:hover {
+    background-color: #1b90be;
+    border: 2px solid #1b90be;
 }
 
 .prod-buy {
     background-color: #9b0083;
-    border: 5px solid #9b0083;
+    border: 2px solid #9b0083;
     border-radius: 4px;
 }
-
-
+.prod-buy:hover {
+    background-color: #880a75;
+    border: 2px solid #880a75;
+}
+.prod-edit{
+    background-color: #28aee2;
+    border: 2px solid #28aee2;
+    border-radius: 4px;
+    margin-right: 2%;
+}
+.prod-edit:hover {
+    background-color: #1b90be;
+    border: 2px solid #1b90be;
+}
+.prod-delete{
+    background-color: #9b0083;
+    border: 2px solid #9b0083;
+    border-radius: 4px;
+}
+.prod-delete:hover {
+    background-color: #880a75;
+    border: 2px solid #880a75;
+}
 /*FORMULARIOS DE PRODUCTO*//*FORMULARIOS DE PRODUCTO*//*FORMULARIOS DE PRODUCTO*/
 
 .formulario-prod{

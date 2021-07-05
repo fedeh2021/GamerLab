@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { inflateRaw } = require('zlib');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -30,8 +31,16 @@ const productsController =
     },
 
     edicionProducto:(req, res) => {
-        res.render("edicionProducto") 
-    }
+        var productoId = req.param.id
+        for (let i=0; i<products.length; i++){
+            if (products[i].id == productoId){
+                var productoEncontrado = products[i]
+            }
+        }
+        res.render("edicionProducto", {productoAEditar: productoEncontrado}) 
+    },
+
+    //delete:(req, res)
 };
 
 module.exports = productsController;
