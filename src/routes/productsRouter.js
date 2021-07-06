@@ -22,16 +22,17 @@ const uploadFile = multer({ storage: multerDS });
 router.get('/', productsController.index); 
 
 router.get("/producto", productsController.listadoProductos); 
-
 router.get("/detail/:id", productsController.detalleProductos);
 
+
 router.get("/edit/:id", productsController.edicionProducto);
-router.put("/edit/:id", productsController.edicionProducto); //cambiar metodo
+router.put("/edit/:id", productsController.store); 
+
 
 router.get("/create", productsController.creacionProducto);
-router.post("/create", productsController.creacionProducto); //cambiar metodo
+router.post("/create", uploadFile.single('imagenProducto'), productsController.store); 
 
-//router.delete("/delete/:id", productsController.delete)
-//router.delete(--)
+
+router.delete("/delete/:id", productsController.delete)
 
 module.exports = router;

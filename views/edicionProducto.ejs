@@ -14,37 +14,37 @@
 <%- include('./../views/partials/header') %>
 
 <body>
-    <form action="/creacion-producto" method="POST" class="formulario-prod">
+    <form action="/products/edit/<%=productoEnDetalle.id%>?_method:PUT" method="POST" class="formulario-prod">
         
     <h1 class="titulo-formulario">EDICIÓN DE PRODUCTO</h1>
 
     <div class="formulario-producto">
-        <label>Imagen del producto:</label>
+        <label>Imagen del producto: <%= productoEnDetalle.image%></label>
         <input type="file" name="usuario" class="usuario" id="foto-producto">
     </div>
 
     <div class="formulario-producto">
-        <label>Nombre del producto:</label>
+        <label>Nombre del producto: <%= productoEnDetalle.name%></label>
         <input type="text" name="usuario" class="usuario" placeholder="Nombre del producto" id="formulario-text">
     </div>    
     
     <div class="formulario-producto">
-        <label>Descripción:</label>
+        <label>Descripción:<%= productoEnDetalle.description%></label>
         <textarea rows="4" cols="40" id="formulario-text"></textarea>
     </div>
 
     <div class="formulario-producto">
-        <label>Precio:</label>
+        <label>Precio: $<%= productoEnDetalle.price%></label>
         <input type="text" name="usuario" class="usuario" placeholder="$" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
-        <label>Descuento:</label>
+        <label>Descuento:<%= productoEnDetalle.discounte%>%</label>
         <input type="text" name="usuario" class="usuario" placeholder="%" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
-        <label>Stock:</label>
+        <label>Stock:<%= productoEnDetalle.image%></label>
         <input type="number" name="usuario" class="usuario" id="formulario-text">
     </div>
 

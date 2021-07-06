@@ -768,7 +768,8 @@ a.btn{
 
 .prod-content p {
     font-style: italic;
-    font-size: 1.5em;
+    font-size: 1.1em;
+    
     display: block; 
     text-align: left;
 }
@@ -944,8 +945,23 @@ a.btn{
     width: 100%;
 }
 
+.crear-producto-btn{
+    box-shadow: rgba(103, 150, 177, 0.733) 0px 7px 20px 0px;
+    width: 7%;
+    text-align: center;
+    display: block;
+    margin:auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 
+.crear-producto-btn:hover{
+    box-shadow: rgba(65, 157, 211, 0.877) 0px 7px 29px 0px;
+}
 
+a:hover{
+text-decoration: none;
+}
 /*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*/
 
 @media(min-width:440px){

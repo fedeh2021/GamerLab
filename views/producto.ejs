@@ -15,18 +15,18 @@
 <body>
     <%- include('./../views/partials/header') %>
     <main>
-        <div>
-            <img class="banner" src="/img/omen.jpg" alt="HP Omen Gaming">
-        </div>
         <div c.lass="container products-wrapper">
             <div class="col-12">
-        <h2 class="titulos">Todos los productos</h2>
+        <h2 class="titulos">TODOS LOS PRODUCTOS</h2>
+            </div>
+            <div class="crear-producto-btn">
+               <button><a href="/products/create">CREAR PRODUCTO</a></button>
             </div>
     <div class="row">
     <% for(let i=0; i < productos.length; i++) { %> 
     <div class="col-12 col-sm-6 col-lg-3">
         <section class="product-box">
-            <a href="/products/<%=productos[i].id %>">
+            <a href="/products/detail/<%= productos[i].id  %>">
                 <figure class="product-box_image">
                     <img src="/img/<%=productos[i].image %>" alt="imagen de producto">
                 </figure>
