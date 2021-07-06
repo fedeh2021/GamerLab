@@ -31,6 +31,6 @@ app.set('view engine', 'ejs');
 
 
 //SERVER
-app.listen(3077, () =>{
+app.listen(process.env.PORT || 3077, () =>{
     console.log("servidor corriendo")
 });
