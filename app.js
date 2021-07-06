@@ -1,6 +1,7 @@
 /*ARCHIVOS DEL EXPRESS GENERATOR*/
 const express = require("express");
 const path = require("path");
+const methodOverride =  require('method-override');
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.use("/products", productsRouter);
 
 app.use(express.static(path.resolve(__dirname, "./public")));
 //app.use(express.static(path.join(__dirname + "/public")));
-
+app.use(methodOverride('_method'));
 
 // view engine setup
 //app.set('views', path.resolve(__dirname, './views'));
