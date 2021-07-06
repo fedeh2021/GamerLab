@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamerLab</title>
+    <link rel="icon" type="./img/png" href="./img/logoGL.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
 <%- include('./../views/partials/header') %>
 
 <body>
-    <form action="/creacion-producto" method="POST" class="formulario-prod">
+    <form action="/products/create" method="POST" class="formulario-prod" enctype="multipart/form-data">
         
     <h1 class="titulo-formulario">CREACIÓN DE PRODUCTO</h1>
 
@@ -57,7 +58,6 @@
                 <option value="accesorios">Teclados y mouses</option>
                 <option value="audio">Audio</option>
                 <option value="placa">Placa de video</option>
-                <option value="pc">Armá tu PC</option>
                 <option value="muebleria">Sillas y escritorios</option>
             </select>
     </div>
