@@ -17,13 +17,13 @@ const productsController =
     },
 
     detalleProductos: (req, res) => {
-        let idProducto = req.params.id
+        let productoId = req.params.id
         for (let i = 0; i < products.length; i++){
-            if (idProducto == products[i].id){
-                var productoEnDetalle = products[i]
+            if (products[i].id == productoId){
+                var productoEncontrado = products[i]
             }
         }
-        res.render("detail", {productoEnDetalle:productoEnDetalle})
+        res.render("detail", {productoEnDetalle:productoEncontrado})
     },
 
     creacionProducto:(req, res) => {
@@ -40,8 +40,8 @@ const productsController =
     },
 
     edicionProducto:(req, res) => {
-        var productoId = req.param.id
-        for (let i=0; i<products.length; i++){
+        var productoId = req.params.id;
+        for (let i=0; i < products.length; i++){
             if (products[i].id == productoId){
                 var productoEncontrado = products[i]
             }
@@ -53,17 +53,17 @@ const productsController =
         let valoresNuevos = req.body
         let productoId = req.params.id
 
-        for (let i =0; i < products.length; i++){
-            if(productoId == products [i]){
+        for (let i = 0; i < products.length; i++){
+            if(products[i].id == productoId){
                 products[i].name = valoresNuevos.name;
 				products[i].price = valoresNuevos.price;
 				products[i].discount = valoresNuevos.discount;
 				products[i].category = valoresNuevos.category;
 				products[i].description = valoresNuevos.description;
                 
-                var productoEncontrado = products[i]
+                var productoEncontrado = products[i];
 
-                break
+                break;
             }
             fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
         }
@@ -71,9 +71,9 @@ const productsController =
     },
 
     delete:(req, res) => {
-        let idProducto = req.params.id;	
-		for(let i=0;i<products.length;i++){
-			if (products[i].id==idProducto){
+        let productoId = req.params.id;	
+		for(let i=0; i < products.length; i++){
+			if (products[i].id== productoId){
 				var nombreImagen=products[i].image;
 				products.splice(i,1);
 				break;

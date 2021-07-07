@@ -26,7 +26,7 @@ router.get("/detail/:id", productsController.detalleProductos);
 
 
 router.get("/edit/:id", productsController.edicionProducto);
-router.put("/edit/:id", productsController.store); 
+router.put("/edit/:id", productsController.update); 
 
 
 router.get("/create", productsController.creacionProducto);
