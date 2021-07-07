@@ -33,6 +33,6 @@ router.get("/create", productsController.creacionProducto);
 router.post("/create", uploadFile.single('usuario'), productsController.store); 
 
 
-router.delete("/delete/:id", productsController.delete)
+router.delete("/:id", productsController.delete)
 
 module.exports = router;

@@ -50,8 +50,8 @@ const productsController =
     },
 
     update:(req, res) => {
-        let valoresNuevos = req.body
-        let productoId = req.params.id
+        let valoresNuevos = req.body;
+        let productoId = req.params.id;
 
         for (let i = 0; i < products.length; i++){
             if(products[i].id == productoId){
@@ -81,7 +81,7 @@ const productsController =
 		}
 		
 	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-		fs.unlinkSync(path.join(__dirname,'../../public/images/products/'+nombreImagen));
+		fs.unlinkSync(path.join(__dirname,'../../public/img/'+nombreImagen));
 		res.render('index',{productos: products});
 
 		}
