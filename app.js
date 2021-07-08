@@ -20,6 +20,8 @@ app.use("/products", productsRouter);
 app.use(express.static(path.resolve(__dirname, "./public")));
 //app.use(express.static(path.join(__dirname + "/public")));
 app.use(methodOverride('_method'));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // view engine setup
 //app.set('views', path.resolve(__dirname, './views'));

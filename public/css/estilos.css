@@ -92,10 +92,6 @@ body{
     font-size: 1.5em;
 }
 
-.menu-productos1 {
-
-}
-
 .barra-derecha{
     align-items: center;
     padding: 0 3px;
@@ -137,7 +133,7 @@ body{
 
 .search-button{
     position: absolute;
-    bottom: 0px;
+    
     height: 40px;
     width: 40px;
     right: 10px;
@@ -262,7 +258,7 @@ main{
     max-height: 100%;
     display: block;
     margin:auto;
-    width: 90%;
+    width: 100vh;
 }
 
 .noticia-banner{
@@ -360,9 +356,6 @@ a.btn{
     display: block;
     flex-direction: column;
     padding: 20px;
-}
-
-.datoperfil{
 }
 
 .perfil{
@@ -913,9 +906,7 @@ text-decoration: none;
     .search-form{
         display: block;
     }
-    .fa-search{
-        display:none;
-    }
+    
     .search-form-input{
         display: flex;
     }

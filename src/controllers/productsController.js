@@ -67,7 +67,7 @@ const productsController =
             }
             fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
         }
-        res.render("detail", {productoEnDetalle:productoEncontrado})
+        res.render("detail", {productoEnDetalle: productoEncontrado})
     },
 
     delete:(req, res) => {
