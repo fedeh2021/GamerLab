@@ -15,5 +15,11 @@ En una nueva reunión para el siguiente sprint, ya no sentimos los nervios por l
 Algo para continuar haciendo es comunicarnos para colaborarnos y sacarnos las dudas. En cambio, algo para seguir tratando de mejorar son los tiempos para las entregas, tener el sprint terminado con algunos dias de sobra, nos dará más tiempo para pulir detalles.
 
 
-7/2021
-Nuestro ultimo sprint fue intenso y quizas no nos pusimos a trabajar en el sitio con mucho tiempo previo. Este "error" generó que para este sprint haya mucha mejor comunicacion en el equipo por el grupo de Whatsapp y videollamadas. Comenzamos a hacer los cambios con tiempo y , si bien algunas cosas cuesta realizarlas, en lineas generales nos vimos mejor parados en este cuarto sprint.
+7/2021 - CUARTO SPRINT
+
+Nuestro ultimo sprint fue intenso y quizas no nos pusimos a trabajar en el sitio con mucho tiempo previo. Este "error" generó que para este sprint haya mucha mejor comunicacion en el equipo por el grupo de Whatsapp y videollamadas. Comenzamos a hacer los cambios con tiempo y, si bien algunas cosas cuesta realizarlas, en lineas generales nos vimos mejor parados en este cuarto sprint.
+
+Tenemos que seguir con la buena comunicación y hasta quizas agregar mas videollamadas a nuestros horarios que siempre son útiles.
+La implementacion de whatsapp (audios) y las video fueron clave para poder entendernos mejor. Muchas veces por el chat de Disord cuesta llegar a entendernos y se hace lento.
+
+En este sprint hubo menos nervios gracias a nuestra voluntad y la de los profesores que siempre intentan mantenernos tranquilos.
