@@ -7,6 +7,9 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+const User = require('../models/User');
+
+
 // ************ Controller ************
 const usersController = 
 {
@@ -32,7 +35,7 @@ const usersController =
 
 		    users.push(nuevoObjeto);
 		    fs.writeFileSync(productsFilePath, JSON.stringify(users, null, ' '));
-		    res.redirect('/users/login');
+		    res.redirect('/'); 
         },
  
     perfil: (req, res)=>{
