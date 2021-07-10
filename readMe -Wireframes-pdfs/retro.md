@@ -23,3 +23,4 @@ Tenemos que seguir con la buena comunicación y hasta quizas agregar mas videoll
 La implementacion de whatsapp (audios) y las video fueron clave para poder entendernos mejor. Muchas veces por el chat de Disord cuesta llegar a entendernos y se hace lento.
 
 En este sprint hubo menos nervios gracias a nuestra voluntad y la de los profesores que siempre intentan mantenernos tranquilos.
+

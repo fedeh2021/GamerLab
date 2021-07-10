@@ -7,8 +7,6 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const User = require('../models/User');
-
 
 // ************ Controller ************
 const usersController = 
@@ -52,6 +50,5 @@ const usersController =
             res.render("carrito") 
         }
 }
-
 
 module.exports = usersController;
