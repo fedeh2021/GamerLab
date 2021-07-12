@@ -22,17 +22,22 @@ const usersController =
             }
             res.render("login", {usuario: usuarioEncontrado})
         },
+
+    checkLogin: (req, res)=> {
+        res.send("hola")
+    },
     
     registro: (req, res) => {
             res.render("registro", {usuario: users})
         },
 
-    store: (req, res) => {
+    checkRegistro: (req, res) => {
             let nuevoId = users[users.length-1].id + 1; 
-		    let nuevoObjeto = Object.assign({id: nuevoId}, req.body);
+            let info = req.body
+		    let nuevoObjeto = Object.assign({id: nuevoId}, info);
 
 		    users.push(nuevoObjeto);
-		    fs.writeFileSync(productsFilePath, JSON.stringify(users, null, ' '));
+		    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
 		    res.redirect('/'); 
         },
  

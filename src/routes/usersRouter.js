@@ -24,10 +24,12 @@ const usersController = require('../controllers/usersController');
 
 /*** LOGIN DE USUARIO EXISTENTE ***/
 router.get('/login', usersController.login);
+router.post('/login', usersController.checkLogin);
+
 
 /*** REGISTRAR UN NUEVO USUARIO ***/
 router.get('/register', usersController.registro);
-router.post('/register', usersController.store);
+router.post('/register', usersController.checkRegistro);
 
 /*** VER TU INFORMACION Y EDITAR ***/ 
 router.get('/profile/:id', usersController.perfil);

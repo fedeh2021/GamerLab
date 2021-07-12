@@ -17,17 +17,17 @@
 
 <main>
 
-    <form method="POST" action="/register" class="formulario-registro">
+    <form method="POST" action="/users/register" class="formulario-registro">
         <div class="usuariologo"><i class="far fa-user-circle"></i></div>
         
             <div class="control-formulario">
                 <label>Nombre de Usuario:</label>
-                <input type="text" name="usuario" class="usuario" placeholder="Nombre de usuario">
+                <input type="text" name="name" class="usuario" placeholder="Nombre de usuario">
             </div>
 
             <div class="control-formulario">
                 <label>Cumpleaños:</label>
-                <input type="date" name="cumpleaños" class="cumpleaños">
+                <input type="date" name="birthdate" class="cumpleaños">
             </div>
 
             <div class="control-formulario">
@@ -37,12 +37,12 @@
 
             <div class="control-formulario">
                 <label>Contraseña:</label>
-                <input type="password" name="contraseña" class="contraseña" placeholder="Contraseña">
+                <input type="password" name="password" class="contraseña" placeholder="Contraseña">
             </div>
 
             <div class="control-formulario">
                 <label>Repetir contraseña:</label>
-                <input type="password" name="contraseña" class="contraseña" placeholder="Repetir contraseña">
+                <input type="password" name="repeatPassword" class="contraseña" placeholder="Repetir contraseña">
             </div>
 
             <button type="submit" class="boton-formulario">Registrarme</button>

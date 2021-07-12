@@ -78,6 +78,15 @@
   "description": "mouse con luces ",
   "image": "mouse.jpg",
   "stock": 32
+ },
+ {
+  "id": 9,
+  "name": "nombre",
+  "description": "ejemplo",
+  "price": "10000",
+  "discount": "20",
+  "stock": "200",
+  "category": "monitores",
+  "image": "1626101705219.jpg"
  }
-  
 ]

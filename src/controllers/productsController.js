@@ -30,7 +30,7 @@ const productsController =
         res.render("creacionProducto") 
     },
 
-    store:(req, res) => {
+    checkCreacionProducto:(req, res) => {
         let nombreImagen=req.file.filename;
 		let idNuevo = products[products.length-1].id + 1;
 		let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
@@ -49,7 +49,7 @@ const productsController =
         res.render("edicionProducto", {productoEnDetalle: productoEncontrado}) 
     },
 
-    update:(req, res) => {
+    checkEdicionProducto:(req, res) => {
         let valoresNuevos = req.body;
         let productoId = req.params.id;
 

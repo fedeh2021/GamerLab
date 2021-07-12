@@ -26,11 +26,11 @@ router.get("/detail/:id", productsController.detalleProductos);
 
 
 router.get("/edit/:id", productsController.edicionProducto);
-router.put("/edit/:id", productsController.update); 
+router.put("/edit/:id", productsController.checkEdicionProducto);
 
 
 router.get("/create", productsController.creacionProducto);
-router.post("/create", uploadFile.single('usuario'), productsController.store); 
+router.post("/create", uploadFile.single('usuario'), productsController.checkCreacionProducto); 
 
 
 router.delete("/:id", productsController.delete)
