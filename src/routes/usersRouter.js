@@ -29,7 +29,7 @@ router.post('/login', usersController.checkLogin);
 
 /*** REGISTRAR UN NUEVO USUARIO ***/
 router.get('/register', usersController.registro);
-router.post('/register', usersController.checkRegistro);
+router.post('/register', uploadFile.single('perfil'), usersController.checkRegistro);
 
 /*** VER TU INFORMACION Y EDITAR ***/ 
 router.get('/profile/:id', usersController.perfil);

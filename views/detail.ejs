@@ -53,7 +53,7 @@
                 </div>
                 <div class="row-2">
                    <a class="prod-add-to-cart" href="/products/edit/<%=productoEnDetalle.id%>">Editar</a>
-                   <form action="/products/delete/<%= productoEnDetalle.id %>?_method=DELETE" method="POST" onsubmit="return confirm('¿Estas Seguro que queres borrar?')">
+                   <form action="/products/delete/<%= productoEnDetalle.id %>/?_method=DELETE" method="POST" onsubmit="return confirm('¿Estas Seguro que queres borrar?')">
                    <button  type="submit" class="prod-buy">Eliminar</button>
                    </form>
                 </div>

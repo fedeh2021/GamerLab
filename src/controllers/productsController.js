@@ -64,9 +64,9 @@ const productsController =
                 var productoEncontrado = products[i];
 
                 break;
-            }
+            }}
             fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-        }
+        
         res.render("detail", {productoEnDetalle: productoEncontrado})
     },
 

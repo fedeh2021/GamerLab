@@ -30,5 +30,8 @@
   "password": "1234",
   "cumpleaños": "01/01/99",
   "image": "perfil.jpg"
+ },
+ {
+  "id": 5
  }
 ]

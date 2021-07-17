@@ -88,5 +88,15 @@
   "stock": "200",
   "category": "monitores",
   "image": "1626101705219.jpg"
+ },
+ {
+  "id": 10,
+  "name": "casa",
+  "description": "s",
+  "price": "222",
+  "discount": "22",
+  "stock": "2",
+  "category": "notebooks",
+  "image": "1626555751276.jpg"
  }
 ]
