@@ -2,8 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
-const User = require('../models/User')
 const { validationResult } = require('express-validator');
+const User = require('../models/User')
 
 const usersFilePath = path.join(__dirname, '../data/usersData.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -78,7 +78,7 @@ const usersController = {
 		    //fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
 		    //res.redirect('/'); 
     perfil: (req, res) => {
-        res.render("perfil", { user: req.session.userLogged }) 
+        return res.render("perfil", { user: req.session.userLogged }) 
         },     
     update: (req, res)=>{
             let idUser = req.params.id
