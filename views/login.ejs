@@ -23,14 +23,21 @@
             <div class="usuariologin"><i class="fas fa-sign-in-alt"></i></div>
 
             <div class="control-formulario">
-                <label>Nombre de Usuario:</label>
-                <input type="text" name="usuario" class="usuario" placeholder="Nombre de usuario">
+                <label>Email:</label>
+                <input type="email" name="email" class="usuario" placeholder="Nombre de usuario">
+                <% if (locals.errors && errors.email) { %>
+                    <div class = "text-danger">
+                    <%=  errors.email.msg %>
+                    </div>
+                    <% } %>
             </div>
             
             <div class="control-formulario">
                 <label>Contraseña:</label>
-                <input type="password" name="contrasena" class="contraseña" placeholder="Contraseña">
+                <input type="password" name="password" class="contraseña" placeholder="Contraseña">
             </div>
+
+            <input type="checkbox" class="" name="remember_user">Recorda mi usuario
        
             <button type="submit" class="boton-formulario">Iniciar Sesión</button>
         </div>

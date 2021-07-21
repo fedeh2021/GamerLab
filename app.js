@@ -2,6 +2,9 @@
 const express = require("express");
 const path = require("path");
 const methodOverride =  require('method-override');
+const cookies = require('cookie-parser');
+const session = require('express-session');
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 
 const app = express();
 
@@ -10,6 +13,9 @@ const router = require("./src/routes/mainRouter");
 const usersRouter = require("./src/routes/usersRouter");
 const productsRouter = require ("./src/routes/productsRouter")
 
+app.use(session({ secret: "es secreto", resave: false, saveUninitialized: false}))
+app.use(cookies());
+app.use(userLoggedMiddleware);
 
 //VISTAS
 app.use("/", router);
@@ -22,6 +28,7 @@ app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 
 // view engine setup
 //app.set('views', path.resolve(__dirname, './views'));
