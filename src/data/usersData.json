@@ -1,34 +1,82 @@
 [
-    {
-        "id": 1,
-        "name": "admin",
-        "email": "admin@admin.com",
-        "password": "1234",
-        "cumpleaños": "01/01/99",
-        "image": "perfil.jpg"
-    },
-    {
-        "id": 2,
-        "name": "admin",
-        "email": "admin@admin.com",
-        "password": "1234",
-        "cumpleaños": "01/01/99",
-        "image": "perfil.jpg"
-    },
-    {
-        "id": 3,
-        "name": "admin",
-        "email": "admin@admin.com",
-        "password": "1234",
-        "cumpleaños": "01/01/99",
-        "image": "perfil.jpg"
-    },
-    {
-        "id": 4,
-        "name": "admin",
-        "email": "admin@admin.com",
-        "password": "1234",
-        "cumpleaños": "01/01/99",
-        "image": "perfil.jpg"
-    }
+ {
+  "id": 1,
+  "name": "admin",
+  "email": "admin@admin.com",
+  "password": "1234",
+  "cumpleaños": "01/01/99",
+  "image": "perfil.jpg"
+ },
+ {
+  "id": 2,
+  "name": "admin",
+  "email": "admin@admin.com",
+  "password": "1234",
+  "cumpleaños": "01/01/99",
+  "image": "perfil.jpg"
+ },
+ {
+  "id": 3,
+  "name": "admin",
+  "email": "admin@admin.com",
+  "password": "1234",
+  "cumpleaños": "01/01/99",
+  "image": "perfil.jpg"
+ },
+ {
+  "id": 4,
+  "name": "admin",
+  "email": "admin@admin.com",
+  "password": "1234",
+  "cumpleaños": "01/01/99",
+  "image": "perfil.jpg"
+ },
+ {
+  "id": 5,
+  "name": "fed",
+  "birthdate": "2200-04-12",
+  "email": "def@gm.com",
+  "password": "$2a$10$HsmCA.3vvWnsj2.4f3Lj0eehRF4gjMzCkLg9j9l.e4pIkgdWp2Z8m",
+  "avatar": "1626902231790.jpg"
+ },
+ {
+  "id": 6,
+  "name": "fedqq",
+  "birthdate": "2200-04-12",
+  "email": "deddf@gm.com",
+  "password": "$2a$10$j1dwbxnGAdm3Nvb6EUz7d.elDQz2ozdptWbkxMEUtNtiZIZoq4r1e",
+  "avatar": "1626902334712.png"
+ },
+ {
+  "id": 7,
+  "name": "fedqq",
+  "birthdate": "2200-04-12",
+  "email": "deddf@gam.com",
+  "password": "$2a$10$RPKEQHJDmYtzxmrGgEeqOuGmYK7kspnrzRU/ij93l8cHqsiWsmjPK",
+  "avatar": "1626903208861.png"
+ },
+ {
+  "id": 8,
+  "name": "fedqq",
+  "birthdate": "2200-04-12",
+  "email": "deddf@gaaam.com",
+  "password": "$2a$10$IzlpbwjJZ1ZHWsevNf1T7umxeDh8m4fT6BqzDr4N1zMsI5Vm.YesO",
+  "avatar": "1626903244551.png"
+ },
+ {
+  "id": 9,
+  "name": "fedqq",
+  "birthdate": "2200-04-12",
+  "email": "deddf@gaaram.com",
+  "password": "$2a$10$gzyD4B3itu1Kww8HzHZXzu6ButbCBNrv6oHQPMxWwBmnfItfIHEWu",
+  "avatar": "1626903293977.png"
+ },
+ {
+  "id": 10,
+  "name": "ejemplo",
+  "birthdate": "2021-07-02",
+  "email": "ejemplo@admin.com",
+  "password": "$2a$10$cwMhgsa3ZvOQi9G5UjjBNOOfnaxos6n5.tk7G22J4mQaOrWZZgcOC",
+  "avatar": "1626909048007.jpg"
+ }
 ]

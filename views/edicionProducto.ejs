@@ -14,11 +14,13 @@
 <%- include('./../views/partials/header') %>
 
 <body>
-    <form action="/products/edit/<%= productoEnDetalle.id%>?_method=PUT" method="POST" class="formulario-prod">
+    
+    <form action="/products/edit/<%=productoEnDetalle.id%>?_method=PUT" method="POST" class="formulario-prod">
         
     <h1 class="titulo-formulario">EDICIÓN DE PRODUCTO</h1>
 
     <div class="formulario-producto">
+<<<<<<< HEAD
         <label>Imagen del producto: </label>
         <input type="file" name="usuario" class="usuario" value="ffff" id="foto-producto">
     </div>
@@ -36,23 +38,50 @@
     <div class="formulario-producto">
         <label>Precio:</label>
         <input type="text" value = "$<%= productoEnDetalle.price%>" name="usuario" class="usuario" placeholder="$" id="formulario-text">
+=======
+        <label>Imagen del producto: <%= productoEnDetalle.image%></label>
+        <input type="file" name="usuario" class="usuario" id="foto-producto" value="<%= productoEnDetalle.image%>">
+    </div>
+
+    <div class="formulario-producto">
+        <label>Nombre del producto: </label>
+        <input type="text" name="usuario" class="usuario" id="formulario-text" value="<%= productoEnDetalle.name%>">
+    </div>    
+    
+    <div class="formulario-producto">
+        <label>Descripción: </label>
+        <textarea rows="4" cols="40" id="formulario-text" value="<%= productoEnDetalle.description%>"></textarea>
+    </div>
+
+    <div class="formulario-producto">
+        <label>Precio: </label>
+        <input type="text" name="usuario" class="usuario" id="formulario-text" value="<%= productoEnDetalle.price%>">
+>>>>>>> 4f7f2339c50d04befc8de22ed93b63ae1d6da111
     </div>
 
     <div class="formulario-producto">
         <label>Descuento: </label>
+<<<<<<< HEAD
         <input type="text" value="<%= productoEnDetalle.discount%>" name="usuario" class="usuario" placeholder="%" id="formulario-text">
+=======
+        <input type="text" name="usuario" class="usuario" id="formulario-text" value="<%= productoEnDetalle.discount%>">
+>>>>>>> 4f7f2339c50d04befc8de22ed93b63ae1d6da111
     </div>
 
     <div class="formulario-producto">
-        <label>Stock:</label>
-        <input type="number" name="usuario" class="usuario" id="formulario-text">
+        <label>Stock: </label>
+        <input type="number" name="usuario" class="usuario" id="formulario-text" value="<%= productoEnDetalle.stock%>">
     </div>
 
 
     <div class="formulario-producto">
         <label for="categoria">Categoría del producto: </label>
+<<<<<<< HEAD
             <select id="categoria" name="categoria" class="formulario-text">
                 <option><%=productoEnDetalle.category%></option>
+=======
+            <select id="categoria" name="categoria" class="formulario-text" value="<%= productoEnDetalle.category%>">
+>>>>>>> 4f7f2339c50d04befc8de22ed93b63ae1d6da111
                 <option value="notebooks">Notebooks</option>
                 <option value="monitores">Monitores</option>
                 <option value="accesorios">Teclados y mouses</option>

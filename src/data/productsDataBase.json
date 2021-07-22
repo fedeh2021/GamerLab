@@ -11,12 +11,7 @@
  },
  {
   "id": 2,
-  "name": "Parlante Bomber Party",
-  "price": 19000,
-  "discount": 0,
-  "category": "parlantes",
-  "description": "Parlante de alta potencia, con conexión bluetooth y AUX 3.5mm. Duración de la bateria: 6hs ",
-  "image": "parlante.jpg",
+  "image": "auriculares-1.jpg",
   "stock": 39
  },
  {
@@ -79,5 +74,4 @@
   "image": "mouse.jpg",
   "stock": 32
  }
-  
 ]

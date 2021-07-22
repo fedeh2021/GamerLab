@@ -31,7 +31,7 @@ const productsController =
         res.render("creacionProducto") 
     },
 
-    store:(req, res) => {
+    checkCreacionProducto:(req, res) => {
         let nombreImagen=req.file.filename;
 		let idNuevo = products[products.length-1].id + 1;
 		let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
@@ -52,7 +52,7 @@ const productsController =
         res.render("edicionProducto", {productoEnDetalle: productoEncontrado}) 
     },
 
-    update:(req, res) => {
+    checkEdicionProducto:(req, res) => {
         let valoresNuevos = req.body;
         let productoId = req.params.id;
 
@@ -67,10 +67,17 @@ const productsController =
                 var productoEncontrado = products[i];
 
                 break;
+<<<<<<< HEAD
             }
         }
          fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
 
+=======
+            }}
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+        
+>>>>>>> 4f7f2339c50d04befc8de22ed93b63ae1d6da111
         res.render("detail", {productoEnDetalle: productoEncontrado})
     },
 

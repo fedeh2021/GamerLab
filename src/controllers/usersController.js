@@ -1,6 +1,9 @@
 // ************ Require's ************
 const fs = require('fs');
 const path = require('path');
+const bcryptjs = require('bcryptjs');
+const { validationResult } = require('express-validator');
+const User = require('../models/User')
 
 const usersFilePath = path.join(__dirname, '../data/usersData.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -9,46 +12,86 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 // ************ Controller ************
-const usersController = 
-{
+const usersController = {
     login: (req, res)=> {
-            let checkEmail = req.params.email
-            let checkPassword = req.params.password;
-
-            for(let i = 0; i <users.length; i++){
-                if (checkEmail == users[i].email && checkPassword == users[i].password){
-                    var usuarioEncontrado = users[i]
+        return res.render("login")
+    },
+    checkLogin: (req, res)=> {
+        let userToLogin = User.findByField('email', req.body.email);
+        if (userToLogin) {
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
+            if (isOkThePassword) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+            if (req.body.remember_user){
+                res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
+            }
+            return res.redirect('./profile') }
+            return res.render('login', {
+            errors: {
+                email: {
+                    msg: 'Las contraseña es incorrecta'}}
+                });
+            }    
+        return res.render('login', {
+            errors: {
+                email: {
+                    msg: 'No se encuentra el email'
                 }
             }
-            res.render("login", {usuario: usuarioEncontrado})
+        });
         },
-    
     registro: (req, res) => {
-            res.render("registro", {usuario: users})
+            return res.render("registro")
         },
 
-    store: (req, res) => {
-            let nuevoId = users[users.length-1].id + 1; 
-		    let nuevoObjeto = Object.assign({id: nuevoId}, req.body);
-
-		    users.push(nuevoObjeto);
-		    fs.writeFileSync(productsFilePath, JSON.stringify(users, null, ' '));
-		    res.redirect('/'); 
-        },
- 
-    perfil: (req, res)=>{
-            let idUser = req.params.id
-            res.render("perfil", {usuario: users, id: idUser}) 
+    checkRegistro: (req, res) => {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('registro', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+        let userInDb = User.findByField('email', req.body.email);
+        if (userInDb) {
+            return res.render('registro', {
+                errors: {
+                    email: {
+                    msg: 'Este email ya esta registrado'
+                }},
+                oldData: req.body
+            });
+        }
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.file.filename
+        }
+        let userCreated = User.create(userToCreate);
+        return res.redirect('./login')
+    },
+        //let nuevoId = users[users.length-1].id + 1; 
+            //let info = req.body
+		    //let nuevoObjeto = Object.assign({id: nuevoId}, info);
+		    //users.push(nuevoObjeto);
+		    //fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+		    //res.redirect('/'); 
+    perfil: (req, res) => {
+        return res.render("perfil", { user: req.session.userLogged }) 
         },     
-
     update: (req, res)=>{
-            let idUser = req.params.id
-            res.render("perfil", {usuario: users, id: idUser}) 
+            res.render("perfil", { user: req.session.userLogged }) 
         }, 
 
     carrito: (req, res)=>{
             res.render("carrito") 
-        }
+        },
+    logout: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        res.redirect('/')
+    }
 }
 
 module.exports = usersController;
