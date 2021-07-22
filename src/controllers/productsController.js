@@ -63,12 +63,13 @@ const productsController =
 				products[i].discount = valoresNuevos.discount;
 				products[i].category = valoresNuevos.category;
 				products[i].description = valoresNuevos.description;
-                
+                products[i].image = (req.file != undefined)? req.file.filename : products[i].image;
                 var productoEncontrado = products[i];
 
                 break;
             }
         }
+
          fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
         res.render("detail", {productoEnDetalle: productoEncontrado})
     },
@@ -78,8 +79,8 @@ const productsController =
     delete:(req, res) => {
         let productoId = req.params.id;	
 		for(let i=0; i < products.length; i++){
-			if (products[i].id== productoId){
-				var nombreImagen=products[i].image;
+			if (products[i].id == productoId){
+				var nombreImagen = products[i].image;
 				products.splice(i,1);
 				break;
 			}
@@ -88,7 +89,7 @@ const productsController =
 	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
 		fs.unlinkSync(path.join(__dirname,'../../public/img/'+nombreImagen));
         
-		res.render('index',{productos: products});
+		res.redirect("/");
 
 		}
     

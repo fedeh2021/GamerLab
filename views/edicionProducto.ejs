@@ -15,38 +15,38 @@
 
 <body>
     
-    <form action="/products/edit/<%=productoEnDetalle.id%>?_method=PUT" method="POST" class="formulario-prod">
+    <form action="/products/edit/<%=productoEnDetalle.id%>?_method=PUT" method="POST" class="formulario-prod" enctype="multipart/form-data">
         
     <h1 class="titulo-formulario">EDICIÓN DE PRODUCTO</h1>
 
     <div class="formulario-producto">
         <label>Imagen del producto: </label>
-        <input type="file" name="usuario" class="usuario" value="<%=productoEnDetalle.image%>" id="foto-producto">
+        <input type="file" name="image" class="usuario" value="<%=productoEnDetalle.image%>" id="foto-producto">
     </div>
 
     <div class="formulario-producto">
         <label>Nombre del producto:</label>
-        <input type="text" value="<%=productoEnDetalle.name%>" name="usuario" class="usuario" placeholder="Nombre del producto" id="formulario-text">
+        <input type="text" value="<%=productoEnDetalle.name%>" name="name" class="usuario" placeholder="Nombre del producto" id="formulario-text">
     </div>    
     
     <div class="formulario-producto">
         <label>Descripción:</label>
-        <textarea rows="4" cols="40" id="formulario-text"><%=productoEnDetalle.description%></textarea>
+        <textarea rows="4" cols="40" id="formulario-text" name="description"><%=productoEnDetalle.description%></textarea>
     </div>
 
     <div class="formulario-producto">
         <label>Precio:</label>
-        <input type="text" value = "$<%= productoEnDetalle.price%>" name="usuario" class="usuario" placeholder="$" id="formulario-text">
+        <input type="text" value = "<%= productoEnDetalle.price%>" name="price" class="usuario" placeholder="$" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
         <label>Descuento: </label>
-        <input type="text" value="<%= productoEnDetalle.discount%>" name="usuario" class="usuario" placeholder="%" id="formulario-text">
+        <input type="text" value="<%= productoEnDetalle.discount%>" name="discount" class="usuario" placeholder="%" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
         <label>Stock: </label>
-        <input type="number" name="usuario" class="usuario" id="formulario-text" value="<%= productoEnDetalle.stock%>">
+        <input type="number" name="stock" class="usuario" id="formulario-text" value="<%= productoEnDetalle.stock%>">
     </div>
 
 

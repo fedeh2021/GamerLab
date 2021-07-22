@@ -28,13 +28,12 @@ router.get("/detail/:id", productsController.detalleProductos);
 
 
 router.get("/edit/:id", productsController.edicionProducto);
-router.put("/edit/:id", productsController.checkEdicionProducto);
+router.put("/edit/:id", uploadFile.single('image'), productsController.checkEdicionProducto);
 
 
 router.get("/create", productsController.creacionProducto);
-router.post("/create", uploadFile.single('usuario'), productsController.checkCreacionProducto); 
+router.post("/create", uploadFile.single('image'), productsController.checkCreacionProducto); 
 
-
-router.delete("/:id", productsController.delete)
+router.delete("/delete/:id", productsController.delete)
 
 module.exports = router;
