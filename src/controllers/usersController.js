@@ -14,7 +14,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 // ************ Controller ************
 const usersController = {
     login: (req, res)=> {
-        res.render("login")
+        return res.render("login")
     },
     checkLogin: (req, res)=> {
         let userToLogin = User.findByField('email', req.body.email);
@@ -26,7 +26,7 @@ const usersController = {
             if (req.body.remember_user){
                 res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
             }
-            return res.redirect('./perfil') }
+            return res.redirect('./profile') }
             return res.render('login', {
             errors: {
                 email: {
@@ -42,7 +42,7 @@ const usersController = {
         });
         },
     registro: (req, res) => {
-            res.render("registro", {usuario: users})
+            return res.render("registro")
         },
 
     checkRegistro: (req, res) => {
@@ -81,8 +81,7 @@ const usersController = {
         return res.render("perfil", { user: req.session.userLogged }) 
         },     
     update: (req, res)=>{
-            let idUser = req.params.id
-            res.render("perfil", {usuario: users, id: idUser}) 
+            res.render("perfil", { user: req.session.userLogged }) 
         }, 
 
     carrito: (req, res)=>{

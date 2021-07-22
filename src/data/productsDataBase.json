@@ -73,15 +73,5 @@
   "description": "mouse con luces ",
   "image": "mouse.jpg",
   "stock": 32
- },
- {
-  "id": 10,
-  "name": "casa",
-  "description": "s",
-  "price": "222",
-  "discount": "22",
-  "stock": "2",
-  "category": "notebooks",
-  "image": "1626555751276.jpg"
  }
 ]
