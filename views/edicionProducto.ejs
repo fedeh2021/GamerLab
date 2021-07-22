@@ -19,28 +19,28 @@
     <h1 class="titulo-formulario">EDICIÓN DE PRODUCTO</h1>
 
     <div class="formulario-producto">
-        <label>Imagen del producto: <%= productoEnDetalle.image%></label>
-        <input type="file" name="usuario" class="usuario" id="foto-producto">
+        <label>Imagen del producto: </label>
+        <input type="file" name="usuario" class="usuario" value="ffff" id="foto-producto">
     </div>
 
     <div class="formulario-producto">
-        <label>Nombre del producto: <%= productoEnDetalle.name%></label>
-        <input type="text" name="usuario" class="usuario" placeholder="Nombre del producto" id="formulario-text">
+        <label>Nombre del producto:</label>
+        <input type="text" value="<%=productoEnDetalle.name%>" name="usuario" class="usuario" placeholder="Nombre del producto" id="formulario-text">
     </div>    
     
     <div class="formulario-producto">
-        <label>Descripción:<%= productoEnDetalle.description%></label>
-        <textarea rows="4" cols="40" id="formulario-text"></textarea>
+        <label>Descripción:</label>
+        <textarea rows="4" cols="40" id="formulario-text"><%=productoEnDetalle.description%></textarea>
     </div>
 
     <div class="formulario-producto">
-        <label>Precio: $<%= productoEnDetalle.price%></label>
-        <input type="text" name="usuario" class="usuario" placeholder="$" id="formulario-text">
+        <label>Precio:</label>
+        <input type="text" value = "$<%= productoEnDetalle.price%>" name="usuario" class="usuario" placeholder="$" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
-        <label>Descuento: <%= productoEnDetalle.discount%></label>
-        <input type="text" name="usuario" class="usuario" placeholder="%" id="formulario-text">
+        <label>Descuento: </label>
+        <input type="text" value="<%= productoEnDetalle.discount%>" name="usuario" class="usuario" placeholder="%" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
@@ -50,9 +50,9 @@
 
 
     <div class="formulario-producto">
-        <label for="categoria">Categoría del producto: <%= productoEnDetalle.category %></label>
+        <label for="categoria">Categoría del producto: </label>
             <select id="categoria" name="categoria" class="formulario-text">
-                <option>Selecciona</option>
+                <option><%=productoEnDetalle.category%></option>
                 <option value="notebooks">Notebooks</option>
                 <option value="monitores">Monitores</option>
                 <option value="accesorios">Teclados y mouses</option>

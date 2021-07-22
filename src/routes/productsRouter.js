@@ -3,6 +3,7 @@ const multer = require ("multer");
 const path = require ("path");
 const express = require('express');
 const router = express.Router();
+const categoriaMiddlewarre = require ("../middlewares/categoriaMiddleware");
 
 //MULTER
 const multerDS = multer.diskStorage({
@@ -21,6 +22,7 @@ const uploadFile = multer({ storage: multerDS });
 
 router.get('/', productsController.index); 
 
+/****/
 router.get("/producto", productsController.listadoProductos); 
 router.get("/detail/:id", productsController.detalleProductos);
 

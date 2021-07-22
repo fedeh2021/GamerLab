@@ -26,6 +26,7 @@ const productsController =
         res.render("detail", {productoEnDetalle:productoEncontrado})
     },
 
+//CREATE Y STORE
     creacionProducto:(req, res) => {
         res.render("creacionProducto") 
     },
@@ -39,6 +40,8 @@ const productsController =
 		res.redirect('/');
     },
 
+
+//EDIT Y UP0DATE
     edicionProducto:(req, res) => {
         var productoId = req.params.id;
         for (let i=0; i < products.length; i++){
@@ -65,11 +68,14 @@ const productsController =
 
                 break;
             }
-            fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
         }
+         fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+
         res.render("detail", {productoEnDetalle: productoEncontrado})
     },
 
+
+    //DELETE
     delete:(req, res) => {
         let productoId = req.params.id;	
 		for(let i=0; i < products.length; i++){
@@ -82,6 +88,7 @@ const productsController =
 		
 	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
 		fs.unlinkSync(path.join(__dirname,'../../public/img/'+nombreImagen));
+        
 		res.render('index',{productos: products});
 
 		}
