@@ -21,39 +21,38 @@
 
     <div class="formulario-producto">
         <label>Imagen del producto: <%= productoEnDetalle.image%></label>
-        <input type="file" name="usuario" class="usuario" id="foto-producto">
+        <input type="file" name="usuario" class="usuario" id="foto-producto" value="<%= productoEnDetalle.image%>">
     </div>
 
     <div class="formulario-producto">
-        <label>Nombre del producto: <%= productoEnDetalle.name%></label>
-        <input type="text" name="usuario" class="usuario" placeholder="Nombre del producto" id="formulario-text">
+        <label>Nombre del producto: </label>
+        <input type="text" name="usuario" class="usuario" id="formulario-text" value="<%= productoEnDetalle.name%>">
     </div>    
     
     <div class="formulario-producto">
-        <label>Descripción:<%= productoEnDetalle.description%></label>
-        <textarea rows="4" cols="40" id="formulario-text"></textarea>
+        <label>Descripción: </label>
+        <textarea rows="4" cols="40" id="formulario-text" value="<%= productoEnDetalle.description%>"></textarea>
     </div>
 
     <div class="formulario-producto">
-        <label>Precio: $<%= productoEnDetalle.price%></label>
-        <input type="text" name="usuario" class="usuario" placeholder="$" id="formulario-text">
+        <label>Precio: </label>
+        <input type="text" name="usuario" class="usuario" id="formulario-text" value="<%= productoEnDetalle.price%>">
     </div>
 
     <div class="formulario-producto">
-        <label>Descuento: <%= productoEnDetalle.discount%></label>
-        <input type="text" name="usuario" class="usuario" placeholder="%" id="formulario-text">
+        <label>Descuento: </label>
+        <input type="text" name="usuario" class="usuario" id="formulario-text" value="<%= productoEnDetalle.discount%>">
     </div>
 
     <div class="formulario-producto">
-        <label>Stock:</label>
-        <input type="number" name="usuario" class="usuario" id="formulario-text">
+        <label>Stock: </label>
+        <input type="number" name="usuario" class="usuario" id="formulario-text" value="<%= productoEnDetalle.stock%>">
     </div>
 
 
     <div class="formulario-producto">
-        <label for="categoria">Categoría del producto: <%= productoEnDetalle.category %></label>
-            <select id="categoria" name="categoria" class="formulario-text">
-                <option>Selecciona</option>
+        <label for="categoria">Categoría del producto: </label>
+            <select id="categoria" name="categoria" class="formulario-text" value="<%= productoEnDetalle.category%>">
                 <option value="notebooks">Notebooks</option>
                 <option value="monitores">Monitores</option>
                 <option value="accesorios">Teclados y mouses</option>

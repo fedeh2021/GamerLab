@@ -70,5 +70,13 @@
   "email": "deddf@gaaram.com",
   "password": "$2a$10$gzyD4B3itu1Kww8HzHZXzu6ButbCBNrv6oHQPMxWwBmnfItfIHEWu",
   "avatar": "1626903293977.png"
+ },
+ {
+  "id": 10,
+  "name": "ejemplo",
+  "birthdate": "2021-07-02",
+  "email": "ejemplo@admin.com",
+  "password": "$2a$10$cwMhgsa3ZvOQi9G5UjjBNOOfnaxos6n5.tk7G22J4mQaOrWZZgcOC",
+  "avatar": "1626909048007.jpg"
  }
 ]

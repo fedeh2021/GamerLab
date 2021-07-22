@@ -65,7 +65,8 @@ const productsController =
 
                 break;
             }}
-            fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
         
         res.render("detail", {productoEnDetalle: productoEncontrado})
     },

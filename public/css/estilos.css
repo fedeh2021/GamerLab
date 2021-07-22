@@ -1,11 +1,9 @@
 *{
-    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
 body{
-    font-family: 'Oswald', sans-serif;
     background-color: #010b17;
-    margin:auto;
 }
 
 
@@ -28,7 +26,7 @@ body{
 .main-header-bottom-bar{
     display: none;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 15px;
     align-items: center;
 }
@@ -46,6 +44,8 @@ body{
 }
 
 .barra-izquierda{
+    width: 360px;
+    justify-content: space-around;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -61,13 +61,13 @@ body{
 
 .icono-burger{
     color:#000;
-    background-color:#fff;
-    width: 40px;
-    height: 40px;
+    background-color:#143663;
+    width: 56px;
+    height: 56px;
     display:block;
     border-radius: 3px;
     padding:5px;
-    font-size: 16px;
+    font-size: 30px;
     text-align: center;
     margin: auto;
 }
@@ -75,6 +75,7 @@ body{
 .icono-burger:hover{
     background-color:#143663;
 }
+
 .menu-productos {
     display: none;
     list-style-type: none
@@ -93,11 +94,12 @@ body{
 }
 
 .barra-derecha{
+    width: 360px;
+    justify-content: space-around;
     align-items: center;
     padding: 0 3px;
     list-style-type: none;
     display:flex;
-    justify-content: flex-end;
     margin:15px
 }
 
@@ -133,7 +135,6 @@ body{
 
 .search-button{
     position: absolute;
-    
     height: 40px;
     width: 40px;
     right: 10px;
@@ -147,6 +148,8 @@ body{
     color: #fff;
     display: inline
 }
+
+/************Esto se puede borrar?? *************/ 
 /*
 .search-form{
     display: flex;
@@ -181,6 +184,8 @@ body{
     line-height: 1em;
     color: #000;
 }
+
+// hasta aca
 
 */
 
@@ -303,53 +308,6 @@ a.btn{
     border: 2px solid #fff;
 }
 
-
-/*FOOTER - REDES SOCIALES*//*FOOTER - REDES SOCIALES*//*FOOTER - REDES SOCIALES*/
-
-.social{
-    margin: 30px;
-    position: relative;
-}
-
-.social p{
-    text-align:center;
-    font-size:1.5rem;
-    margin-bottom:20px;
-    color: #fff;
-}
-
-.links{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.links a{
-    margin:0 30px;
-}
-
-.fas{
-    font-size:2rem;
-    color:#fff;
-}
-.fab{
-    font-size:2rem;
-    color:#fff;
-}
-.fa{
-    font-size:2rem;
-    color:#fff;
-}
-.fa:hover{
-
-    color:#143663;
-}
-.fab:hover{
-    color:#143663;
-}
-.fas:hover{
-    color:#143663;
-}
 
 /* PERFIL *//* PERFIL *//* PERFIL *//* PERFIL *//* PERFIL */
 .perfil-box{
@@ -514,55 +472,6 @@ a.btn{
     margin-top: 4vh;
     justify-content: center;
     align-items: center;
-}
-
-
-/*MAIN FOOTER*//*MAIN FOOTER*//*MAIN FOOTER*//*MAIN FOOTER*//*MAIN FOOTER*/
-
-.hr-footer{
-    width: 90%;
-}
-
-.main-footer{
-    background:#010b17;
-    padding:35px 0;
-}
-
-.footer-container{
-    display:flex;
-    flex-direction: row;
-    gap:6.36vw;
-    align-items:flex-start;
-    justify-content: center;
-}
-
-.footer-container h3{
-    color:#fff;
-    font-size: 0.75rem;
-    list-style-type: none;
-}
-
-.footer-container h3:hover{
-    color:#143663
-}
-
-.footer-container ul{
-    list-style-type: none;
-}
-
-.copy{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    padding-left: 50px;
-    align-items: center;
-    color:#fff;
-    font-size: 0.75rem;
-    justify-content: center;
-}
-
-.fa-registered{
-    margin-left: 0.55vw;
 }
 
 
@@ -831,6 +740,7 @@ a.btn{
     background-color: #880a75;
     border: 2px solid #880a75;
 }
+
 /*FORMULARIOS DE PRODUCTO*//*FORMULARIOS DE PRODUCTO*//*FORMULARIOS DE PRODUCTO*/
 
 .formulario-prod{
@@ -897,12 +807,113 @@ a.btn{
 a:hover{
 text-decoration: none;
 }
+
+
+
+/*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*/
+
+.hr-footer{
+    width: 90%;
+}
+
+.main-footer{
+    background:#010b17;
+    padding:35px 0;
+}
+
+.footer-container{
+    display:flex;
+    flex-direction: row;
+    gap:6.36vw;
+    align-items:flex-start;
+    justify-content: center;
+}
+
+.footer-container h3{
+    color:#fff;
+    font-size: 0.75rem;
+    list-style-type: none;
+}
+
+.footer-container h3:hover{
+    color:#143663
+}
+
+.footer-container ul{
+    list-style-type: none;
+}
+
+.copy{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 50px;
+    align-items: center;
+    color:#fff;
+    font-size: 0.75rem;
+    justify-content: center;
+}
+
+.fa-registered{
+    margin-left: 0.55vw;
+}
+
+
+/*FOOTER - REDES SOCIALES*//*FOOTER - REDES SOCIALES*//*FOOTER - REDES SOCIALES*/
+
+.social{
+    margin: 30px;
+    position: relative;
+}
+
+.social p{
+    text-align:center;
+    font-size:1.5rem;
+    margin-bottom:20px;
+    color: #fff;
+}
+
+.links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.links a{
+    margin:0 30px;
+}
+
+.fas{
+    font-size:2rem;
+    color:#fff;
+}
+.fab{
+    font-size:2rem;
+    color:#fff;
+}
+.fa{
+    font-size:2rem;
+    color:#fff;
+}
+.fa:hover{
+
+    color:#143663;
+}
+.fab:hover{
+    color:#143663;
+}
+.fas:hover{
+    color:#143663;
+}
+
+
 /*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*/
 
 @media(min-width:440px){
     .barra-entera{
         width:100vw;
     }
+
     .search-form{
         display: block;
     }
@@ -910,56 +921,77 @@ text-decoration: none;
     .search-form-input{
         display: flex;
     }
-    
-    .primerosDos{
-        display: flex;
-        flex-direction:row;
-        width: 100%;
-    }
 
-    .segundosDos{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-    }
+    /************* Esto se puede borrar??? **************/
+    /*
+
     .productoTeclado{
         margin-left: 2%;
     }
+
     .productoMonitor{
         margin-right: 2%;
     }
+
     .noticia-banner{
         max-height:300vh;
     }
+
     .productoSilla{
         margin-right: 2%;
     }
+
     .productoParlante{
         margin-left:2%;
     }
-    .prod-content form {
-        font-size: 1.8em;
-    }
-    .prod-content span{
-        font-size: 1.5em;
-    }
-    .prod-content select {
-        width: 80px;
-        min-width: 80px;
-        height: 40px;
-    }
-    .product-box {
-        margin: 4% 2%;
-      }
-    .prod-content input {
-        width: 80px;
-        min-width: 80px;
-        height: 40px;
-        font-size: 1em;
-    }
-    .prod-buttons {
-        font-size: 2.4em;
-    }
+
+    // hasta aca
+*/
+
+/************* Esto se puede borrar??? **************/
+
+.primerosDos{
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+}
+.segundosDos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/************* Esto se puede borrar??? **************/
+
+.prod-content form {
+    font-size: 1.8em;
+}
+
+.prod-content span{
+    font-size: 1.5em;
+}
+
+.prod-content select {
+    width: 80px;
+    min-width: 80px;
+    height: 40px;
+}
+
+.product-box {
+    margin: 4% 2%;
+}
+
+.prod-content input {
+    width: 80px;
+    min-width: 80px;
+    height: 40px;
+    font-size: 1em;
+}
+
+.prod-buttons {
+    font-size: 2.4em;
+}
+
 }
 
 @media(min-width:768px) {
@@ -986,13 +1018,9 @@ text-decoration: none;
         width: 100%;
         margin:auto;
     }
-    .primerosDos{
-        width: 50%;
-    }
-    .segundosDos{
-        width: 50%;
-        margin-left: 2%;
-    }
+
+    /************* Esto se puede borrar??? **************/
+    /*
 
     .productoParlante{
         height: 100%;
@@ -1009,6 +1037,34 @@ text-decoration: none;
         height: 65%;
         width: 65%;
     }
+    .contenedor-teclado{
+        display: flex;
+        flex-direction: row;
+        margin-left:10vw;
+        align-items: center;
+    }
+    .contenedor-monitor{
+        display: flex;
+        flex-direction: row;
+        margin-left:8vw;
+        align-items: center;
+    }
+
+// hasta aca
+*/
+
+    /************* Esto se puede borrar??? **************/
+
+    .primerosDos{
+        width: 50%;
+    }
+    .segundosDos{
+        width: 50%;
+        margin-left: 2%;
+    }
+
+    /************* Esto se puede borrar??? **************/
+
     .prod-content select {
         width: 80px;
         height: 30px;
@@ -1022,24 +1078,14 @@ text-decoration: none;
     .prod-buttons {
         font-size: 1.75em;
     }
-    .contenedor-teclado{
-        display: flex;
-        flex-direction: row;
-        margin-left:10vw;
-        align-items: center;
-    }
-    .contenedor-monitor{
-        display: flex;
-        flex-direction: row;
-        margin-left:8vw;
-        align-items: center;
-    }
+
     .derecha .img-login{
         display: inline-block;
         width: 100%;
         margin-left: 4%;
         height: auto;
     }
+
     .formulario-login{
         display: flex;
         flex-direction: row;
