@@ -78,5 +78,13 @@
   "email": "ejemplo@admin.com",
   "password": "$2a$10$cwMhgsa3ZvOQi9G5UjjBNOOfnaxos6n5.tk7G22J4mQaOrWZZgcOC",
   "avatar": "1626909048007.jpg"
+ },
+ {
+  "id": 11,
+  "name": "ferrr",
+  "birthdate": "1990-11-11",
+  "email": "ferrr@gm.com",
+  "password": "$2a$10$B/3IAamERyZw1d53Zs3FlOdU5rNIAn3tLRKTQqPthXjTIFDKL8r1e",
+  "avatar": "1626978206204.jpg"
  }
 ]
