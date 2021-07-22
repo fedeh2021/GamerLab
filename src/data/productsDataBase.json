@@ -73,5 +73,10 @@
   "description": "mouse con luces ",
   "image": "mouse.jpg",
   "stock": 32
+ },
+ {
+  "id": 9,
+  "stock": "12",
+  "image": "1626967663885.jpg"
  }
 ]
