@@ -6,7 +6,6 @@
 
             <a class="icono-burger"><i class="fas fa-bars fa-10x"></i></a>
             
-<<<<<<< HEAD
             <ul class="menu-productos">
                 <li><a href="/products/producto">Todos los productos</a></li>
                 <li><a href="#">Notebooks</a></li>
@@ -18,8 +17,6 @@
                 <li><a href="/#">Sillas y escritorios</a</li>
             </ul>
 
-=======
->>>>>>> 4f7f2339c50d04befc8de22ed93b63ae1d6da111
             <a href="/"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
             
         </div>
@@ -37,13 +34,13 @@
             <% if (locals.isLogged) { %>
             <li class="">
                 <a class="" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="/public/img/avatars/ <%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%;">
+                <img src="./public/img/avatars/ <%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%;">
                 Hola <%= locals.userLogged.name %>
             </a>
                 <ul class="" aria-labelledby="navbarDropdown">
                 <a class="" href="/users/profile">Mi perfil</a>
                 <li><hr class=""></li>
-                <a class="" href="/logout">Cerrar sesión</a>
+                <a class="" href="/users/logout">Cerrar sesión</a>
             </ul>
             </li>
             <% } else { %>
@@ -61,7 +58,7 @@
     <div class="main-header-bottom-bar">
 
     <ul class="menu-productos1">
-        <li><a href="#">Todos los productos</a></li>
+        <li><a href="/products/producto">Todos los productos</a></li>
         <li><a href="#">Notebooks</a></li>
         <li><a href="#">Monitores</a></li>
         <li><a href="#">Teclados y mouses</a</li>

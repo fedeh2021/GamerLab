@@ -3,7 +3,7 @@ const multer = require ("multer");
 const path = require ("path");
 const express = require('express');
 const router = express.Router();
-const categoriaMiddlewarre = require ("../middlewares/categoriaMiddleware");
+//const categoriaMiddlewarre = require ("../middlewares/categoriaMiddleware");
 
 //MULTER
 const multerDS = multer.diskStorage({

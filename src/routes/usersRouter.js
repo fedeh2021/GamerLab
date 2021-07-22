@@ -1,25 +1,12 @@
 // ************ Require's ************
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
 const path = require('path');
 const { body } = require('express-validator');
 const validations = require('../middlewares/validateRegisterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-
-// ************ Multer ************
-const multerDS = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, path.join(__dirname, '../../public/img/avatars'));
-    },
-    filename: function(req, file, cb){
-        let nameImage = Date.now() + path.extname(file.originalname);
-        cb(null, nameImage);
-    }
-});
-
-const uploadFile = multer({ storage: multerDS });
+const uploadFile = require('../middlewares/multerMiddleware');
 
 // ************ Controller Require ************
 const usersController = require('../controllers/usersController');
