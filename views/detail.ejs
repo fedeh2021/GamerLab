@@ -52,15 +52,11 @@
                    <button class="prod-buy" href="#">Comprar</button>
                 </div>
                 <div class="row-2">
-<<<<<<< HEAD
+
                    <a class="prod-edit" href="/products/edit/<%=productoEnDetalle.id%>">Editar</a>
                    <form action="/products/delete/<%= productoEnDetalle.id %>?_method=DELETE" method="POST" onsubmit="return confirm('¿Estas Seguro que queres borrar?')">
                    <button  type="submit" class="prod-delete">Eliminar</button>
-=======
-                   <a href="/products/edit/<%=productoEnDetalle.id%>" class="prod-add-to-cart">Editar</a>
-                   <form action="/products/<%= productoEnDetalle.id %>?_method=DELETE" method="POST" onsubmit="return confirm('¿Estas Seguro que queres borrar?')">
-                   <button  type="submit" class="prod-buy">Eliminar</button>
->>>>>>> 4f7f2339c50d04befc8de22ed93b63ae1d6da111
+
                    </form>
                 </div>
             </div>
