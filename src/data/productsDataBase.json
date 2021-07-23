@@ -2,9 +2,8 @@
  {
   "id": 1,
   "name": "Mouse Genérico",
-  "price": 11499,
-  "discount": 5,
-  "category": "Teclados y mouses",
+  "price": "11499",
+  "discount": "10",
   "description": "El mouse de juego te ofrecerá la posibilidad de marcar la diferencia y sacar ventajas en tus partidas. Su conectividad y sensor suave ayudará a que te desplaces rápido por la pantalla.",
   "image": "mouse2.jpg",
   "stock": 100
