@@ -94,5 +94,13 @@
   "email": "miguel@ejemplo.com",
   "password": "$2a$10$w5eq9k.Wtfep1LYLsuiJmeTn8fYrePq8H/y2np/b3QPx.WUy4Xw0y",
   "avatar": "1626983736790.jpg"
+ },
+ {
+  "id": 13,
+  "name": "222",
+  "birthdate": "2000-07-13",
+  "email": "eeee@dd.com",
+  "password": "$2a$10$8np70PsXVWWHki8vX66JneySkdAh5BbzKIyeDTaFx5HvzqppoJ9Ey",
+  "avatar": "1627031197845.jpg"
  }
 ]

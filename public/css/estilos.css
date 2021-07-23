@@ -894,6 +894,27 @@ a:hover{
 text-decoration: none;
 }
 
+/*****PERFIL VISTA*****/
+.imagenavatar{
+    width: 30%;
+    height: 60%;
+}
+.logeado{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+.avatarpequeño{
+    height: 80%;
+    width: 70%;
+}
+.item-logeo{
+    padding: 0 5px;
+    width: 35%;
+}
+a.item-logeo{
+    padding:0 5px;
+}
 
 /*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*/
 
