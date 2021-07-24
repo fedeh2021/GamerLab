@@ -32,19 +32,20 @@
                 </form>
             </div>
             <% if (locals.isLogged) { %>
-                <ul class="logeado" aria-labelledby="navbarDropdown">
+                
 
-                    <!--<li><a class="" href="#!" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a></li>-->
-                   
-                    <li class="item-logeo"></li><img src="/img/avatars/<%= locals.userLogged.avatar %>" style="border-radius: 100%" class="avatarpequeño"></li>
-                   
+            <div class="barra-logeado">  
+                
+                <img src="/img/avatars/<%= locals.userLogged.avatar %>" style="border-radius: 100%" class="avatarpequeño">
+                
+                <ul class="ul-opciones">
                     <li class="item-logeo"><a href="#!"> Hola <%= locals.userLogged.name %></a></li> 
 
                     <li class="item-logeo"><a class="" href="/users/profile">Mi perfil</a></li>
 
                     <li class="item-logeo"><a class="" href="/users/logout">Cerrar sesión</a></li>
                 </ul>
-            
+            </div> 
             <% } else { %>
             <li><a href="/users/register"><i class="fas fa-sign-in-alt fa-2x"></i></a></li>
             <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
@@ -63,11 +64,11 @@
         <li><a href="/products/producto">Todos los productos</a></li>
         <li><a href="#!">Notebooks</a></li>
         <li><a href="#!">Monitores</a></li>
-        <li><a href="#!">Teclados y mouses</a</li>
-        <li><a href="#!">Audio</a</li>
-        <li><a href="#!">Placa de video</a</li>
-        <li><a href="#!">Armá tu PC</a</li>
-        <li><a href="#!">Sillas y escritorios</a</li>
+        <li><a href="#!">Teclados y mouses</a></li>
+        <li><a href="#!">Audio</a></li>
+        <li><a href="#!">Placa de video</a></li>
+        <li><a href="#!">Armá tu PC</a></li>
+        <li><a href="#!">Sillas y escritorios</a></li>
      </ul>
 
     </div>

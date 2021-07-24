@@ -102,5 +102,13 @@
   "email": "eeee@dd.com",
   "password": "$2a$10$8np70PsXVWWHki8vX66JneySkdAh5BbzKIyeDTaFx5HvzqppoJ9Ey",
   "avatar": "1627031197845.jpg"
+ },
+ {
+  "id": 14,
+  "name": "dd",
+  "birthdate": "2021-07-29",
+  "email": "rrr@mm.com",
+  "password": "$2a$10$QSFGAWwd6JQTYwkPCIUOQ.9UJK.RWHe0W2K2NeFa4d.Kf.JWJX2sG",
+  "avatar": "1627111470963.jpg"
  }
 ]
