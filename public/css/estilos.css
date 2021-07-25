@@ -678,7 +678,19 @@ a.btn{
 .prod-price{
     color:#fff;
 }
-
+.prod-description{
+    font-size: 1.5em;
+    padding: 20px;
+    margin-top: .5em;
+    margin-bottom: .2em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+}
 .prod-content p {
     font-style: italic;
     font-size: 1.1em;
@@ -694,8 +706,8 @@ a.btn{
 }
 
 .prod-price {
-    font-size: 2.5em;
-    padding: 1%;
+    font-size: 2em;
+    padding: 20px;
     margin-top: .5em;
     margin-bottom: .2em;
     display: flex;
@@ -754,7 +766,6 @@ a.btn{
 }
 
 .prod-buttons {
-    height: 100%;
     font-size: 1.4em;
     margin-top: 1.5em;
     display: flex;
@@ -822,9 +833,11 @@ form .prod-buy{
     border: 2px solid #9b0083;
     border-radius: 4px;
     height: 25%;
-    font-size: 1.8rem;
+    font-size: 1.2em;
 }
-
+form .prod-delete{
+    font-size: 1rem;
+}
 .prod-delete:hover {
     background-color: #880a75;
     border: 2px solid #880a75;
@@ -899,32 +912,12 @@ text-decoration: none;
 
 /*****PERFIL VISTA*****/
 .imagenavatar{
-    width: 30%;
-    height: 60%;
-}
-.barra-logeado{
-    display:flex;
-    flex-direction: row;
-    width: 150%;
-    position: relative;
-    right: 10%;
-}
-.item-logeo{
-    margin:0 15%;
-}
-.ul-opciones{
-    position: relative;
-    right: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style-type: none;
-    width: 85%;
-}
-
-.avatarpequeño{
-    width:70%;
+    width: 50%;
     height: 80%;
+}
+.avatarpequeño{
+    width:20%;
+    height: 30%;
 }
 
 
@@ -942,21 +935,6 @@ text-decoration: none;
     .search-form-input{
         display: flex;
     }
-
-/************* Esto se puede borrar??? **************/
-
-.primerosDos{
-    display: flex;
-    flex-direction:row;
-    width: 100%;
-}
-.segundosDos{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-/***************************/
 
 .prod-content form {
     font-size: 1.8em;
@@ -986,6 +964,35 @@ text-decoration: none;
 .prod-buttons {
     font-size: 2.4em;
 }
+.imagenavatar{
+    width: 30%;
+    height: 60%;
+}
+.barra-logeado{
+    display:flex;
+    flex-direction: row;
+    width: 150%;
+    position: relative;
+    right: 10%;
+}
+.item-logeo{
+    margin:0 15%;
+}
+.ul-opciones{
+    position: relative;
+    right: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 85%;
+}
+
+.avatarpequeño{
+    width:70%;
+    height: 80%;
+}
+
 
 }
 
@@ -996,7 +1003,26 @@ text-decoration: none;
         max-width: 900px;
     }
     .prod-img-container {
-        width: 45%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-container{
+        position: relative;
+    }
+    .prod-description{
+        width: 30%;
+        font-size: 1.5em;
+        padding: 20px;
+        margin-top: .5em;
+        margin-bottom: .2em;
+        position: absolute;
+        bottom:25%;
+        right:53%;
+        border-top: 5px solid black;
+        border-bottom: 5px solid black;
     }
     .prod-content {
         width: 50%;
@@ -1013,18 +1039,6 @@ text-decoration: none;
         width: 100%;
         margin:auto;
     }
-
-    /************* Esto se puede borrar??? **************/
-
-    .primerosDos{
-        width: 50%;
-    }
-    .segundosDos{
-        width: 50%;
-        margin-left: 2%;
-    }
-
-    /***************************/
 
     .prod-content select {
         width: 80px;
