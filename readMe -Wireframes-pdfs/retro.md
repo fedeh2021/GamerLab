@@ -24,3 +24,6 @@ La implementacion de whatsapp (audios) y las video fueron clave para poder enten
 
 En este sprint hubo menos nervios gracias a nuestra voluntad y la de los profesores que siempre intentan mantenernos tranquilos.
 
+QUINTO SPRINT
+
+Este srint nos organizamos con mayor anticipación, esto generó que lo resolvieramos con más tiempo y así tuvimos más tiempo para corregir errores del sprint anterior. Si bien los temas se van complejizando, nos complementamos muy bien para poderlos resolver.
