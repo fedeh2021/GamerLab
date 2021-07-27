@@ -110,5 +110,13 @@
   "email": "rrr@mm.com",
   "password": "$2a$10$QSFGAWwd6JQTYwkPCIUOQ.9UJK.RWHe0W2K2NeFa4d.Kf.JWJX2sG",
   "avatar": "1627111470963.jpg"
+ },
+ {
+  "id": 15,
+  "name": "Miguel",
+  "birthdate": "2001-10-17",
+  "email": "miguelb@ejemplo.com",
+  "password": "$2a$10$7V6m0xd3iDp6YrKMdrfLuuqNqrNI88owDSNhXCiKvihX3fWVdGWYy",
+  "avatar": "1627353705159.jpg"
  }
 ]
