@@ -36,33 +36,33 @@
 
     <div class="formulario-producto">
         <label>Precio:</label>
-        <input type="text" value = "<%= productoEnDetalle.price%>" name="price" class="usuario" placeholder="$" id="formulario-text">
+        <input type="text" value = "<%=productoEnDetalle.price%>" name="price" class="usuario" placeholder="$" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
         <label>Descuento: </label>
-        <input type="text" value="<%= productoEnDetalle.discount%>" name="discount" class="usuario" placeholder="%" id="formulario-text">
+        <input type="text" value="<%=productoEnDetalle.discount%>" name="discount" class="usuario" placeholder="%" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
         <label>Stock: </label>
-        <input type="number" name="stock" class="usuario" id="formulario-text" value="<%= productoEnDetalle.stock%>">
+        <input type="number" name="stock" class="usuario" id="formulario-text" value="<%=productoEnDetalle.stock%>">
     </div>
 
 
     <div class="formulario-producto">
         <label for="categoria">Categoría del producto: </label>
         
-            <select id="categoria" name="categoria" class="formulario-text">
+            <select id="categoria" name="category" class="formulario-text">
                 <option><%=productoEnDetalle.category%></option>
 
-                <option value="notebooks">Notebooks</option>
+                <option value="<%=productoEnDetalle.category%>">Notebooks</option>
                 <option value="monitores">Monitores</option>
-                <option value="accesorios">Teclados y mouses</option>
+                <option value="<%=productoEnDetalle.category%>">Teclados y mouses</option>
                 <option value="audio">Audio</option>
                 <option value="placa">Placa de video</option>
-                <option value="pc">Armá tu PC</option>
-                <option value="muebleria">Sillas y escritorios</option>
+                <option value="<%=productoEnDetalle.category%>">Armá tu PC</option>
+                <option value="<%=productoEnDetalle.category%>">Sillas y escritorios</option>
             </select>
     </div>
 
