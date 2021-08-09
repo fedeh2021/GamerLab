@@ -71,12 +71,7 @@ const usersController = {
         let userCreated = User.create(userToCreate);
         return res.redirect('./login')
     },
-        //let nuevoId = users[users.length-1].id + 1; 
-            //let info = req.body
-		    //let nuevoObjeto = Object.assign({id: nuevoId}, info);
-		    //users.push(nuevoObjeto);
-		    //fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-		    //res.redirect('/'); 
+    
     perfil: (req, res) => {
         return res.render("perfil", { user: req.session.userLogged }) 
         },     

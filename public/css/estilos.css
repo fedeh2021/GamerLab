@@ -126,7 +126,7 @@ body{
 
 .barra-buscadora{
     position: relative;
-    right: 300%;
+    right: 150%;
     width: 200%;
     padding: 7px 35px 7px 7px;
     height: 40px;
@@ -646,7 +646,7 @@ a.btn{
 }
 
 .prod-big-img img {
-    width: 100%;
+    width: 80%;
     border-radius: 4px;
 }
 
@@ -660,7 +660,7 @@ a.btn{
 }
 
 .prod-small-img img {
-    width: 30%;
+    width: 20%;
     border-radius: 4px;
 }
 
@@ -838,11 +838,21 @@ form .prod-buy{
     background-color: #9b0083;
     border-style: solid ;
     border-radius: 4px;
+<<<<<<< HEAD
     font-size: 1.2em;
+=======
+>>>>>>> 1171f42d025e203c0e9709eb61270881bbd96b6d
 }
-form .prod-delete{
+form.form-prod-delete {
     font-size: 1rem;
+    background-color: #9b0083;
+    border: 2px solid #9b0083;
+    border-radius: 4px;
+    margin: 0%;
+    width: 50%;
+    padding: 0%;
 }
+
 .prod-delete:hover {
     background-color: #880a75;
     border: 2px solid #880a75;
