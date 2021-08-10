@@ -20,5 +20,13 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Factura = sequelize.define(alias, cols, config);
 
+    Factura.associate = function (models){
+
+        Factura.hasMany(models.Pedido, {
+           as: "pedido",
+           foreignKey: "facturaFK"
+            });
+    }
+   
     return Factura;
 }
