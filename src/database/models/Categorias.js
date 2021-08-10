@@ -1,26 +1,44 @@
-module.exports = function moviesData(sequelize, Datatypes){
+module.exports = (sequelize, dataTypes) => {
 
-    alias = 'categorias';
+    const alias = 'categorias';
 
-    cols = {
-      id: { type: Datatypes.INTEGER, primaryKey:true, autoIncrement:true},
-      create_at: {type: Datatypes.DATE},
-      update_at: {type: Datatypes.DATE},
-      delete_at: {type: Datatypes.DATE},
-      nombre: {type: Datatypes.STRING(255)},
-      descripcion: { type: Datatypes.STRING(255)},
-    };
-
-    config = {};
-
-    productos = sequelize.define(alias,cols,config)
+    const cols = {
+        id: { 
+            type: dataTypes.INTEGER, 
+            primaryKey:true, 
+            autoIncrement:true
+        },
+        create_at: {
+            type: dataTypes.DATE
+        },
+        update_at: {
+            type: dataTypes.DATE
+        },
+        delete_at: {
+            type: dataTypes.DATE
+        },
+        nombre: {
+            type: dataTypes.STRING(255)
+        },
+        descripcion: {
+            type: dataTypes.STRING(255)
+        }
+    }
+    config = {
+      tablename: 'categorias',
+      timestamps: false,
+      camelCase: false
+    }
+    const Categorias = sequelize.define(alias,cols,config);
 
     Categorias.associate = function (models){
+
       Categorias.hasMany( models.Productos, {
         as: "productos",
         foreignKey: "categoriaFK"
       });
+
   }
     
-    return categorias;
+    return Categorias;
 }
