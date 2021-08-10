@@ -17,6 +17,12 @@ module.exports = function moviesData(sequelize, Datatypes){
 
     productos = sequelize.define(alias,cols,config)
     
+    Productos.associate = function (models){
+        Productos.belongsTo( models.Categorias, {
+          as: "categorias",
+          foreignKey: "categoriaFK"
+        });
+    }
     return productos;
     }
     

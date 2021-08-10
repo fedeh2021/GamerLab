@@ -14,6 +14,13 @@ module.exports = function moviesData(sequelize, Datatypes){
     config = {};
 
     productos = sequelize.define(alias,cols,config)
+
+    Categorias.associate = function (models){
+      Categorias.hasMany( models.Productos, {
+        as: "productos",
+        foreignKey: "categoriaFK"
+      });
+  }
     
     return categorias;
 }
