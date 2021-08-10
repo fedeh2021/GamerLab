@@ -1,21 +1,53 @@
-module.exports = function moviesData(sequelize, Datatypes){
+module.exports = (sequelize, dataTypes) => {
 
-    alias = 'productos';
+    const alias = 'productos';
 
-    cols = {
-      id: { type: Datatypes.INTEGER, primaryKey:true, autoIncrement:true},
-      create_at: {type: Datatypes.DATE, allowNull:false},
-      update_at: {type: Datatypes.DATE, allowNull:false},
-      delete_at: {type: Datatypes.DATE, allowNull:false},
-      nombre: {type: Datatypes.STRING(255), allowNull:false},
-      imagen: {type: Datatypes.STRING(500), allowNull:false},
-      descripcion: { type: Datatypes.STRING(255), allowNull:false},
-      precio_lista: { type: Datatypes.DECIMAL, allowNull:false},
-      descuento: {type: Datatypes.DECIMAL, allowNull:false},
-    };
-    config = {};
+    const cols = {
+        id: { 
+            type: dataTypes.INTEGER, 
+            primaryKey:true, 
+            autoIncrement:true
+        },
+        create_at: {
+            type: dataTypes.DATE, 
+            allowNull:false
+        },
+        update_at: {
+            type: dataTypes.DATE, 
+            allowNull:false
+        },
+        delete_at: {
+            type: dataTypes.DATE, 
+            allowNull:false
+        },
+        nombre: {
+            type: dataTypes.STRING(255),
+            allowNull:false
+        },
+        imagen: {
+            type: dataTypes.STRING(500), 
+            allowNull:false
+        },
+        descripcion: {
+            type: dataTypes.STRING(255), 
+            allowNull:false
+        },
+        precio_lista: { 
+            type: dataTypes.DECIMAL, 
+            allowNull:false
+        },
+        descuento: {
+            type: dataTypes.DECIMAL, 
+            allowNull:false
+        },
+    }
+    const config = {
+        tablename: 'productos',
+        timestamps: false,
+        camelCase: false
+    }
 
-    productos = sequelize.define(alias,cols,config)
+    const Productos = sequelize.define(alias,cols,config)
     
     Productos.associate = function (models){
         Productos.belongsTo( models.Categorias, {
@@ -23,6 +55,6 @@ module.exports = function moviesData(sequelize, Datatypes){
           foreignKey: "categoriaFK"
         });
     }
-    return productos;
-    }
-    
+
+    return Productos;
+}

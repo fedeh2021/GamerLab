@@ -1,5 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
+    
     const alias = 'clientes'
+    
     const cols = {
         id: {
             type: dataTypes.SMALLINT(6).UNSIGNED,
@@ -7,23 +9,23 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         envioFK: {
-            type: dataTypes.INT(11),
+            type: dataTypes.INTEGER,
             allowNull:false
         },
         nombre: {
-            type: dataTypes.VARCHAR(123),
+            type: dataTypes.STRING,
             allowNull: false
         },
         apellido: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
         email: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
         contraseña: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
         rol: {
@@ -31,31 +33,31 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         dni: {
-            type: dataTypes.INT(11),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         fecha_nacimiento: {
-            type: dataTypes.DATE,
+            type: dataTypes.DATEONLY,
             allowNull: false
         },
         telefono: {
-            type: dataTypes.INT(11),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         imagen: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
         created_at: {
-            type: dataTypes.DATETIME, 
+            type: dataTypes.DATE, 
             allowNull: false
         },
         updated_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
             allowNull: false
         },
         deleted_at: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
             allowNull: false
         }
     }

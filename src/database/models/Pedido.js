@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         estado: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         }
     }

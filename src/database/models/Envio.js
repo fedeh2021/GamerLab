@@ -7,31 +7,31 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         pais: {
-            type: dataTypes.VARCHAR(123),
+            type: dataTypes.STRING,
             allowNull: false
         },
         ciudad: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
         region: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
         direccion: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
         altura: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
         piso: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         },
         codigo_postal: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false   
         }
     }
