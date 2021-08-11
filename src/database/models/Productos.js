@@ -22,6 +22,10 @@ module.exports = function moviesData(sequelize, Datatypes){
           as: "categorias",
           foreignKey: "categoriaFK"
         });
+        Productos.belongsToMany (models.Pedido) {
+          as: "pedidos",
+          
+        }
     }
     return productos;
     }
