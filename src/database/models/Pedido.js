@@ -44,8 +44,8 @@ module.exports = (sequelize, dataTypes) => {
 
     Pedido.associate = function(models){
 
-        Pedido.belongsTo(models.Factura, {   
-            as: "factura",
+        Pedido.belongsTo(models.facturas, {   
+            as: "facturas",
             foreignKey: "facturaFK"
              });
      }

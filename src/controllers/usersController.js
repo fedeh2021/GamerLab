@@ -11,6 +11,9 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
+// ************ User login ************
+
+
 // ************ Controller ************
 const usersController = {
     login: (req, res)=> {

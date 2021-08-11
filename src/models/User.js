@@ -14,6 +14,8 @@ generateId: function () {
 	}
 	return 1;
 },
+
+
 findAll: function () {
 	return this.getData()
 },
@@ -27,6 +29,7 @@ findByField: function (field, text) {
 	let userFound = allUsers.find(oneUser => oneUser[field] === text);
 	return userFound;
 },
+
 create: function (userData) {
 	let allUsers = this.findAll();
 	let newUser = {
@@ -37,6 +40,7 @@ create: function (userData) {
 	fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
 	return newUser;
 },
+
 delete: function (id) {
 	let allUsers = this.findAll();
 	let finalUsers =  allUsers.filter(oneUser => oneUser.id !== id);

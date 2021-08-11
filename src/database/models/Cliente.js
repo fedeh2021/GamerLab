@@ -69,7 +69,7 @@ module.exports = (sequelize, dataTypes) => {
     const Cliente = sequelize.define(alias, cols, config);
 
     Cliente.associate = function (models) {
-        Cliente.belongsTo( models.Envio, {
+        Cliente.belongsTo( models.envios, {
           as: "envios",
           foreignKey: "envioFK"
         });
