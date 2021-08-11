@@ -47,14 +47,14 @@ module.exports = (sequelize, dataTypes) => {
         camelCase: false
     }
 
-    const Productos = sequelize.define(alias,cols,config)
+    const Producto = sequelize.define(alias,cols,config)
     
-    Productos.associate = function (models){
-        Productos.belongsTo( models.Categorias, {
+    Producto.associate = function (models){
+        Producto.belongsTo( models.Categoria, {
           as: "categorias",
           foreignKey: "categoriaFK"
         });
     }
 
-    return Productos;
+    return Producto;
 }

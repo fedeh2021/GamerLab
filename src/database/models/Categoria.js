@@ -24,21 +24,22 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255)
         }
     }
-    config = {
+    const config = {
       tablename: 'categorias',
       timestamps: false,
       camelCase: false
     }
-    const Categorias = sequelize.define(alias,cols,config);
 
-    Categorias.associate = function (models){
+    const Categoria = sequelize.define(alias,cols,config);
 
-      Categorias.hasMany( models.Productos, {
+    Categoria.associate = function(models){
+
+      Categoria.hasMany(models.Producto, {
         as: "productos",
         foreignKey: "categoriaFK"
       });
 
   }
     
-    return Categorias;
+    return Categoria;
 }
