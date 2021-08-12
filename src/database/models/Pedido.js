@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         estado: {
-            type: dataTypes.VARCHAR(255),
+            type: dataTypes.STRING,
             allowNull: false
         }
     }
@@ -42,12 +42,16 @@ module.exports = (sequelize, dataTypes) => {
 
     const Pedido = sequelize.define(alias, cols, config);
 
-    Pedido.associate = function (models){
+    Pedido.associate = function(models){
 
-        Pedido.belongsTo(models.Factura, {   
-            as: "factura",
+        Pedido.belongsTo(models.facturas, {   
+            as: "facturas",
             foreignKey: "facturaFK"
              });
+        Pedido.belongsTo (models.productos, {
+            as:"productos",
+            foreignKey: "productoFK"
+        })
      }
 
     return Pedido;

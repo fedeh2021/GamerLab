@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const { inflateRaw } = require('zlib');
-
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db =require ("../database/models")
@@ -10,69 +9,81 @@ const db =require ("../database/models")
 const productsController = 
 {
     listadoProductos: (req, res) => {
-        res.render("producto", {productos: products})
+        db.productos.findAll()
+        .then(function(productos){
+            res.render("producto", {productos: db.productos})
+        })
     },
 
     index:(req,res) =>{
-        res.render("index", {productos: products})
+        db.productos.findAll()
+        .then(function(productos) {
+            res.render ("productos", {productos: db.productos})
+        })
     },
 
-    detalleProductos: (req, res) => {
-        let productoId = req.params.id
-        for (let i = 0; i < products.length; i++){
-            if (products[i].id == productoId){
-                var productoEncontrado = products[i]
-            }
-        }
-        res.render("detail", {productoEnDetalle:productoEncontrado})
+    detalleProductos: (req, res) => {        
+        
+        db.pelicula.FindByPk(req.params.id, {
+            include: [{association: categorias}]
+        })
+        .then(function(pelicula){
+            res.render("detail", {productoEnDetalle:productoEncontrado})
+        })
+       
     },
 
 //CREATE Y STORE
     creacionProducto:(req, res) => {
-        res.render("creacionProducto") 
+        db.productos.findAll()
+        .then(function(resultado){
+            return res.render("creacionProducto", {producto: db.productos})
+        } )
     },
 
     checkCreacionProducto:(req, res) => {
-        let nombreImagen=req.file.filename;
-		let idNuevo = products[products.length-1].id + 1;
-		let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
-		products.push(nuevoObjeto);
-   	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-		res.redirect('/');
+        db.productos.create({
+            nombre: req.body.name,
+            descripcion:req.body.description,
+            precio_lista: req.body.price,
+            descuento: req.body.discount,
+            categoriaFK: req.body.category,
+
+        })
+        res.redirect('/');    
+        /*let nombreImagen=req.file.filename;
+            let idNuevo = products[products.length-1].id + 1;
+            let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
+            products.push(nuevoObjeto);
+            fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+            res.redirect('/');*/
     },
 
 
 //EDIT Y UP0DATE
     edicionProducto:(req, res) => {
-        var productoId = req.params.id;
-        for (let i=0; i < products.length; i++){
-            if (products[i].id == productoId){
-                var productoEncontrado = products[i]
-            }
-        }
-        res.render("edicionProducto", {productoEnDetalle: productoEncontrado}) 
+        let pedidoProducto = db.productos.findByPk(req.params.id);
+        //let pedidoCategorias = db.categorias.findAll();
+
+        Promise.all([pedidoProducto, pedidoCategoria])
+        .then(function(producto){
+            res.render ("edicionPorducto", {productoEnDetalle: producto})
+        })
     },
-
+ 
     checkEdicionProducto:(req, res) => {
-        let valoresNuevos = req.body;
-        let productoId = req.params.id;
+        db.productos.update({
+            nombre: req.body.name,
+            descripcion:req.body.description,
+            precio_lista: req.body.price,
+            descuento: req.body.discount,
+            categoriaFK: req.body.category,
 
-        for (let i = 0; i < products.length; i++){
-            if(products[i].id == productoId){
-                products[i].name = valoresNuevos.name;
-				products[i].price = valoresNuevos.price;
-				products[i].discount = valoresNuevos.discount;
-				products[i].category = valoresNuevos.category;
-				products[i].description = valoresNuevos.description;
-                products[i].image = (req.file != undefined)? req.file.filename : products[i].image;
-                var productoEncontrado = products[i];
-
-                break;
-            }
-        }
-
-         fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-        res.render("detail", {productoEnDetalle: productoEncontrado})
+        }, {where:{
+            id:req.params.id
+            }}
+        )
+        res.redirect('/productos' + req.params.id);  
     },
 
 

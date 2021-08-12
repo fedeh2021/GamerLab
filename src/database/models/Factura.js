@@ -18,12 +18,13 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
         camelCase: false
     }
+
     const Factura = sequelize.define(alias, cols, config);
 
     Factura.associate = function (models){
 
-        Factura.hasMany(models.Pedido, {
-           as: "pedido",
+        Factura.hasMany(models.pedidos, {
+           as: "pedidos",
            foreignKey: "facturaFK"
             });
     }
