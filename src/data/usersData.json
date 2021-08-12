@@ -118,5 +118,13 @@
   "email": "miguelb@ejemplo.com",
   "password": "$2a$10$7V6m0xd3iDp6YrKMdrfLuuqNqrNI88owDSNhXCiKvihX3fWVdGWYy",
   "avatar": "1627353705159.jpg"
+ },
+ {
+  "id": 16,
+  "name": "fede",
+  "birthdate": "2021-07-28",
+  "email": "fede@fede.com",
+  "password": "$2a$10$xNtpeTeAcxbmT11y/Tfcu.RvjHv.xVPAXd3F48m/K2Nf49lrG/wre",
+  "avatar": "1628697170135.png"
  }
 ]

@@ -1,16 +1,14 @@
 const path = require('path');
-const { body, validationResult } = require('express-validator');
-const User = require('../models/User');
+const { body } = require('express-validator');
 
+module.exports = [
 
-function validateRegisterMiddleware(req,res, next) {
-
-	body('fullName').notEmpty().withMessage('Tienes que escribir un nombre'),
+	body('name').notEmpty().withMessage('Tienes que escribir un nombre de usuario'),
+	body('birthdate').notEmpty().withMessage('Tienes que elegir una fecha de cumpleaños'),
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
 	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-	body('country').notEmpty().withMessage('Tienes que elegir un país'),
 	body('avatar').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif','jpeg'];
@@ -26,6 +24,4 @@ function validateRegisterMiddleware(req,res, next) {
 
 		return true;
 	})
-}
-
-module.exports = validateRegisterMiddleware;
+]

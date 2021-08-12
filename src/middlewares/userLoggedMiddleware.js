@@ -1,6 +1,6 @@
 //MIDDLEWARE APLICACION PARA NO MOSTRAR LAS OPCIONES SI YA INICIASTE SESION 
 
-const User = require('../models/User');
+const User = require('../database/models/User');
 
 function userLoggedMiddleware(req,res, next) { 
 	res.locals.isLogged = false;
