@@ -13,8 +13,24 @@ const productsController =
     },
 
     index:(req,res) =>{
-        res.render("index", {productos: products})
-    },
+      /*  db.Producto.findAll({include: [{association: 'productos'}, {association: 'categorias'}]})
+        .then((productos) => {
+        let listadoProductos = [];
+        for (producto of productos){
+            let listaCategorias = [];
+            for (producto of productos.productos){
+                listadoProductos.push(producto.nombre + producto.imagen);
+            }
+            let objaux = {
+                nombre: producto.nombre,
+                imagen: producto.imagen
+            }
+            listadoProductos.push(objaux);
+        }
+        
+        res.render("index", {productos: listadoProductos})
+    })
+*/},
 
     detalleProductos: (req, res) => {
         let productoId = req.params.id
@@ -32,12 +48,16 @@ const productsController =
     },
 
     checkCreacionProducto:(req, res) => {
-        let nombreImagen=req.file.filename;
-		let idNuevo = products[products.length-1].id + 1;
-		let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
-		products.push(nuevoObjeto);
-   	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-		res.redirect('/');
+        
+        db.Producto.create({
+            nombre: req.body.name
+        //let nombreImagen=req.file.filename;
+		//let idNuevo = products[products.length-1].id + 1;
+		//let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
+		//products.push(nuevoObjeto);
+   	    //fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+        })
+           res.redirect('/');
     },
 
 
