@@ -1,9 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const { inflateRaw } = require('zlib');
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const { inflateRaw } = require('zlib');
+// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db =require ("../database/models")
+
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const productsController = 
@@ -11,7 +13,7 @@ const productsController =
     listadoProductos: (req, res) => {
         db.productos.findAll()
         .then(function(productos){
-            res.render("producto", {productos: db.productos})
+            return res.render("producto", {productos: db.productos})
         })
     },
 
@@ -71,6 +73,7 @@ const productsController =
 
         })
         res.redirect('/');    
+
         /*let nombreImagen=req.file.filename;
             let idNuevo = products[products.length-1].id + 1;
             let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
@@ -91,7 +94,7 @@ const productsController =
     },
 
 
-//EDIT Y UP0DATE
+//EDIT Y UPDATE
     edicionProducto:(req, res) => {
         let pedidoProducto = db.productos.findByPk(req.params.id);
         //let pedidoCategorias = db.categorias.findAll();
@@ -118,7 +121,21 @@ const productsController =
     },
 
 
-    //DELETE
+    //DELETE 
+
+    delete:(req, res) => {
+            
+        db.producto.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        
+        res.redirect("/");
+
+    }
+
+    /*
     delete:(req, res) => {
         let productoId = req.params.id;	
 		for(let i=0; i < products.length; i++){
@@ -135,7 +152,8 @@ const productsController =
 		res.redirect("/");
 
 		}
-    
+    */
+   
 };
 
 module.exports = productsController;

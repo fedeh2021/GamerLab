@@ -33,7 +33,7 @@ router.put("/edit/:id", uploadFile.single('image'), productsController.checkEdic
 
 router.get("/create", productsController.creacionProducto);
 router.post("/create", uploadFile.single('image'), productsController.checkCreacionProducto); 
-
+ 
 router.delete("/delete/:id", productsController.delete)
 
 module.exports = router;

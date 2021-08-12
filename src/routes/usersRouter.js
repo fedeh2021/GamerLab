@@ -36,22 +36,26 @@ const usersController = require('../controllers/usersController');
 // ************ Views ************
 
 /*** LOGIN DE USUARIO EXISTENTE ***/
-router.get('/login', guestMiddleware ,usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', usersController.checkLogin);
 
 
 /*** REGISTRAR UN NUEVO USUARIO ***/
 router.get('/register', guestMiddleware ,usersController.registro);
-router.post('/register', uploadFile.single('avatar'), validations ,usersController.checkRegistro);
+router.post('/register', uploadFile.single('avatar'), validations, usersController.checkRegistro);
+
 
 /*** VER TU INFORMACION Y EDITAR ***/ 
 router.get('/profile/', authMiddleware ,usersController.perfil);
 router.put('/profile/:id', usersController.update);
 
+
 /*** VER EL CARRITO ***/
-//router.get('/cart',usersController.carrito);
+//router.get('/cart', usersController.carrito);
+
 
 /*** CERRAR SESION ***/
 router.get('/logout',usersController.logout)
+
 
 module.exports = router;

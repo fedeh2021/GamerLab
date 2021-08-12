@@ -3,9 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const db = require("../database/models")
 const User = require('../database/models/User')
-const usersFilePath = path.join(__dirname, '../data/usersData.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+//const usersFilePath = path.join(__dirname, '../data/usersData.json');
+//const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -18,6 +19,7 @@ const usersController = {
     login: (req, res)=> {
         return res.render("login")
     },
+
     checkLogin: (req, res)=> {
         let userToLogin = User.findByField('email', req.body.email);
         if (userToLogin) {
@@ -43,6 +45,7 @@ const usersController = {
             }
         });
         },
+
     registro: (req, res) => {
             return res.render("registro")
         },
@@ -77,6 +80,7 @@ const usersController = {
     perfil: (req, res) => {
         return res.render("perfil", { user: req.session.userLogged }) 
         },     
+
     update: (req, res)=>{
             res.render("perfil", { user: req.session.userLogged }) 
         }, 
@@ -84,6 +88,7 @@ const usersController = {
     carrito: (req, res)=>{
             res.render("carrito") 
         },
+
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
