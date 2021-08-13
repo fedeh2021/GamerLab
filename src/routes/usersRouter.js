@@ -51,7 +51,7 @@ router.put('/profile/:id', usersController.update);
 
 
 /*** VER EL CARRITO ***/
-//router.get('/cart', usersController.carrito);
+router.get('/cart', usersController.carrito);
 
 
 /*** CERRAR SESION ***/

@@ -51,7 +51,27 @@
             <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
             
             <% } %>
-            <li><a href="/users/cart"><i class="fas fa-shopping-cart fa-2x"></i></a></li>
+            
+            <div class="">
+            <a href="/users/cart"><img src="/img/carrito-de-compras.png"class="nav-link dropdown-toggle img-fluid" height="70px"
+                width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"></img></a>
+                <table id="lista-carrito" class="table">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <li><a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a></li>
+                <li><a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a></li>
+            </div>
+            
             
 
         </div>  

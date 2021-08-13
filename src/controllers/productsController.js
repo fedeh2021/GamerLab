@@ -46,10 +46,10 @@ const productsController =
 
     detalleProductos: (req, res) => {        
         
-        db.pelicula.FindByPk(req.params.id, {
+        db.productos.FindByPk(req.params.id, {
             include: [{association: categorias}]
         })
-        .then(function(pelicula){
+        .then(function(productos){
             res.render("detail", {productoEnDetalle:productoEncontrado})
         })
        
