@@ -126,5 +126,13 @@
   "email": "fede@fede.com",
   "password": "$2a$10$xNtpeTeAcxbmT11y/Tfcu.RvjHv.xVPAXd3F48m/K2Nf49lrG/wre",
   "avatar": "1628697170135.png"
+ },
+ {
+  "id": 17,
+  "name": "miguel",
+  "birthdate": "2001-10-10",
+  "email": "ejemplo@ejemplo.com",
+  "password": "$2a$10$FKaTn2WE/SABikhGQZ.zgejDFLXHLZANDpATwfvs9/fyBA2mwo84.",
+  "avatar": "1628983446564.jpg"
  }
 ]

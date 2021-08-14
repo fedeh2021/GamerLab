@@ -15,38 +15,38 @@
 
 <body>
     
-    <form action="/products/edit/<%=productoEnDetalle.id%>?_method=PUT" method="POST" class="formulario-prod" enctype="multipart/form-data">
+    <form action="/products/edit/<%=productos.id%>?_method=PUT" method="POST" class="formulario-prod" enctype="multipart/form-data">
         
     <h1 class="titulo-formulario">EDICIÓN DE PRODUCTO</h1>
 
     <div class="formulario-producto">
         <label>Imagen del producto: </label>
-        <input type="file" name="image" class="usuario" value="<%=productoEnDetalle.image%>" id="foto-producto">
+        <input type="file" name="image" class="usuario" value="<%=productos.image%>" id="foto-producto">
     </div>
 
     <div class="formulario-producto">
         <label>Nombre del producto:</label>
-        <input type="text" value="<%=productoEnDetalle.name%>" name="name" class="usuario" placeholder="Nombre del producto" id="formulario-text">
+        <input type="text" value="<%=productos.name%>" name="name" class="usuario" placeholder="Nombre del producto" id="formulario-text">
     </div>    
     
     <div class="formulario-producto">
         <label>Descripción:</label>
-        <textarea rows="4" cols="40" id="formulario-text" name="description"><%=productoEnDetalle.description%></textarea>
+        <textarea rows="4" cols="40" id="formulario-text" name="description"><%=productos.description%></textarea>
     </div>
 
     <div class="formulario-producto">
         <label>Precio:</label>
-        <input type="text" value = "<%=productoEnDetalle.price%>" name="price" class="usuario" placeholder="$" id="formulario-text">
+        <input type="text" value = "<%=productos.price%>" name="price" class="usuario" placeholder="$" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
         <label>Descuento: </label>
-        <input type="text" value="<%=productoEnDetalle.discount%>" name="discount" class="usuario" placeholder="%" id="formulario-text">
+        <input type="text" value="<%=productos.discount%>" name="discount" class="usuario" placeholder="%" id="formulario-text">
     </div>
 
     <div class="formulario-producto">
         <label>Stock: </label>
-        <input type="number" name="stock" class="usuario" id="formulario-text" value="<%=productoEnDetalle.stock%>">
+        <input type="number" name="stock" class="usuario" id="formulario-text" value="<%=productos.stock%>">
     </div>
 
 
@@ -54,9 +54,9 @@
         <label for="categoria">Categoría del producto: </label>
         
             <select id="categoria" name="category" class="formulario-text">
-                <% for (let i = 0; i < categoria.length; i++) { %>
-                    <% if (categoria[i].id == productos.categoriaFK) { %>
-                <option value="<%=categoria[i].id%>" selected>
+                <% for (let i = 0; i <= categorias[i].length; i++) { %>
+                    <% if (categorias[i].id == productos.categoria_fk) { %>
+                <option value="<%=categorias[i].id%>" selected>
                     <%=categoria[i].name%>
                 </option>
                 <% } else %>
@@ -64,11 +64,11 @@
                     <%=categoria[i].name%>
                 </option>
                 <% } %>
-                <option value="<%=productoEnDetalle.category%>">Teclados y mouses</option>
+                <option value="<%=productos.category%>">Teclados y mouses</option>
                 <option value="audio">Audio</option>
                 <option value="placa">Placa de video</option>
-                <option value="<%=productoEnDetalle.category%>">Armá tu PC</option>
-                <option value="<%=productoEnDetalle.category%>">Sillas y escritorios</option>
+                <option value="<%=productos.category%>">Armá tu PC</option>
+                <option value="<%=productos.category%>">Sillas y escritorios</option>
             </select>
     </div>
 

@@ -19,7 +19,6 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
-
 // ************ Controller ************
 const productsController = {
 
@@ -32,14 +31,15 @@ const productsController = {
     },
 
     index:(req,res) =>{
+    /*
         db.Producto.findAll()
         .then(function(productos) {
             res.render ("producto", {productos})
         })
-    },
+    },*/
 
     // SEGUNDA OPCION INDEX 
-      /*  db.Producto.findAll({include: [{association: 'productos'}, {association: 'categorias'}]}) 
+        db.Producto.findAll({include: [{association: 'productos'}, {association: 'categorias'}]}) 
         .then((productos) => {
         let listadoProductos = [];
         for (producto of productos){
@@ -55,15 +55,15 @@ const productsController = {
         }
         
         res.render("index", {productos: listadoProductos})
-    }) */
+    })},
 
 /*** DETALLE DE PRODUCTO ***/
     detalleProductos: (req, res) => {        
         db.Producto.findByPk(req.params.id, {
             include: [{association: "categorias"}]
         })
-        .then(function(productos){
-            res.render("detail", {productos})
+        .then(function(productos, categorias){
+            res.render("detail", {productos, categorias})
         })
     },
 
@@ -86,24 +86,6 @@ const productsController = {
             categoriaFK: req.body.category,
         })
         res.redirect('/');    
-
-        /*let nombreImagen=req.file.filename;
-            let idNuevo = products[products.length-1].id + 1;
-            let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
-            products.push(nuevoObjeto);
-            fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-            res.redirect('/');*/
-
-       //SEGUNDA OPCION INDEX 
-       // db.Producto.create({
-       //    nombre: req.body.name
-        //let nombreImagen=req.file.filename;
-		//let idNuevo = products[products.length-1].id + 1;
-		//let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
-		//products.push(nuevoObjeto);
-   	    //fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-        //})
-         //  res.redirect('/');
     },
 
 
