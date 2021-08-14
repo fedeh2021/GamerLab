@@ -17,7 +17,7 @@ PRIMARY KEY (`id`)
 
 CREATE TABLE `productos` (
 `id` INT NOT NULL AUTO_INCREMENT,
-`categoriaFK` INT DEFAULT NULL,
+`categoria_fk` INT DEFAULT NULL,
 `nombre` VARCHAR(255) DEFAULT NULL,
 `imagen` VARCHAR(255) DEFAULT NULL,
 `descripcion` VARCHAR(510) DEFAULT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE `productos` (
 `updated_at` DATETIME DEFAULT NULL,
 `deleted_at` DATETIME DEFAULT NULL,
 PRIMARY KEY (`id`),
-FOREIGN KEY (`categoriaFK`) REFERENCES `categorias`(`id`)
+FOREIGN KEY (`categoria_fk`) REFERENCES `categorias`(`id`)
 );
 
 -- Table structure for table `facturas`
@@ -57,7 +57,7 @@ PRIMARY KEY (`id`)
 
 CREATE TABLE `clientes` (
 `id` INT NOT NULL AUTO_INCREMENT,
-`envioFK` INT DEFAULT NULL,
+`envio_fk` INT DEFAULT NULL,
 `nombre` VARCHAR(255) DEFAULT NULL,
 `apellido` VARCHAR(255) DEFAULT NULL,
 `email` VARCHAR(255) DEFAULT NULL,
@@ -71,23 +71,23 @@ CREATE TABLE `clientes` (
 `updated_at` DATETIME, 
 `deleted_at` DATETIME, 
 PRIMARY KEY (`id`),
-FOREIGN KEY (`envioFK`) REFERENCES `envios`(`id`)
+FOREIGN KEY (`envio_fk`) REFERENCES `envios`(`id`)
 );
 
 -- Table structure for table `pedidos`
 
 CREATE TABLE `pedidos` (
 `id` INT NOT NULL AUTO_INCREMENT,
-`clienteFK` INT DEFAULT NULL,
-`productoFK` INT DEFAULT NULL,
-`facturaFK` INT DEFAULT NULL,
+`cliente_fk` INT DEFAULT NULL,
+`producto_fk` INT DEFAULT NULL,
+`factura_fk` INT DEFAULT NULL,
 `precio_venta` DECIMAL DEFAULT NULL,
 `cantidad_prod` INT DEFAULT NULL,
 `estado` VARCHAR(255) DEFAULT NULL, 
 PRIMARY KEY (`id`),
-FOREIGN KEY (`clienteFK`) REFERENCES `clientes`(`id`),
-FOREIGN KEY (`productoFK`) REFERENCES `productos`(`id`),
-FOREIGN KEY (`facturaFK`) REFERENCES `facturas`(`id`)
+FOREIGN KEY (`cliente_fk`) REFERENCES `clientes`(`id`),
+FOREIGN KEY (`producto_fk`) REFERENCES `productos`(`id`),
+FOREIGN KEY (`factura_fk`) REFERENCES `facturas`(`id`)
 );
 
 INSERT INTO `clientes` VALUES(1,1,'Miguel','Apellido','email@email.com','contrasena',1,'43434343','2001-10-17','11221212','avatar.jpg','2021-07-22 16:30:00','2021-07-22 16:30:00','2021-07-22 16:30:00'),(2,2,'Fede','Apellido','email@email.com','contrasena',1,'43434343','2001-10-17','11221212','avatar.jpg','2021-07-22 16:30:00','2021-07-22 16:30:00','2021-07-22 16:30:00'),(3,3,'Facu','Apellido','email@email.com','contrasena',1,'43434343','2001-10-17','12121212','avatar.jpg','2021-07-22 16:30:00','2021-07-22 16:30:00','2021-07-22 16:30:00');

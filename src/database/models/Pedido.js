@@ -8,15 +8,15 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        clienteFK: {
+        cliente_fk: {
             type: dataTypes.INTEGER,
             allowNull:false
         },
-        productoFK: {
+        producto_fk: {
             type: dataTypes.INTEGER,
             allowNull:false
         },
-        facturaFK: {
+        factura_fk: {
             type: dataTypes.INTEGER,
             allowNull:false
         },
@@ -47,14 +47,14 @@ module.exports = (sequelize, dataTypes) => {
     Pedido.associate = function(models){
 
         Pedido.belongsTo(models.Factura, {   
-            as: "Factura",
-            foreignKey: "facturaFK"
+            as: "facturas",
+            foreignKey: "factura_fk"
              });
         Pedido.belongsToMany (models.Cliente, {
-          as:"Cliente",
+          as: "clientes",
           through: "pedidos",
-          foreignKey: "productoFK",
-          otherKey: "clienteFK",
+          foreignKey: "producto_fk",
+          otherKey: "cliente_fk",
           timestamps: false
         })
      }
