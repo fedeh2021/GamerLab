@@ -40,6 +40,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL, 
             allowNull:false
         },
+        stock: {
+            type: dataTypes.INTEGER, 
+            allowNull:false
+        },
     }
     const config = {
         tablename: 'productos',
@@ -51,7 +55,7 @@ module.exports = (sequelize, dataTypes) => {
     
     Producto.associate = function (models) {
         Producto.belongsTo( models.Categoria, {
-          as: "categoria",
+          as: "categorias",
           foreignKey: "categoriaFK"
         });
         Producto.belongsToMany( models.Cliente, {
