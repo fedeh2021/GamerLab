@@ -1,21 +1,28 @@
 // ************ Require's ************
 const fs = require('fs');
 const path = require('path');
-const bcryptjs = require('bcryptjs');
-const { validationResult } = require('express-validator');
+
+
+// ************ Require DATABASE ************
 const db = require("../database/models")
 const User = require('../models2/User')
+
+
+// ************ otros Require's ************
+const bcryptjs = require('bcryptjs');
+const { validationResult } = require('express-validator');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+// JSON (borrar cuando esté lista la BDD)
 //const usersFilePath = path.join(__dirname, '../data/usersData.json');
 //const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-
-// ************ User login ************
 
 
 // ************ Controller ************
 const usersController = {
+
+/*** USER LOGIN ***/
     login: (req, res)=> {
         return res.render("login")
     },
@@ -46,6 +53,7 @@ const usersController = {
         });
         },
 
+/*** REGISTRO ***/
     registro: (req, res) => {
             return res.render("registro")
         },
@@ -77,18 +85,22 @@ const usersController = {
         return res.redirect('./login')
     },
     
+/*** PERFIL ***/
     perfil: (req, res) => {
         return res.render("perfil", { user: req.session.userLogged }) 
         },     
 
+/*** UPDATE ***/
     update: (req, res)=>{
             res.render("perfil", { user: req.session.userLogged }) 
         }, 
 
+/*** CARRITO ***/
     carrito: (req, res)=>{
             res.render("carrito") 
         },
 
+/*** CERRAR SESION ***/
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
@@ -96,4 +108,6 @@ const usersController = {
     }
 }
 
+
+// ************ Export ************
 module.exports = usersController;

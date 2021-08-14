@@ -1,9 +1,17 @@
-const mainController = require("../controllers/mainController");
-
+// ************ Require's ************
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
+
+// ************ Controller Require ************
+const mainController = require("../controllers/mainController");
+
+
+// ************ Views ************
+
+/*** HOME PAGE ***/
 router.get('/', mainController.index);
 
+
+// ************ Export ************
 module.exports = router;

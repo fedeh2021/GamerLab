@@ -1,17 +1,29 @@
+// ************ Require's ************
 const fs = require('fs');
 const path = require('path');
-// const { inflateRaw } = require('zlib');
-// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
+// ************ Require DATABASE ************
 const db =require ("../database/models")
+
+
+// ************ otros Require's ************
+const { inflateRaw } = require('zlib');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const { response } = require('express');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+// JSON (borrar cuando esté lista la BDD)
+// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const productsController = 
-{
+
+
+// ************ Controller ************
+const productsController = {
+
+/*** LISTADO DE TODOS LOS PRODUCTOS ***/
     listadoProductos: (req, res) => {
         db.Producto.findAll()
         .then(function(productos){
@@ -26,7 +38,7 @@ const productsController =
         })
     },
 
-    //SEGUNDA OPCION INDEX
+    // SEGUNDA OPCION INDEX 
       /*  db.Producto.findAll({include: [{association: 'productos'}, {association: 'categorias'}]}) 
         .then((productos) => {
         let listadoProductos = [];
@@ -43,21 +55,19 @@ const productsController =
         }
         
         res.render("index", {productos: listadoProductos})
-    })
-*/
+    }) */
 
+/*** DETALLE DE PRODUCTO ***/
     detalleProductos: (req, res) => {        
-        
         db.Producto.findByPk(req.params.id, {
             include: [{association: "categoria"}]
         })
         .then(function(productos){
             res.render("detail", {productos: productos})
         })
-       
     },
 
-//CREATE Y STORE
+/*** CREATE Y STORE ***/
     creacionProducto:(req, res) => {
         db.Producto.findAll()
         .then(function(productos){
@@ -97,7 +107,7 @@ const productsController =
     },
 
 
-//EDIT Y UPDATE
+/*** EDIT Y UPDATE DE UN PRODUCTO***/
     edicionProducto:(req, res) => {
         let pedidoProducto = db.Producto.findByPk(req.params.id);
         let pedidoCategoria = db.Categoria.findAll();
@@ -125,8 +135,7 @@ const productsController =
     },
 
 
-    //DELETE 
-
+/*** BORRAR UN PRODUCTO ***/
     delete:(req, res) => {
         db.Producto.destroy({
             where: {
@@ -148,8 +157,7 @@ const productsController =
         })
     }
 
-    /*
-    delete:(req, res) => {
+    /* delete:(req, res) => {
         let productoId = req.params.id;	
 		for(let i=0; i < products.length; i++){
 			if (products[i].id == productoId){
@@ -164,9 +172,9 @@ const productsController =
         
 		res.redirect("/");
 
-		}
-    */
-   
+		} */
 };
 
+
+// ************ Export ************
 module.exports = productsController;

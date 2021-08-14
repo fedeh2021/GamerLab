@@ -2,8 +2,8 @@
  {
   "id": 1,
   "name": "Mouse Genérico",
-  "price": "11499",
-  "discount": "10",
+  "price": 11499,
+  "discount": 10,
   "description": "El mouse de juego te ofrecerá la posibilidad de marcar la diferencia y sacar ventajas en tus partidas. Su conectividad y sensor suave ayudará a que te desplaces rápido por la pantalla.",
   "image": "mouse2.jpg",
   "stock": 100,
@@ -62,8 +62,8 @@
  {
   "id": 7,
   "name": "Auriculares Gamer",
-  "price": "17900",
-  "discount": "5",
+  "price": 17900,
+  "discount": 5,
   "category": "Audio",
   "description": "¡Experimentá la adrenalina de sumergirte en la escena de otra manera! Tener auriculares específicos para jugar cambia completamente tu experiencia en cada partida.",
   "image": "auriculares.jpg",
