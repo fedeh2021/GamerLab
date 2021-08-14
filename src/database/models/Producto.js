@@ -10,15 +10,16 @@ module.exports = (sequelize, dataTypes) => {
         },
         created_at: {
             type: dataTypes.DATE, 
-            allowNull:false
+            
         },
         updated_at: {
             type: dataTypes.DATE, 
-            allowNull:false
+            
         },
         deleted_at: {
-            type: dataTypes.DATE, 
-            allowNull:false
+            type: dataTypes.DATE,
+            defaultValue: true
+            
         },
         nombre: {
             type: dataTypes.STRING(255),
@@ -26,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         imagen: {
             type: dataTypes.STRING(500), 
-            allowNull:false
+            
         },
         descripcion: {
             type: dataTypes.STRING(255), 
@@ -40,6 +41,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL, 
             allowNull:false
         },
+        stock: {
+            type: dataTypes.INTEGER, 
+            allowNull:false
+        },
     }
     const config = {
         tablename: 'productos',
@@ -48,7 +53,7 @@ module.exports = (sequelize, dataTypes) => {
         camelCase: false
     }
 
-    const Producto = sequelize.define(alias,cols,config)
+    const Producto = sequelize.define(alias,cols,config);
     
     Producto.associate = function (models) {
         Producto.belongsTo( models.Categoria, {

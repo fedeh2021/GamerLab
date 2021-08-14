@@ -1,28 +1,44 @@
+// ************ Require's ************
 const fs = require('fs');
 const path = require('path');
-const { inflateRaw } = require('zlib');
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
+// ************ Require DATABASE ************
 const db =require ("../database/models")
 
 
-const productsController = 
-{
+// ************ otros Require's ************
+const { inflateRaw } = require('zlib');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const { response } = require('express');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+// JSON (borrar cuando esté lista la BDD)
+// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
+
+// ************ Controller ************
+const productsController = {
+
+/*** LISTADO DE TODOS LOS PRODUCTOS ***/
     listadoProductos: (req, res) => {
-        db.productos.findAll()
+        db.Producto.findAll()
         .then(function(productos){
-            res.render("producto", {productos: db.productos})
+            return res.render("producto", {productos})
         })
     },
 
     index:(req,res) =>{
-        db.productos.findAll()
+        db.Producto.findAll()
         .then(function(productos) {
-            res.render ("productos", {productos: db.productos})
+            res.render ("producto", {productos})
         })
     },
 
-    //SEGUNDA OPCION INDEX
+    // SEGUNDA OPCION INDEX 
       /*  db.Producto.findAll({include: [{association: 'productos'}, {association: 'categorias'}]}) 
         .then((productos) => {
         let listadoProductos = [];
@@ -39,38 +55,38 @@ const productsController =
         }
         
         res.render("index", {productos: listadoProductos})
-    })
-*/
+    }) */
 
+/*** DETALLE DE PRODUCTO ***/
     detalleProductos: (req, res) => {        
-        
-        db.pelicula.FindByPk(req.params.id, {
-            include: [{association: categorias}]
+        db.Producto.findByPk(req.params.id, {
+            include: [{association: "categorias"}]
         })
-        .then(function(pelicula){
-            res.render("detail", {productoEnDetalle:productoEncontrado})
+        .then(function(productos){
+            res.render("detail", {productos})
         })
-       
     },
 
-//CREATE Y STORE
+/*** CREATE Y STORE ***/
     creacionProducto:(req, res) => {
-        db.productos.findAll()
-        .then(function(resultado){
-            return res.render("creacionProducto", {producto: db.productos})
+        db.Producto.findAll()
+        .then(function(productos){
+            return res.render("creacionProducto", {productos})
         } )
     },
 
     checkCreacionProducto:(req, res) => {
-        db.productos.create({
+        db.Producto.create({
             nombre: req.body.name,
+            imagen: req.body.image,
             descripcion:req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
+            stock: req.body.stock,
             categoriaFK: req.body.category,
-
         })
         res.redirect('/');    
+
         /*let nombreImagen=req.file.filename;
             let idNuevo = products[products.length-1].id + 1;
             let nuevoObjeto =  Object.assign({id: idNuevo},req.body,{image:nombreImagen});
@@ -91,20 +107,21 @@ const productsController =
     },
 
 
-//EDIT Y UP0DATE
+/*** EDIT Y UPDATE DE UN PRODUCTO***/
     edicionProducto:(req, res) => {
-        let pedidoProducto = db.productos.findByPk(req.params.id);
-        //let pedidoCategorias = db.categorias.findAll();
+        let pedidoProducto = db.Producto.findByPk(req.params.id);
+        let pedidoCategoria = db.Categoria.findAll();
 
         Promise.all([pedidoProducto, pedidoCategoria])
-        .then(function(producto){
-            res.render ("edicionPorducto", {productoEnDetalle: producto})
+        .then(function(productos, categorias){
+            res.render ("edicionProducto", {productos, categorias})
         })
     },
  
     checkEdicionProducto:(req, res) => {
-        db.productos.update({
+        db.Producto.update({
             nombre: req.body.name,
+            imagen: req.body.image,
             descripcion:req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
@@ -118,8 +135,29 @@ const productsController =
     },
 
 
-    //DELETE
+/*** BORRAR UN PRODUCTO ***/
     delete:(req, res) => {
+        db.Producto.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        
+        res.redirect("/");
+
+    },
+    search: function(req, res) {
+        db.Producto.findAll({
+            where: { nombre: {[Op.like]: '%' + req.query.keyword + '%'}}
+        }).then(productos => {
+            if (productos.length > 0) {
+            return res.status(200).json(productos);
+        }
+        return res.status(200).json('No existen productos')
+        })
+    }
+
+    /* delete:(req, res) => {
         let productoId = req.params.id;	
 		for(let i=0; i < products.length; i++){
 			if (products[i].id == productoId){
@@ -134,8 +172,9 @@ const productsController =
         
 		res.redirect("/");
 
-		}
-    
+		} */
 };
 
+
+// ************ Export ************
 module.exports = productsController;
