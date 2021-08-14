@@ -41,6 +41,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL, 
             allowNull:false
         },
+        stock: {
+            type: dataTypes.INTEGER, 
+            allowNull:false
+        },
     }
     const config = {
         tablename: 'productos',
