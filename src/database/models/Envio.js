@@ -38,14 +38,15 @@ module.exports = (sequelize, dataTypes) => {
     const config = {
         tablename: 'envios',
         timestamps: false,
+        underscored: true,
         camelCase: false
     }
     const Envio = sequelize.define(alias, cols, config);
 
     Envio.associate = function (models){
         Envio.hasMany( models.Cliente, {
-          as: "Cliente",
-          foreignKey: "envioFK"
+          as: "clientes",
+          foreignKey: "envio_fk"
         });
     }
 

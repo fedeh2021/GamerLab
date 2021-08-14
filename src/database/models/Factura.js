@@ -16,6 +16,7 @@ module.exports = (sequelize, dataTypes) => {
     const config = {
         tablename: 'facturas',
         timestamps: false,
+        underscored: true,
         camelCase: false
     }
 
@@ -24,9 +25,9 @@ module.exports = (sequelize, dataTypes) => {
     Factura.associate = function (models){
 
         Factura.hasMany(models.Pedido, {
-           as: "pedidos",
-           foreignKey: "facturaFK"
-            });
+           as: "Pedido",
+           foreignKey: "factura_fk"
+        });
     }
    
     return Factura;

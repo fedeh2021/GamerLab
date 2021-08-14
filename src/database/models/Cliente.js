@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        envioFK: {
+        envio_fk: {
             type: dataTypes.INTEGER,
             allowNull:false
         },
@@ -64,20 +64,21 @@ module.exports = (sequelize, dataTypes) => {
     const config = {
         tablename: 'clientes',
         timestamps: false,
+        underscored: true,
         camelCase: false
     }
     const Cliente = sequelize.define(alias, cols, config);
 
     Cliente.associate = function (models) {
         Cliente.belongsTo( models.Envio, {
-          as: "Envio",
-          foreignKey: "envioFK"
+          as: "envios",
+          foreignKey: "envio_fk"
         });
         Cliente.belongsToMany( models.Producto, {
-            as: "Producto",
+            as: "productos",
             through: "pedidos",
-            foreignKey: "clienteFK",
-            otherKey: "clienteFK",
+            foreignKey: "cliente_fk",
+            otherKey: "cliente_fk",
             timestamps: false
         })
     }
