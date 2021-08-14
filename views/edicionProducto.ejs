@@ -54,10 +54,16 @@
         <label for="categoria">Categoría del producto: </label>
         
             <select id="categoria" name="category" class="formulario-text">
-                <option><%=productoEnDetalle.category%></option>
-
-                <option value="<%=productoEnDetalle.category%>">Notebooks</option>
-                <option value="monitores">Monitores</option>
+                <% for (let i = 0; i < categoria.length; i++) { %>
+                    <% if (categoria[i].id == productos.categoriaFK) { %>
+                <option value="<%=categoria[i].id%>" selected>
+                    <%=categoria[i].name%>
+                </option>
+                <% } else %>
+                <option value="<%=categoria[i].id%>">
+                    <%=categoria[i].name%>
+                </option>
+                <% } %>
                 <option value="<%=productoEnDetalle.category%>">Teclados y mouses</option>
                 <option value="audio">Audio</option>
                 <option value="placa">Placa de video</option>

@@ -675,9 +675,6 @@ a.btn{
     color:#fff;
 }
 
-.prod-price{
-    color:#fff;
-}
 .prod-description{
     font-size: 1.5em;
     padding: 20px;
@@ -706,6 +703,21 @@ a.btn{
 }
 
 .prod-price {
+    color: #fff;
+    font-size: 2em;
+    padding: 20px;
+    margin-top: .5em;
+    margin-bottom: .2em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+}
+.prod-discount {
+    color: #fff;
     font-size: 2em;
     padding: 20px;
     margin-top: .5em;

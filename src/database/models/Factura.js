@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = 'facturas'
+    const alias = 'Factura'
 
     const cols = {
         id: {
@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Factura.associate = function (models){
 
-        Factura.hasMany(models.pedidos, {
+        Factura.hasMany(models.Pedido, {
            as: "pedidos",
            foreignKey: "facturaFK"
             });

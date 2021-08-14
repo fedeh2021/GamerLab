@@ -17,7 +17,7 @@
     <main>
 
 <div class="product-container">
-    <div class="prod-box">
+    <div class="prod-box" data-id="<%=productoEnDetalle.id%>">
         <div class="prod-img-container">
             <div class="prod-big-img">
                 <img src="/img/<%=productoEnDetalle.image%>">
@@ -32,7 +32,7 @@
         <div class="prod-content">
             <p><%=productoEnDetalle.category%></p>
             <h3 class="prod-title"><%=productoEnDetalle.name%></h3>
-            <div class="prod-price"><%=productoEnDetalle.discount%>% OFF</div>
+            <div class="prod-discount"><%=productoEnDetalle.discount%>% OFF</div>
             <div class="prod-price">$<%=productoEnDetalle.price%></div>
             <form action="">
                 <div class="prod-options">
@@ -50,7 +50,7 @@
             </form>
             <div class="prod-buttons">
                 <div class="row-1">
-                   <a href="/cart" class="prod-add-to-cart">Agregar al carrito</a>
+                   <a href="/cart" class="prod-add-to-cart" id="agregar-carrito" >Agregar al carrito</a>
                    <button class="prod-buy" href="/cart">Comprar</button>
                 </div>
                 <div class="row-2">

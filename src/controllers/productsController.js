@@ -4,23 +4,25 @@ const path = require('path');
 // const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 // const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db =require ("../database/models")
-
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const { response } = require('express');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const productsController = 
 {
     listadoProductos: (req, res) => {
-        db.productos.findAll()
+        db.Producto.findAll()
         .then(function(productos){
-            return res.render("producto", {productos: db.productos})
+            return res.render("producto", {productos: productos})
         })
     },
 
     index:(req,res) =>{
-        db.productos.findAll()
+        db.Producto.findAll()
         .then(function(productos) {
-            res.render ("productos", {productos: db.productos})
+            res.render ("producto", {productos: productos})
         })
     },
 
@@ -46,26 +48,27 @@ const productsController =
 
     detalleProductos: (req, res) => {        
         
-        db.productos.FindByPk(req.params.id, {
-            include: [{association: categorias}]
+        db.Producto.findByPk(req.params.id, {
+            include: [{association: "categoria"}]
         })
         .then(function(productos){
-            res.render("detail", {productoEnDetalle:productoEncontrado})
+            res.render("detail", {productos: productos})
         })
        
     },
 
 //CREATE Y STORE
     creacionProducto:(req, res) => {
-        db.productos.findAll()
-        .then(function(resultado){
-            return res.render("creacionProducto", {producto: db.productos})
+        db.Producto.findAll()
+        .then(function(productos){
+            return res.render("creacionProducto", {productos: productos})
         } )
     },
 
     checkCreacionProducto:(req, res) => {
-        db.productos.create({
+        db.Producto.create({
             nombre: req.body.name,
+            imagen: req.body.image,
             descripcion:req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
@@ -96,18 +99,19 @@ const productsController =
 
 //EDIT Y UPDATE
     edicionProducto:(req, res) => {
-        let pedidoProducto = db.productos.findByPk(req.params.id);
-        //let pedidoCategorias = db.categorias.findAll();
+        let pedidoProducto = db.Producto.findByPk(req.params.id);
+        let pedidoCategoria = db.Categoria.findAll();
 
         Promise.all([pedidoProducto, pedidoCategoria])
-        .then(function(producto){
-            res.render ("edicionPorducto", {productoEnDetalle: producto})
+        .then(function(productos, categorias){
+            res.render ("edicionProducto", {productos: productos, categorias: categorias})
         })
     },
  
     checkEdicionProducto:(req, res) => {
-        db.productos.update({
+        db.Producto.update({
             nombre: req.body.name,
+            imagen: req.body.image,
             descripcion:req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
@@ -124,8 +128,7 @@ const productsController =
     //DELETE 
 
     delete:(req, res) => {
-            
-        db.producto.destroy({
+        db.Producto.destroy({
             where: {
                 id: req.params.id
             }
@@ -133,6 +136,16 @@ const productsController =
         
         res.redirect("/");
 
+    },
+    search: function(req, res) {
+        db.Producto.findAll({
+            where: { nombre: {[Op.like]: '%' + req.query.keyword + '%'}}
+        }).then(productos => {
+            if (productos.length > 0) {
+            return res.status(200).json(productos);
+        }
+        return res.status(200).json('No existen productos')
+        })
     }
 
     /*

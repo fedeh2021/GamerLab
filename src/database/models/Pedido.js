@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = 'pedidos'
+    const alias = 'Pedido'
 
     const cols = {
         id: {
@@ -44,14 +44,14 @@ module.exports = (sequelize, dataTypes) => {
 
     Pedido.associate = function(models){
 
-        Pedido.belongsTo(models.facturas, {   
-            as: "facturas",
+        Pedido.belongsTo(models.Factura, {   
+            as: "factura",
             foreignKey: "facturaFK"
              });
-        Pedido.belongsTo (models.productos, {
-            as:"productos",
-            foreignKey: "productoFK"
-        })
+        //Pedido.belongsTo (models.Producto, {
+          //  as:"producto",
+            //foreignKey: "productoFK"
+       // })
      }
 
     return Pedido;

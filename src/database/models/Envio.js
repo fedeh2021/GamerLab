@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'envios'
+    const alias = 'Envio'
     const cols = {
         id: {
             type: dataTypes.SMALLINT(6).UNSIGNED,
@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
     const Envio = sequelize.define(alias, cols, config);
 
     Envio.associate = function (models){
-        Envio.hasMany( models.clientes, {
+        Envio.hasMany( models.Cliente, {
           as: "clientes",
           foreignKey: "envioFK"
         });

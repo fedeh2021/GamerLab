@@ -10,15 +10,15 @@ module.exports = (sequelize, dataTypes) => {
         },
         created_at: {
             type: dataTypes.DATE, 
-            allowNull:false
+            
         },
         updated_at: {
             type: dataTypes.DATE, 
-            allowNull:false
+            
         },
         deleted_at: {
             type: dataTypes.DATE, 
-            allowNull:false
+            
         },
         nombre: {
             type: dataTypes.STRING(255),
@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         imagen: {
             type: dataTypes.STRING(500), 
-            allowNull:false
+            
         },
         descripcion: {
             type: dataTypes.STRING(255), 
@@ -42,21 +42,24 @@ module.exports = (sequelize, dataTypes) => {
         },
     }
     const config = {
-        tablename: 'Producto',
+        tablename: 'productos',
         timestamps: false,
         camelCase: false
     }
 
-    const Producto = sequelize.define(alias,cols,config)
+    const Producto = sequelize.define(alias,cols,config);
     
-    Producto.associate = function (models){
-        Producto.belongsTo( models.categorias, {
-          as: "categorias",
+    Producto.associate = function (models) {
+        Producto.belongsTo( models.Categoria, {
+          as: "categoria",
           foreignKey: "categoriaFK"
         });
-        Producto.hasMany( models.pedidos, {
-            as: "pedidos",
-            foreignKey: "productosFK"
+        Producto.belongsToMany( models.Cliente, {
+            as: "clientes",
+            through: "pedidos",
+            foreignKey: "productoFK",
+            otherKey: "clienteFK",
+            timestamps: false
         })
     }
 
