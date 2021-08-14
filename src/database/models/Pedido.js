@@ -37,6 +37,8 @@ module.exports = (sequelize, dataTypes) => {
     const config = {
         tablename: 'pedidos',
         timestamps: false,
+        underscored: true,
+
         camelCase: false
     }
 
@@ -45,7 +47,7 @@ module.exports = (sequelize, dataTypes) => {
     Pedido.associate = function(models){
 
         Pedido.belongsTo(models.Factura, {   
-            as: "factura",
+            as: "Factura",
             foreignKey: "facturaFK"
              });
         Pedido.belongsToMany (models.Cliente, {

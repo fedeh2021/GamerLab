@@ -64,6 +64,7 @@ module.exports = (sequelize, dataTypes) => {
     const config = {
         tablename: 'clientes',
         timestamps: false,
+        underscored: true,
         camelCase: false
     }
     const Cliente = sequelize.define(alias, cols, config);

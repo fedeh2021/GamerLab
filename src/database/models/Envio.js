@@ -38,6 +38,8 @@ module.exports = (sequelize, dataTypes) => {
     const config = {
         tablename: 'envios',
         timestamps: false,
+        underscored: true,
+
         camelCase: false
     }
     const Envio = sequelize.define(alias, cols, config);

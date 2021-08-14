@@ -49,6 +49,7 @@ module.exports = (sequelize, dataTypes) => {
     const config = {
         tablename: 'productos',
         timestamps: false,
+        underscored: true,
         camelCase: false
     }
 
@@ -60,7 +61,7 @@ module.exports = (sequelize, dataTypes) => {
           foreignKey: "categoriaFK"
         });
         Producto.belongsToMany( models.Cliente, {
-            as: "clientes",
+            as: "Cliente",
             through: "pedidos",
             foreignKey: "productoFK",
             otherKey: "clienteFK",
