@@ -44,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Envio.associate = function (models){
         Envio.hasMany( models.Cliente, {
-          as: "clientes",
+          as: "Cliente",
           foreignKey: "envioFK"
         });
     }

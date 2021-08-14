@@ -70,13 +70,13 @@ module.exports = (sequelize, dataTypes) => {
 
     Cliente.associate = function (models) {
         Cliente.belongsTo( models.Envio, {
-          as: "envio",
+          as: "Envio",
           foreignKey: "envioFK"
         });
         Cliente.belongsToMany( models.Producto, {
-            as: "productos",
+            as: "Producto",
             through: "pedidos",
-            foreignKey: "productoFK",
+            foreignKey: "clienteFK",
             otherKey: "clienteFK",
             timestamps: false
         })

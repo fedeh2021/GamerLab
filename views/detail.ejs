@@ -17,23 +17,23 @@
     <main>
 
 <div class="product-container">
-    <div class="prod-box" data-id="<%=productoEnDetalle.id%>">
+    <div class="prod-box" data-id="<%=productos.id%>">
         <div class="prod-img-container">
             <div class="prod-big-img">
-                <img src="/img/<%=productoEnDetalle.image%>">
+                <img src="/img/<%=productos.image%>">
             </div>
             <div class="prod-small-img">
-                <img src="/img/<%=productoEnDetalle.image%>">
-                <img src="/img/<%=productoEnDetalle.image%>">
-                <img src="/img/<%=productoEnDetalle.image%>">
+                <img src="/img/<%=productos.image%>">
+                <img src="/img/<%=productos.image%>">
+                <img src="/img/<%=productos.image%>">
             </div> 
         </div>
-        <div class="prod-description"><%=productoEnDetalle.description%></div> 
+        <div class="prod-description"><%=productos.description%></div> 
         <div class="prod-content">
-            <p><%=productoEnDetalle.category%></p>
-            <h3 class="prod-title"><%=productoEnDetalle.name%></h3>
-            <div class="prod-discount"><%=productoEnDetalle.discount%>% OFF</div>
-            <div class="prod-price">$<%=productoEnDetalle.price%></div>
+            <p><%=productos.category%></p>
+            <h3 class="prod-title"><%=productos.name%></h3>
+            <div class="prod-discount"><%=productos.discount%>% OFF</div>
+            <div class="prod-price">$<%=productos.price%></div>
             <form action="">
                 <div class="prod-options">
                     <span>Elegí el color:</span>
@@ -55,8 +55,8 @@
                 </div>
                 <div class="row-2">
 
-                   <a class="prod-edit" href="/products/edit/<%=productoEnDetalle.id%>">Editar</a>
-                   <form action="/products/delete/<%=productoEnDetalle.id%>?_method=DELETE" class="form-prod-delete" method="POST" onsubmit="return confirm('¿Estas Seguro que queres borrar?')">
+                   <a class="prod-edit" href="/products/edit/<%=productos.id%>">Editar</a>
+                   <form action="/products/delete/<%=productos.id%>?_method=DELETE" class="form-prod-delete" method="POST" onsubmit="return confirm('¿Estas Seguro que queres borrar?')">
                    <button type="submit" class="prod-delete">Eliminar</button>
 
                    </form>

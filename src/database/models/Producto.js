@@ -17,7 +17,8 @@ module.exports = (sequelize, dataTypes) => {
             
         },
         deleted_at: {
-            type: dataTypes.DATE, 
+            type: dataTypes.DATE,
+            defaultValue: true
             
         },
         nombre: {
@@ -51,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
     
     Producto.associate = function (models) {
         Producto.belongsTo( models.Categoria, {
-          as: "categoria",
+          as: "Categoria",
           foreignKey: "categoriaFK"
         });
         Producto.belongsToMany( models.Cliente, {

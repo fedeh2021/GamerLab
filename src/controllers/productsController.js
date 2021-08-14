@@ -27,14 +27,14 @@ const productsController = {
     listadoProductos: (req, res) => {
         db.Producto.findAll()
         .then(function(productos){
-            return res.render("producto", {productos: productos})
+            return res.render("producto", {productos})
         })
     },
 
     index:(req,res) =>{
         db.Producto.findAll()
         .then(function(productos) {
-            res.render ("producto", {productos: productos})
+            res.render ("producto", {productos})
         })
     },
 
@@ -60,10 +60,10 @@ const productsController = {
 /*** DETALLE DE PRODUCTO ***/
     detalleProductos: (req, res) => {        
         db.Producto.findByPk(req.params.id, {
-            include: [{association: "categoria"}]
+            include: [{association: "categorias"}]
         })
         .then(function(productos){
-            res.render("detail", {productos: productos})
+            res.render("detail", {productos})
         })
     },
 
@@ -71,7 +71,7 @@ const productsController = {
     creacionProducto:(req, res) => {
         db.Producto.findAll()
         .then(function(productos){
-            return res.render("creacionProducto", {productos: productos})
+            return res.render("creacionProducto", {productos})
         } )
     },
 
@@ -114,7 +114,7 @@ const productsController = {
 
         Promise.all([pedidoProducto, pedidoCategoria])
         .then(function(productos, categorias){
-            res.render ("edicionProducto", {productos: productos, categorias: categorias})
+            res.render ("edicionProducto", {productos, categorias})
         })
     },
  
