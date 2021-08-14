@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = 'Producto';
+    const alias = 'productos';
 
     const cols = {
         id: { 
@@ -10,16 +10,15 @@ module.exports = (sequelize, dataTypes) => {
         },
         created_at: {
             type: dataTypes.DATE, 
-            
+            allowNull:false
         },
         updated_at: {
             type: dataTypes.DATE, 
-            
+            allowNull:false
         },
         deleted_at: {
-            type: dataTypes.DATE,
-            defaultValue: true
-            
+            type: dataTypes.DATE, 
+            allowNull:false
         },
         nombre: {
             type: dataTypes.STRING(255),
@@ -27,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         imagen: {
             type: dataTypes.STRING(500), 
-            
+            allowNull:false
         },
         descripcion: {
             type: dataTypes.STRING(255), 
@@ -41,10 +40,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL, 
             allowNull:false
         },
-        stock: {
-            type: dataTypes.INTEGER, 
-            allowNull:false
-        },
     }
     const config = {
         tablename: 'productos',
@@ -52,19 +47,16 @@ module.exports = (sequelize, dataTypes) => {
         camelCase: false
     }
 
-    const Producto = sequelize.define(alias,cols,config);
+    const Producto = sequelize.define(alias,cols,config)
     
-    Producto.associate = function (models) {
-        Producto.belongsTo( models.Categoria, {
-          as: "Categoria",
+    Producto.associate = function (models){
+        Producto.belongsTo( models.categorias, {
+          as: "categorias",
           foreignKey: "categoriaFK"
         });
-        Producto.belongsToMany( models.Cliente, {
-            as: "clientes",
-            through: "pedidos",
-            foreignKey: "productoFK",
-            otherKey: "clienteFK",
-            timestamps: false
+        Producto.hasMany( models.pedidos, {
+            as: "pedidos",
+            foreignKey: "productosFK"
         })
     }
 
