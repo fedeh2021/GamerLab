@@ -30,7 +30,8 @@ module.exports = (sequelize, dataTypes) => {
             allowNull:false
         },
         imagen: {
-            type: dataTypes.STRING(500), 
+            type: dataTypes.STRING(500),
+            
             
         },
         descripcion: {
@@ -65,7 +66,7 @@ module.exports = (sequelize, dataTypes) => {
           foreignKey: "categoria_fk"
         });
         Producto.belongsToMany( models.Cliente, {
-            as: "clientes",
+            as: "Cliente",
             through: "pedidos",
             foreignKey: "producto_fk",
             otherKey: "cliente_fk",

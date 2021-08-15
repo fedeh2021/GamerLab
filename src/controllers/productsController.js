@@ -69,9 +69,9 @@ const productsController = {
 
 /*** CREATE Y STORE ***/
     creacionProducto:(req, res) => {
-        db.Producto.findAll()
-        .then(function(productos){
-            return res.render("creacionProducto", {productos})
+        db.categorias.findAll()
+        .then(function(categorias){
+            return res.render("creacionProducto", {categorias})
         } )
     },
 
@@ -92,10 +92,10 @@ const productsController = {
 /*** EDIT Y UPDATE DE UN PRODUCTO***/
     edicionProducto:(req, res) => {
         let pedidoProducto = db.Producto.findByPk(req.params.id);
-        let pedidoCategoria = db.categorias.findAll()
+        let pedidoCategorias = db.categorias.findAll();
 
-        Promise.all([pedidoProducto, pedidoCategoria])
-        .then(function(productos, categorias){
+        Promise.all([pedidoProducto, pedidoCategorias])
+        .then(function([productos, categorias]){
             res.render ("edicionProducto", {productos, categorias})
         })
     },
@@ -113,7 +113,7 @@ const productsController = {
             id:req.params.id
             }}
         )
-        res.redirect('/productos' + req.params.id);  
+        res.redirect('/products/detail/' + req.params.id);  
     },
 
 

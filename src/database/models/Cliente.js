@@ -78,7 +78,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "productos",
             through: "pedidos",
             foreignKey: "cliente_fk",
-            otherKey: "cliente_fk",
+            otherKey: "producto_fk",
             timestamps: false
         })
     }

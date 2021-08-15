@@ -22,8 +22,8 @@
         
             <div class="control-formulario">
                 <label>Nombre de Usuario:</label>
-                <input type="text" name="name" class="usuario <%= locals.errors && errors.nombre? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.name : null %>" placeholder="Nombre de usuario">
-                <% if (locals.errors && errors.nombre) { %>
+                <input id="name" type="text" name="name" class="usuario <%= locals.errors && errors.name ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.name : null %>" placeholder="Nombre de usuario">
+                <% if (locals.errors && errors.name) { %>
                     <div class="text-danger">
                     <%= errors.name.msg %>
                     </div>
@@ -42,7 +42,7 @@
 
             <div class="control-formulario">
                 <label>Dirección de email:</label>
-                <input type="email" name="email" class="usuario <%= locals.errors && errors.email ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.email : null %>" placeholder="email">
+                <input id="email" type="email" name="email" class="usuario <%= locals.errors && errors.email ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.email : null %>" placeholder="email">
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger">
                     <%= errors.email.msg %>
