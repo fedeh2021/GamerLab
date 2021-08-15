@@ -53,23 +53,26 @@
     <div class="formulario-producto">
         <label for="categoria">Categoría del producto: </label>
         
+        <!--
             <select id="categoria" name="category" class="formulario-text">
-                <% for (let i = 0; i <= categorias[i].length; i++) { %>
-                    <% if (categorias[i].id == productos.categoria_fk) { %>
-                <option value="<%=categorias[i].id%>" selected>
-                    <%=categoria[i].name%>
+                <% for (producto of productos) { %>
+                    <% if (categoria.id == productos.categoria_fk) { %>
+                <option value="<%=categoria.id%>" selected>
+                    <%=categoria.nombre%>
                 </option>
                 <% } else %>
-                <option value="<%=categoria[i].id%>">
-                    <%=categoria[i].name%>
+                <option value="<%=categoria.id%>">
+                    <%=categoria.nombre%>
                 </option>
                 <% } %>
-                <option value="<%=productos.category%>">Teclados y mouses</option>
-                <option value="audio">Audio</option>
-                <option value="placa">Placa de video</option>
-                <option value="<%=productos.category%>">Armá tu PC</option>
-                <option value="<%=productos.category%>">Sillas y escritorios</option>
+                <option value="<%=productos.categoria_fk%>">Teclados y mouses</option>
+                <option value="<%=productos.categoria_fk%>">Audio</option>
+                <option value="<%=productos.categoria_fk%>">Placa de video</option>
+                <option value="<%=productos.categoria_fk%>">Armá tu PC</option>
+                <option value="<%=productos.categoria_fk%>">Sillas y escritorios</option>
             </select>
+        -->
+            
     </div>
 
     <button type="submit" class="formulario-boton">Modificar producto</button>

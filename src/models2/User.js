@@ -15,7 +15,6 @@ generateId: function () {
 	return 1;
 },
 
-
 findAll: function () {
 	return this.getData()
 },

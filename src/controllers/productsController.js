@@ -4,7 +4,7 @@ const path = require('path');
 
 
 // ************ Require DATABASE ************
-const db =require ("../database/models")
+const db = require ("../database/models")
 
 
 // ************ otros Require's ************
@@ -79,11 +79,11 @@ const productsController = {
         db.Producto.create({
             nombre: req.body.name,
             imagen: req.body.image,
-            descripcion:req.body.description,
+            descripcion: req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
             stock: req.body.stock,
-            categoriaFK: req.body.category,
+            categoria_fk: req.body.category,
         })
         res.redirect('/');    
     },
@@ -95,8 +95,8 @@ const productsController = {
         let pedidoCategoria = db.Categoria.findAll();
 
         Promise.all([pedidoProducto, pedidoCategoria])
-        .then(function(productos, categorias){
-            res.render ("edicionProducto", {productos, categorias})
+        .then(function(productos, categoria){
+            res.render ("edicionProducto", {productos, categoria})
         })
     },
  
