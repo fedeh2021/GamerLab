@@ -107,7 +107,7 @@ const productsController = {
             descripcion:req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
-            categoriaFK: req.body.category,
+            categoria_fk: req.body.category,
 
         }, {where:{
             id:req.params.id
