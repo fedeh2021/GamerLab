@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = 'Categoria';
+    const alias = 'categorias';
  
     const cols = {
         id: { 
@@ -28,7 +28,6 @@ module.exports = (sequelize, dataTypes) => {
       tablename: 'categorias',
       timestamps: false,
       underscored: true,
-
       camelCase: false
     }
 

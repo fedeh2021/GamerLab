@@ -20,20 +20,20 @@
     <div class="prod-box" data-id="<%=productos.id%>">
         <div class="prod-img-container">
             <div class="prod-big-img">
-                <img src="/img/<%=productos.image%>">
+                <img src="/img/<%=productos.imagen%>">
             </div>
             <div class="prod-small-img">
-                <img src="/img/<%=productos.image%>">
-                <img src="/img/<%=productos.image%>">
-                <img src="/img/<%=productos.image%>">
+                <img src="/img/<%=productos.imagen%>">
+                <img src="/img/<%=productos.imagen%>">
+                <img src="/img/<%=productos.imagen%>">
             </div> 
         </div>
-        <div class="prod-description"><%=productos.description%></div> 
+        <div class="prod-description"><%=productos.descripcion%></div> 
         <div class="prod-content">
-            <p><%=productos.category%></p>
-            <h3 class="prod-title"><%=productos.name%></h3>
-            <div class="prod-discount"><%=productos.discount%>% OFF</div>
-            <div class="prod-price">$<%=productos.price%></div>
+            <p><%=productos.categorias.nombre%></p>
+            <h3 class="prod-title"><%=productos.nombre%></h3>
+            <div class="prod-discount"><%=productos.descuento%>% OFF</div>
+            <div class="prod-price">$<%=productos.precio_lista%></div>
             <form action="">
                 <div class="prod-options">
                     <span>Elegí el color:</span>

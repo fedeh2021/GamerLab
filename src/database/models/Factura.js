@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
     Factura.associate = function (models){
 
         Factura.hasMany(models.Pedido, {
-           as: "Pedido",
+           as: "pedidos",
            foreignKey: "factura_fk"
         });
     }
