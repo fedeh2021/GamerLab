@@ -22,8 +22,8 @@
         
             <div class="control-formulario">
                 <label>Nombre de Usuario:</label>
-                <input type="text" name="name" class="usuario <%= locals.errors && errors.name ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.name : null %>" placeholder="Nombre de usuario">
-                <% if (locals.errors && errors.name) { %>
+                <input type="text" name="name" class="usuario <%= locals.errors && errors.nombre? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.name : null %>" placeholder="Nombre de usuario">
+                <% if (locals.errors && errors.nombre) { %>
                     <div class="text-danger">
                     <%= errors.name.msg %>
                     </div>
@@ -32,8 +32,8 @@
 
             <div class="control-formulario">
                 <label>Cumpleaños:</label>
-                <input type="date" name="birthdate" class="usuario <%= locals.errors && errors.birthdate ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.birthdate : null %>">
-                <% if (locals.errors && errors.birthdate) { %>
+                <input type="date" name="birthdate" class="usuario <%= locals.errors && errors.fecha_nacimiento ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.birthdate : null %>">
+                <% if (locals.errors && errors.fecha_nacimiento) { %>
                     <div class="text-danger">
                     <%= errors.birthdate.msg %>
                     </div>
@@ -52,8 +52,8 @@
 
             <div class="control-formulario">
                 <label>Contraseña:</label>
-                <input type="password" name="password" class="usuario <%= locals.errors && errors.password ? 'is-invalid' : null %>" placeholder="Contraseña">
-                <% if (locals.errors && errors.password) { %>
+                <input type="password" name="password" class="usuario <%= locals.errors && errors.contrasena ? 'is-invalid' : null %>" placeholder="Contraseña">
+                <% if (locals.errors && errors.contrasena) { %>
                     <div class="text-danger">
                     <%= errors.password.msg %>
                     </div>
@@ -63,7 +63,7 @@
             <div class="control-formulario">
                 <label>Imagen de perfil:</label>
                 <input type="file" name="avatar" class="usuario" id="foto-producto">
-                <% if (locals.errors && errors.avatar) { %>
+                <% if (locals.errors && errors.imagen) { %>
                     <div class="text-danger">
                     <%= errors.avatar.msg %>
                     </div>

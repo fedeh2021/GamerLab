@@ -134,5 +134,13 @@
   "email": "ejemplo@ejemplo.com",
   "password": "$2a$10$FKaTn2WE/SABikhGQZ.zgejDFLXHLZANDpATwfvs9/fyBA2mwo84.",
   "avatar": "1628983446564.jpg"
+ },
+ {
+  "id": 18,
+  "name": "miguel",
+  "birthdate": "2001-10-20",
+  "email": "ejemplo@ej.com",
+  "password": "$2a$10$KDG8l1n7eNFo72pKk09/o.1bBhoQDZmgz9c.VTSUeMBgQMIwCnrT2",
+  "avatar": "1629049760329.jpg"
  }
 ]

@@ -5,7 +5,7 @@ const path = require('path');
 
 // ************ Require DATABASE ************
 const db = require("../database/models")
-const User = require('../models2/User')
+//const User = require('../models2/User')
 
 
 // ************ otros Require's ************
@@ -28,7 +28,10 @@ const usersController = {
     },
 
     checkLogin: (req, res)=> {
-        let userToLogin = User.findByField('email', req.body.email);
+        let userToLogin =   db.Cliente.findOne({
+                                where: {email: req.body.email}
+                            }) 
+
         if (userToLogin) {
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
             if (isOkThePassword) {
@@ -66,8 +69,12 @@ const usersController = {
                 oldData: req.body
             });
         }
-        let userInDb = User.findByField('email', req.body.email);
-        if (userInDb) {
+        let userInDb =  db.Cliente.findOne({
+                            where: {email: req.body.email}
+                        })
+        console.log(userInDb)
+
+        if (userInDb != null) {
             return res.render('registro', {
                 errors: {
                     email: {
@@ -81,10 +88,11 @@ const usersController = {
             password: bcryptjs.hashSync(req.body.password, 10),
             avatar: req.file.filename
         }
-        let userCreated = User.create(userToCreate);
+        let userCreated = db.Cliente.create(userToCreate);
         return res.redirect('./login')
     },
-    
+
+
 /*** PERFIL ***/
     perfil: (req, res) => {
         return res.render("perfil", { user: req.session.userLogged }) 

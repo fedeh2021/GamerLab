@@ -1,3 +1,5 @@
+/*
+
 const fs = require('fs');
 
 const User = {
@@ -28,6 +30,8 @@ findByField: function (field, text) {
 	let userFound = allUsers.find(oneUser => oneUser[field] === text);
 	return userFound;
 },
+
+
 
 create: function (userData) {
 	let allUsers = this.findAll();

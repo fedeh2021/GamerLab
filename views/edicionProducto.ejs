@@ -53,16 +53,15 @@
     <div class="formulario-producto">
         <label for="categoria">Categoría del producto: </label>
         
-        <!--
             <select id="categoria" name="category" class="formulario-text">
-                <% for (producto of productos) { %>
-                    <% if (categoria.id == productos.categoria_fk) { %>
-                <option value="<%=categoria.id%>" selected>
-                    <%=categoria.nombre%>
+                <% for (categoria of categorias) { %>
+                    <% if (categorias.id == productos.categoria_fk) { %>
+                <option value="<%=categorias.id%>" selected>
+                    <%=categorias.nombre%>
                 </option>
                 <% } else %>
-                <option value="<%=categoria.id%>">
-                    <%=categoria.nombre%>
+                <option value="<%=categorias.id%>">
+                    <%=categorias.nombre%>
                 </option>
                 <% } %>
                 <option value="<%=productos.categoria_fk%>">Teclados y mouses</option>
@@ -71,7 +70,7 @@
                 <option value="<%=productos.categoria_fk%>">Armá tu PC</option>
                 <option value="<%=productos.categoria_fk%>">Sillas y escritorios</option>
             </select>
-        -->
+
             
     </div>
 
