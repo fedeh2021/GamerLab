@@ -92,11 +92,11 @@ const productsController = {
 /*** EDIT Y UPDATE DE UN PRODUCTO***/
     edicionProducto:(req, res) => {
         let pedidoProducto = db.Producto.findByPk(req.params.id);
-        let pedidoCategoria = db.Categoria.findAll();
+        let pedidoCategoria = db.categorias.findAll();
 
         Promise.all([pedidoProducto, pedidoCategoria])
-        .then(function(productos, categoria){
-            res.render ("edicionProducto", {productos, categoria})
+        .then(function(productos, categorias){
+            res.render ("edicionProducto", {productos: productos, categorias: categorias})
         })
     },
  

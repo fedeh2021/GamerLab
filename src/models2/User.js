@@ -1,12 +1,12 @@
 const fs = require('fs');
+const db = "./src/database/models"
 
 const User = {
-	fileName: './src/data/usersData.json',
-
+	fileName: './src/data/usersData.json', 						// lo eliminaria
 getData: function () {
-	return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+	return JSON.parse(fs.readFileSync(this.fileName, 'utf-8')); // lo eliminaria
 },
-generateId: function () {
+generateId: function () {										// quedaria igual
 	let allUsers = this.findAll();
 	let lastUser = allUsers.pop();
 	if (lastUser) {
@@ -15,7 +15,7 @@ generateId: function () {
 	return 1;
 },
 
-findAll: function () {
+findAll: function () {											//return db.Cliente.findAll()
 	return this.getData()
 },
 findByPk: function (id) {
@@ -29,7 +29,7 @@ findByField: function (field, text) {
 	return userFound;
 },
 
-create: function (userData) {
+create: function (userData) {										// no me cierra
 	let allUsers = this.findAll();
 	let newUser = {
 		id: this.generateId(),
@@ -47,5 +47,5 @@ delete: function (id) {
 	return true;
 }
 }
- 
-module.exports = User;
+
+module.exports = User; 

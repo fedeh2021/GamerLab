@@ -24,7 +24,10 @@ const usersController = {
 
 /*** USER LOGIN ***/
     login: (req, res)=> {
-        return res.render("login")
+        db.Cliente.findAll()
+        .then(function(clientes) {
+            res.render ("login", {clientes})
+        })
     },
 
     checkLogin: (req, res)=> {
@@ -55,8 +58,11 @@ const usersController = {
 
 /*** REGISTRO ***/
     registro: (req, res) => {
-            return res.render("registro")
-        },
+        db.Cliente.findAll()
+        .then(function(clientes) {
+            res.render ("registro", {clientes})
+        })
+    },
 
     checkRegistro: (req, res) => {
         const resultValidation = validationResult(req);
