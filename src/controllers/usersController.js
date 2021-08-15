@@ -72,24 +72,46 @@ const usersController = {
         let userInDb =  db.Cliente.findOne({
                             where: {email: req.body.email}
                         })
-        console.log(userInDb)
+        .then(res => {
+            if (!res || res.length === 0) {
 
-        if (userInDb != null) {
+                db.Cliente.create({
+                    nombre: req.body.name,
+                    apellido: req.body.apellido,
+                    email: req.body.email,
+                    contrasena: bcryptjs.hashSync(req.body.password, 10),
+                    rol: 0,
+                    dni: req.body.dni,
+                    fecha_nacimiento: req.body.fecha_nacimiento,
+                    telefono: req.body.telefono,
+                    imagen: req.body.image,
+                    created_at: req.body.datetime,
+                    created_at: req.body.datetime,
+                    created_at: req.body.datetime,
+                })
+
+                res.redirect('./login')
+
+                /*
+                let userToCreate = {
+                    ...req.body,
+                    password: bcryptjs.hashSync(req.body.password, 10),
+                    avatar: req.file.filename
+                }
+
+                let userCreated = db.Cliente.create(userToCreate);
+                */
+
+
+            } else {
             return res.render('registro', {
                 errors: {
                     email: {
                     msg: 'Este email ya esta registrado'
                 }},
                 oldData: req.body
-            });
-        }
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.file.filename
-        }
-        let userCreated = db.Cliente.create(userToCreate);
-        return res.redirect('./login')
+            })}
+        })
     },
 
 
