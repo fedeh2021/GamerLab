@@ -21,28 +21,28 @@
         <div class="usuariologo"><i class="far fa-user-circle"></i></div>
         
             <div class="control-formulario">
-                <label>Nombre de Usuario:</label>
-                <input type="text" name="name" class="usuario <%= locals.errors && errors.name ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.name : null %>" placeholder="Nombre de usuario">
-                <% if (locals.errors && errors.name) { %>
+                <label>Nombre:</label>
+                <input type="text" name="nombre" class="usuario <%= locals.errors && errors.nombre? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.nombre : null %>" placeholder="Nombre">
+                <% if (locals.errors && errors.nombre) { %>
                     <div class="text-danger">
-                    <%= errors.name.msg %>
+                    <%= errors.nombre.msg %>
                     </div>
                 <% } %>
             </div>
 
             <div class="control-formulario">
-                <label>Cumpleaños:</label>
-                <input type="date" name="birthdate" class="usuario <%= locals.errors && errors.birthdate ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.birthdate : null %>">
-                <% if (locals.errors && errors.birthdate) { %>
+                <label>Apellido:</label>
+                <input type="text" name="apellido" class="usuario <%= locals.errors && errors.apellido? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.apellido : null %>" placeholder="Apelllido">
+                <% if (locals.errors && errors.apellido) { %>
                     <div class="text-danger">
-                    <%= errors.birthdate.msg %>
+                    <%= errors.apellido.msg %>
                     </div>
                 <% } %>
             </div>
 
             <div class="control-formulario">
                 <label>Dirección de email:</label>
-                <input type="email" name="email" class="usuario <%= locals.errors && errors.email ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.email : null %>" placeholder="email">
+                <input id="email" type="email" name="email" class="usuario <%= locals.errors && errors.email ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.email : null %>" placeholder="email">
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger">
                     <%= errors.email.msg %>
@@ -52,8 +52,8 @@
 
             <div class="control-formulario">
                 <label>Contraseña:</label>
-                <input type="password" name="password" class="usuario <%= locals.errors && errors.password ? 'is-invalid' : null %>" placeholder="Contraseña">
-                <% if (locals.errors && errors.password) { %>
+                <input type="password" name="password" class="usuario <%= locals.errors && errors.contrasena ? 'is-invalid' : null %>" placeholder="Contraseña">
+                <% if (locals.errors && errors.contrasena) { %>
                     <div class="text-danger">
                     <%= errors.password.msg %>
                     </div>
@@ -61,11 +61,41 @@
             </div>
 
             <div class="control-formulario">
-                <label>Imagen de perfil:</label>
-                <input type="file" name="avatar" class="usuario" id="foto-producto">
-                <% if (locals.errors && errors.avatar) { %>
+                <label>DNI:</label>
+                <input type="text" name="dni" class="usuario <%= locals.errors && errors.dni? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.dni : null %>" placeholder="Documento Nacional de identidad">
+                <% if (locals.errors && errors.apellido) { %>
                     <div class="text-danger">
-                    <%= errors.avatar.msg %>
+                    <%= errors.dni.msg %>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="control-formulario">
+                <label>Cumpleaños:</label>
+                <input type="date" name="fecha_nacimiento" class="usuario <%= locals.errors && errors.fecha_nacimiento ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.birthdate : null %>">
+                <% if (locals.errors && errors.fecha_nacimiento) { %>
+                    <div class="text-danger">
+                    <%= errors.fecha_nacimiento.msg %>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="control-formulario">
+                <label>Telefono:</label>
+                <input type="text" name="telefono" class="usuario <%= locals.errors && errors.telefono? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.telefono : null %>" placeholder="Numero de telefono">
+                <% if (locals.errors && errors.telefono) { %>
+                    <div class="text-danger">
+                    <%= errors.telefono.msg %>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="control-formulario">
+                <label>Imagen de perfil:</label>
+                <input type="file" name="imagen" class="usuario" id="foto-producto">
+                <% if (locals.errors && errors.imagen) { %>
+                    <div class="text-danger">
+                    <%= errors.imagen.msg %>
                     </div>
                 <% } %>
             </div>

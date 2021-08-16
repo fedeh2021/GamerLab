@@ -1,3 +1,5 @@
+/*
+
 const fs = require('fs');
 const db = "./src/database/models"
 
@@ -29,7 +31,9 @@ findByField: function (field, text) {
 	return userFound;
 },
 
-create: function (userData) {										// no me cierra
+
+
+create: function (userData) {
 	let allUsers = this.findAll();
 	let newUser = {
 		id: this.generateId(),
@@ -47,5 +51,7 @@ delete: function (id) {
 	return true;
 }
 }
+ 
+module.exports = User
 
-module.exports = User; 
+*/

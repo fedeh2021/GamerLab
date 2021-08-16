@@ -53,12 +53,12 @@
     <div class="formulario-producto">
         <label for="categoria">Categoría del producto:</label>
             <select id="categoria" name="category" class="formulario-text">
-                <option value="notebooks">Notebooks</option>
-                <option value="monitores">Monitores</option>
-                <option value="accesorios">Teclados y mouses</option>
-                <option value="audio">Audio</option>
-                <option value="placa">Placa de video</option>
-                <option value="muebleria">Sillas y escritorios</option>
+                <% for (let i=0; i < categorias.length ; i++) { %>
+                    <option value="<%=categorias[i].id%>">
+                    <%=categorias[i].nombre%>
+                    </option>
+                <% } %>
+                
             </select>
     </div>
 

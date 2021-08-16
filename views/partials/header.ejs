@@ -24,9 +24,9 @@
         <div class="barra-derecha">
 
             <div class="searchbar">
-                <form action="/search" method="GET" class="search-form">
-                    <input type="text" class="barra-buscadora" placeholder="Busca productos">
-                    <button class="search-button" type="submit">
+                <form class="search-form">
+                    <input type="text" id ="formulario" class="barra-buscadora" placeholder="Busca productos">
+                    <button class="search-button" id = "boton" type="submit">
                         <i class="fas fa-search fa-2x"></i>
                     </button> 
                 </form>
@@ -94,4 +94,27 @@
     </div>
 
 
+
+    <!--BARRA BUSCADORA-->
+
+<script>
+    const db = require ("../database/models")
+    const productos = db.Producto
+    const formulario = document.querySelector("#formulario")
+    const boton = document.querySelector("#boton")
+    const resultados = req.body.
+
+    const filtrar =  () => {
+       // console.log(formulario.value);
+       const texto = formulario.value.toLowerCase();
+       for (let producto of productos){
+           let nombre = producto.nombre.toLowerCase();
+           if(nombre.indexOf(texto) !== -1){
+
+           }
+       }
+    }
+
+    boton.addEventListener("click", filtrar)
+</script>
 </header>

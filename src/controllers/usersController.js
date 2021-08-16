@@ -5,7 +5,7 @@ const path = require('path');
 
 // ************ Require DATABASE ************
 const db = require("../database/models")
-const User = require('../models2/User')
+//const User = require('../models2/User')
 
 
 // ************ otros Require's ************
@@ -31,7 +31,10 @@ const usersController = {
     },
 
     checkLogin: (req, res)=> {
-        let userToLogin = User.findByField('email', req.body.email);
+        let userToLogin =   db.Cliente.findOne({
+                                where: {email: req.body.email}
+                            }) 
+
         if (userToLogin) {
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
             if (isOkThePassword) {
@@ -72,25 +75,52 @@ const usersController = {
                 oldData: req.body
             });
         }
-        let userInDb = User.findByField('email', req.body.email);
-        if (userInDb) {
+        let userInDb =  db.Cliente.findOne({
+                            where: {email: req.body.email}
+                        })
+        .then(res => {
+            if (!res || res.length === 0) {
+
+                db.Cliente.create({
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    email: req.body.email,
+                    contrasena: bcryptjs.hashSync(req.body.password, 10),
+                    rol: 0,
+                    dni: req.body.dni,
+                    fecha_nacimiento: req.body.fecha_nacimiento,
+                    telefono: req.body.telefono,
+                    imagen: 'imagen',
+                    created_at: Date.now(),
+                    updated_at: Date.now(),
+                    deleted_at: Date.now(),
+                })
+
+                res.redirect('./login')
+
+                /*
+                let userToCreate = {
+                    ...req.body,
+                    password: bcryptjs.hashSync(req.body.password, 10),
+                    avatar: req.file.filename
+                }
+
+                let userCreated = db.Cliente.create(userToCreate);
+                */
+
+
+            } else {
             return res.render('registro', {
                 errors: {
                     email: {
                     msg: 'Este email ya esta registrado'
                 }},
                 oldData: req.body
-            });
-        }
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.file.filename
-        }
-        let userCreated = User.create(userToCreate);
-        return res.redirect('./login')
+            })}
+        })
     },
-    
+
+
 /*** PERFIL ***/
     perfil: (req, res) => {
         return res.render("perfil", { user: req.session.userLogged }) 

@@ -54,23 +54,18 @@
         <label for="categoria">Categoría del producto: </label>
         
             <select id="categoria" name="category" class="formulario-text">
-                <% for (producto of productos) { %>
-                    <% if (categorias.id == productos.categoria_fk) { %>
-                <option value="<%=categoria.id%>" selected>
-                    <%=categorias.nombre%>
+                <% for (let i = 0; i < categorias.length; i++) { %>
+                    <% if (categorias[i].id == productos.categoria_fk) { %>
+                <option value="<%=categorias[i].id%>" selected>
+                    <%=categorias[i].nombre%>
                 </option>
                 <% } else %>
-                <option value="<%=categoria.id%>">
-                    <%=categorias.nombre%>
+                <option value="<%=categorias[i].id%>">
+                    <%=categorias[i].nombre%>
                 </option>
                 <% } %>
-                <option value="<%=productos.categoria_fk%>">Teclados y mouses</option>
-                <option value="<%=productos.categoria_fk%>">Audio</option>
-                <option value="<%=productos.categoria_fk%>">Placa de video</option>
-                <option value="<%=productos.categoria_fk%>">Armá tu PC</option>
-                <option value="<%=productos.categoria_fk%>">Sillas y escritorios</option>
+                
             </select>
-        --
             
     </div>
 
