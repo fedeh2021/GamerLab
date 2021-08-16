@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         envio_fk: {
             type: dataTypes.INTEGER,
-            allowNull:false
+            allowNull: true
         },
         nombre: {
             type: dataTypes.STRING,

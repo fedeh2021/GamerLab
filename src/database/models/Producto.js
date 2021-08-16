@@ -50,6 +50,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER, 
             allowNull:false
         },
+        deleteable: {
+            type: dataTypes.BOOLEAN, 
+            allowNull:false
+        }
     }
     const config = {
         tablename: 'productos',
