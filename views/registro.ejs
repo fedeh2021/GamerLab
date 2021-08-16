@@ -52,7 +52,7 @@
 
             <div class="control-formulario">
                 <label>Contraseña:</label>
-                <input type="password" name="password" class="usuario <%= locals.errors && errors.contrasena ? 'is-invalid' : null %>" placeholder="Contraseña">
+                <input type="password" name="contrasena" class="usuario <%= locals.errors && errors.contrasena ? 'is-invalid' : null %>" placeholder="Contraseña">
                 <% if (locals.errors && errors.contrasena) { %>
                     <div class="text-danger">
                     <%= errors.password.msg %>
@@ -63,7 +63,7 @@
             <div class="control-formulario">
                 <label>DNI:</label>
                 <input type="text" name="dni" class="usuario <%= locals.errors && errors.dni? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.dni : null %>" placeholder="Documento Nacional de identidad">
-                <% if (locals.errors && errors.apellido) { %>
+                <% if (locals.errors && errors.dni) { %>
                     <div class="text-danger">
                     <%= errors.dni.msg %>
                     </div>

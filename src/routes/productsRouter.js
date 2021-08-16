@@ -11,20 +11,7 @@ const productsController = require("../controllers/productsController");
 
 
 // ************ Middlewares ************
-//const categoriaMiddlewarre = require ("../middlewares/categoriaMiddleware");
-
-
-// ************ Multer ************
-const multerDS = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, path.join(__dirname, '../../public/img'));
-    },
-    filename: function(req, file, cb){
-        let nameImage = Date.now() + path.extname(file.originalname);
-        cb(null, nameImage);
-    }
-});
-const uploadFile = multer({ storage: multerDS });
+const uploadFile = require ("../middlewares/imageMiddleware");
 
 
 // ************ Views ************

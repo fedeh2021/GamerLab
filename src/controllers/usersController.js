@@ -12,6 +12,7 @@ const db = require("../database/models")
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const storage = require("../middlewares/multerMiddleware")
 
 // JSON (borrar cuando esté lista la BDD)
 //const usersFilePath = path.join(__dirname, '../data/usersData.json');
@@ -76,6 +77,7 @@ const usersController = {
             if (!res || res.length === 0) {
 
                 db.Cliente.create({
+                    envio_fk: null,
                     nombre: req.body.nombre,
                     apellido: req.body.apellido,
                     email: req.body.email,
@@ -84,13 +86,13 @@ const usersController = {
                     dni: req.body.dni,
                     fecha_nacimiento: req.body.fecha_nacimiento,
                     telefono: req.body.telefono,
-                    imagen: 'imagen',
+                    imagen: storage.filename.fileName,
                     created_at: Date.now(),
                     updated_at: Date.now(),
                     deleted_at: Date.now(),
                 })
 
-                res.redirect('./login')
+                res.redirect('/login')
 
                 /*
                 let userToCreate = {

@@ -5,6 +5,7 @@ const path = require('path');
 
 // ************ Require DATABASE ************
 const db = require ("../database/models")
+const uploadFile = require ("../middlewares/imageMiddleware");
 
 
 // ************ otros Require's ************
@@ -77,13 +78,17 @@ const productsController = {
 
     checkCreacionProducto:(req, res) => {
         db.Producto.create({
+            categoria_fk: req.body.category,
             nombre: req.body.name,
-            imagen: req.body.image,
+            imagen: uploadFile.multerDS.nombre,
             descripcion: req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
             stock: req.body.stock,
-            categoria_fk: req.body.category,
+            deleteable: 1,
+            created_at: Date.now(),
+            updated_at: Date.now(),
+            deleted_at: Date.now(),
         })
         res.redirect('/');    
     },
@@ -119,11 +124,12 @@ const productsController = {
 
 /*** BORRAR UN PRODUCTO ***/
     delete:(req, res) => {
-        db.Producto.destroy({
-            where: {
-                id: req.params.id
-            }
-        })
+        db.Producto.update({
+            deleteable: 0
+        }, {where:{
+            id:req.params.id
+            }}
+        )
         
         res.redirect("/");
 
