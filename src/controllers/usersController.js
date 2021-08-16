@@ -76,7 +76,7 @@ const usersController = {
             if (!res || res.length === 0) {
 
                 db.Cliente.create({
-                    nombre: req.body.name,
+                    nombre: req.body.nombre,
                     apellido: req.body.apellido,
                     email: req.body.email,
                     contrasena: bcryptjs.hashSync(req.body.password, 10),
@@ -84,10 +84,10 @@ const usersController = {
                     dni: req.body.dni,
                     fecha_nacimiento: req.body.fecha_nacimiento,
                     telefono: req.body.telefono,
-                    imagen: req.body.image,
-                    created_at: req.body.datetime,
-                    created_at: req.body.datetime,
-                    created_at: req.body.datetime,
+                    imagen: 'imagen',
+                    created_at: Date.now(),
+                    updated_at: Date.now(),
+                    deleted_at: Date.now(),
                 })
 
                 res.redirect('./login')

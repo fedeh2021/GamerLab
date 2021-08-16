@@ -52,4 +52,6 @@ delete: function (id) {
 }
 }
  
-module.exports = User;
+module.exports = User
+
+*/

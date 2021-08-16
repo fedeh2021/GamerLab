@@ -49,7 +49,7 @@ router.post('/login', usersController.checkLogin);
 
 /*** REGISTRAR UN NUEVO USUARIO ***/
 router.get('/register', guestMiddleware ,usersController.registro);
-router.post('/register', uploadFile.single('avatar'), validations, usersController.checkRegistro);
+router.post('/register', uploadFile.single('imagen'), validations, usersController.checkRegistro);
 
 /*** VER TU INFORMACION Y EDITAR ***/ 
 router.get('/profile/', authMiddleware ,usersController.perfil);
