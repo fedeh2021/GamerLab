@@ -73,6 +73,7 @@ const usersController = {
         let userInDb =  db.Cliente.findOne({
                             where: {email: req.body.email}
                         })
+
         .then(res => {
             if (!res || res.length === 0) {
 
@@ -86,13 +87,13 @@ const usersController = {
                     dni: req.body.dni,
                     fecha_nacimiento: req.body.fecha_nacimiento,
                     telefono: req.body.telefono,
-                    imagen: storage.filename.fileName,
+                    imagen: req.file.filename,
                     created_at: Date.now(),
                     updated_at: Date.now(),
                     deleted_at: Date.now(),
                 })
 
-                res.redirect('/login')
+                res.redirect('/')
 
                 /*
                 let userToCreate = {
