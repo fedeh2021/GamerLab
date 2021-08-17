@@ -31,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         imagen: {
             type: dataTypes.STRING(500),
-            
+            allowNull: false
             
         },
         descripcion: {
@@ -50,6 +50,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER, 
             allowNull:false
         },
+        deleteable: {
+            type: dataTypes.BOOLEAN, 
+            allowNull:false
+        }
     }
     const config = {
         tablename: 'productos',
