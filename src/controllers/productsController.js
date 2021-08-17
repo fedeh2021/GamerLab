@@ -127,7 +127,7 @@ const productsController = {
 /*** BORRAR UN PRODUCTO ***/
     delete:(req, res) => {
         db.Producto.update({
-            deleteable: 1
+            deleteable: 0
         }, {where:{
             id:req.params.id
             }}

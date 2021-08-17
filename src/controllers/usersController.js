@@ -84,35 +84,24 @@ const usersController = {
             if (!res || res.length === 0) {
 
                 db.Cliente.create({
-                    envio_fk: null,
                     nombre: req.body.nombre,
                     apellido: req.body.apellido,
                     email: req.body.email,
-                    contrasena: bcryptjs.hashSync(req.body.password, 10),
+                    contrasena: bcryptjs.hashSync(req.body.contrasena, 10),
                     rol: 0,
                     dni: req.body.dni,
                     fecha_nacimiento: req.body.fecha_nacimiento,
                     telefono: req.body.telefono,
                     imagen: req.file.filename,
+                    envio_fk: null,
                     created_at: Date.now(),
                     updated_at: Date.now(),
                     deleted_at: Date.now(),
                 })
+                res.redirect('login'); // aca trae un error, pero guarda en la db el registro
 
-                res.redirect('/')
-
-                /*
-                let userToCreate = {
-                    ...req.body,
-                    password: bcryptjs.hashSync(req.body.password, 10),
-                    avatar: req.file.filename
-                }
-
-                let userCreated = db.Cliente.create(userToCreate);
-                */
-
-
-            } else {
+            }
+            else {
             return res.render('registro', {
                 errors: {
                     email: {
