@@ -80,7 +80,7 @@ const productsController = {
         db.Producto.create({
             categoria_fk: req.body.category,
             nombre: req.body.name,
-            imagen: req.file.filename,
+            imagen: uploadFile.multerDS.nombre,
             descripcion: req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
@@ -145,22 +145,6 @@ const productsController = {
         })
     }
 
-    /* delete:(req, res) => {
-        let productoId = req.params.id;	
-		for(let i=0; i < products.length; i++){
-			if (products[i].id == productoId){
-				var nombreImagen = products[i].image;
-				products.splice(i,1);
-				break;
-			}
-		}
-		
-	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-		fs.unlinkSync(path.join(__dirname,'../../public/img/'+nombreImagen));
-        
-		res.redirect("/");
-
-		} */
 };
 
 

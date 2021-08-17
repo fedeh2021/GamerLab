@@ -31,3 +31,8 @@ En este sprint hubo menos nervios gracias a nuestra voluntad y la de los profeso
 En este sprint pudimos ver los progresos y aprendizajes que fuimos acumulando, y al juntarnos por llamada antes de comenzar el sprint para ordenar todas las ideas y seguir utilizando audios para irnos comunicando, vimos muy buenos resultados en la complementacion del equipo, producto tambien de ir conociendo como trabajamos en conjunto y colaborando, cuando uno no podia encontrar un error, otro lo revisaba y solucionaba, y asi entre todos fuimos solucionando los pequeños bugs que teniamos en el código. A veces lo que uno revisaba mil veces y no encontraba el error, otro con revisarlo una vez lo podia encontrar.
 
 Tambien nos ayudó organizarnos con mayor anticipación, esto generó que lo resolvieramos con anterioridad y así tuvimos más tiempo para corregir errores del sprint anterior y mejorar otros aspectos del proyecto, como el front, ordenar el css, y mejorar otros detalles, que quizas en otros sprints no tuvimos el tiempo o los conocimientos para lograrlo. Si bien los temas se van complejizando, nos complementamos muy bien para poderlos resolver.
+
+-- SEXTO SPRINT (08/2021)
+
+Este sprint tuvo unos ultimos dias intensos en los cuales, gracias a muchos mensajes en Whatsapp y a varias llamadas de Discord, pudimos resolver todos los inconvenientes que se nos presentaron. Es muy destacable el compañerismo del grupo en ayudar cuando alguien no puede resolver errores y en estar más activos cuando algún miembro no puede conectarse.  
+Entrando en la recta final del proyecto todo es mas complejo y detallista, trabajando en grupo, con buena comunicación y con predisposición hemos podido y vamos a seguir resolviendo todos las trabas que se nos presenten.
