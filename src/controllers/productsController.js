@@ -85,7 +85,7 @@ const productsController = {
             precio_lista: req.body.price,
             descuento: req.body.discount,
             stock: req.body.stock,
-            deleteable: 0,
+            deleteable: 1,
             created_at: Date.now(),
             updated_at: Date.now(),
             deleted_at: Date.now(),
@@ -113,7 +113,7 @@ const productsController = {
             precio_lista: req.body.price,
             descuento: req.body.discount,
             categoria_fk: req.body.category,
-            deleteable: 0,
+            deleteable: 1,
             stock: req.body.stock
 
         }, {where:{
@@ -127,7 +127,7 @@ const productsController = {
 /*** BORRAR UN PRODUCTO ***/
     delete:(req, res) => {
         db.Producto.update({
-            deleteable: 0
+            deleteable: 1
         }, {where:{
             id:req.params.id
             }}
