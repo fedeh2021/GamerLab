@@ -19,9 +19,9 @@ module.exports = {
   },
   "production": {
     "username": "root",
-    "password": "",
-    "database": "gamerlab_db",
-    "host": "mysql-gamerlab.alwaysdata.net",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }
