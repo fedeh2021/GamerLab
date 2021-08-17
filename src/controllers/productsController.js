@@ -80,12 +80,12 @@ const productsController = {
         db.Producto.create({
             categoria_fk: req.body.category,
             nombre: req.body.name,
-            imagen: uploadFile.multerDS.nombre,
+            imagen: req.file.filename,
             descripcion: req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
             stock: req.body.stock,
-            deleteable: 1,
+            deleteable: 0,
             created_at: Date.now(),
             updated_at: Date.now(),
             deleted_at: Date.now(),
@@ -108,11 +108,13 @@ const productsController = {
     checkEdicionProducto:(req, res) => {
         db.Producto.update({
             nombre: req.body.name,
-            imagen: req.body.image,
+            imagen: req.file.filename,
             descripcion:req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
             categoria_fk: req.body.category,
+            deleteable: 0,
+            stock: req.body.stock
 
         }, {where:{
             id:req.params.id

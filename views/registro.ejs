@@ -55,7 +55,7 @@
                 <input type="password" name="contrasena" class="usuario <%= locals.errors && errors.contrasena ? 'is-invalid' : null %>" placeholder="Contraseña">
                 <% if (locals.errors && errors.contrasena) { %>
                     <div class="text-danger">
-                    <%= errors.password.msg %>
+                    <%= errors.contrasena.msg %>
                     </div>
                 <% } %>
             </div>
@@ -81,7 +81,7 @@
             </div>
 
             <div class="control-formulario">
-                <label>Telefono:</label>
+                <label>Teléfono:</label>
                 <input type="text" name="telefono" class="usuario <%= locals.errors && errors.telefono? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.telefono : null %>" placeholder="Numero de telefono">
                 <% if (locals.errors && errors.telefono) { %>
                     <div class="text-danger">
