@@ -18,8 +18,8 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "gamerlab",
-    "password": "gamerlab2021",
+    "username": "root",
+    "password": "",
     "database": "gamerlab_db",
     "host": "mysql-gamerlab.alwaysdata.net",
     "dialect": "mysql"
