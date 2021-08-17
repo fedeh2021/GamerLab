@@ -80,7 +80,7 @@ const productsController = {
         db.Producto.create({
             categoria_fk: req.body.category,
             nombre: req.body.name,
-            imagen: uploadFile.multerDS.nombre,
+            imagen: req.file.filename,
             descripcion: req.body.description,
             precio_lista: req.body.price,
             descuento: req.body.discount,
