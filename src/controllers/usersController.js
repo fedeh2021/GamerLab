@@ -70,18 +70,34 @@ const usersController = {
 
     checkRegistro: (req, res) => {
         const resultValidation = validationResult(req);
+        
         if (resultValidation.errors.length > 0) {
             return res.render('registro', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
         }
+
         let userInDb =  db.Cliente.findOne({
                             where: {email: req.body.email}
                         })
 
         .then(res => {
-            if (!res || res.length === 0) {
+
+            if (userInDb) {
+                
+                res.render('registro', {
+                    errors: {
+                        email: {
+                        msg: 'Este email ya esta registrado'
+                    }},
+                    oldData: req.body
+                })
+                
+             // aca trae un error, pero guarda en la db el registro
+
+            }
+            else {
 
                 db.Cliente.create({
                     nombre: req.body.nombre,
@@ -98,18 +114,13 @@ const usersController = {
                     updated_at: Date.now(),
                     deleted_at: Date.now(),
                 })
-                res.redirect('login'); // aca trae un error, pero guarda en la db el registro
 
+                res.redirect('./login');
             }
-            else {
-            return res.render('registro', {
-                errors: {
-                    email: {
-                    msg: 'Este email ya esta registrado'
-                }},
-                oldData: req.body
-            })}
         })
+
+        .catch(console.log("ERROR"))
+
     },
 
 
