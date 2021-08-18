@@ -84,12 +84,18 @@ FOREIGN KEY (producto_fk) REFERENCES productos(id),
 FOREIGN KEY (factura_fk) REFERENCES facturas(id)
 );
 
-INSERT INTO clientes VALUES(1,null,'Miguel','Apellido','email@email.com','contrasena',1,'43434343','2001-10-17','11221212','avatar.jpg','2021-07-22 16:30:00','2021-07-22 16:30:00','2021-07-22 16:30:00'),(2,2,'Fede','Apellido','email@email.com','contrasena',1,'43434343','2001-10-17','11221212','avatar.jpg','2021-07-22 16:30:00','2021-07-22 16:30:00','2021-07-22 16:30:00'),(3,3,'Facu','Apellido','email@email.com','contrasena',1,'43434343','2001-10-17','12121212','avatar.jpg','2021-07-22 16:30:00','2021-07-22 16:30:00','2021-07-22 16:30:00');
+
 INSERT INTO envios VALUES(1,'Argentina','CABA','barrio','Av. Santa Fe','1234','3A','1111'),(2,'Argentina','CABA','barrio','Av. Callao','1234','2A','2222'),(3,'Argentina','CABA','barrio','Av. Las Heras','1234','7A','4444');
+
+
+INSERT INTO clientes VALUES(1,null,'Miguel','Apellido','email@email.com','contrasena',1,'43434343','2001-10-17','11221212','avatar.jpg','2021-07-22 16:30:00','2021-07-22 16:30:00','2021-07-22 16:30:00'),(2,2,'Fede','Apellido','email@email.com','contrasena',1,'43434343','2001-10-17','11221212','avatar.jpg','2021-07-22 16:30:00','2021-07-22 16:30:00','2021-07-22 16:30:00'),(3,3,'Facu','Apellido','email@email.com','contrasena',1,'43434343','2001-10-17','12121212','avatar.jpg','2021-07-22 16:30:00','2021-07-22 16:30:00','2021-07-22 16:30:00');
+
+
 INSERT INTO facturas VALUES(1,500),(2,3000),(3,9000);
-INSERT INTO pedidos VALUES(1,1,1,1,500,1,'procesando pedido'),(2,2,2,2,3000,2,'procesando pedido'),(3,3,3,3,9000,3,'procesando pedido');
+
 
 INSERT INTO categorias VALUES(1,'Notebooks','descripcion','2021-08-01 00:00:00',null,null),(2,'Monitores','descripcion','2021-08-01 00:00:00',null,null),(3,'Teclados y mouses','descripcion','2021-08-01 00:00:00',null,null),(4,'Audio','descripcion','2021-08-01 00:00:00',null,null),(5,'Placas de video','descripcion','2021-08-01 00:00:00',null,null),(6,'Sillas y escritorios','descripcion','2021-08-01 00:00:00',null,null);
+
 
 INSERT INTO productos VALUES
 (1,3,'Mouse Genérico','mouse2.jpg','El mouse de juego te ofrecerá la posibilidad de marcar la diferencia y sacar ventajas en tus partidas. Su conectividad y sensor suave ayudará a que te desplaces rápido por la pantalla.',11499,20,200,1,'2021-08-01 00:00:00',null,null),
@@ -103,3 +109,5 @@ INSERT INTO productos VALUES
 (9,6,'Silla Gamer Dooku B&R','silla-gamer.jpg','Butaca de ecocuero en color rojo. Soporta hasta 150kg y tiene altura regulable y gira 360º. Totalmente reclinable 180º',35999,10,200,1,'2021-08-01 00:00:00',null,null),
 (10,5,'Kit Completo Gamer','kit-completo.jpg','Kit completo para comenzar la aventura del gaming!',249999,5,200,1,'2021-08-01 00:00:00',null,null);
 
+
+INSERT INTO pedidos VALUES(1,1,1,1,500,1,'procesando pedido'),(2,2,2,2,3000,2,'procesando pedido'),(3,3,3,3,9000,3,'procesando pedido');

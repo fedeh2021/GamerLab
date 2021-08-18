@@ -38,9 +38,9 @@ const usersController = {
                             }) 
 
         if (userToLogin) {
-            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
+            let isOkThePassword = bcryptjs.compareSync(req.body.contrasena, userToLogin.contrasena)
             if (isOkThePassword) {
-                delete userToLogin.password;
+                delete userToLogin.contrasena;
                 req.session.userLogged = userToLogin;
             if (req.body.remember_user){
                 res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
@@ -70,6 +70,7 @@ const usersController = {
     },
 
     checkRegistro: (req, res) => {
+
         const resultValidation = validationResult(req);
         
         if (resultValidation.errors.length > 0) {
@@ -79,14 +80,13 @@ const usersController = {
             });
         }
 
-        let userInDb =  db.Cliente.findAll({
-                            where: {email: req.body.email}
-                        })
 
-      // .then(res => {
-        //               if (!res || res.length ===0 ){
-            if (req.body.email === userInDb) {
-                
+        db.Cliente.count({
+                        where: {email: req.body.email}
+                        })
+            .then(count => {
+                if (count != 0) {
+
                 res.render('registro', {
                     errors: {
                         email: {
@@ -94,10 +94,9 @@ const usersController = {
                     }},
                     oldData: req.body
                 })
-                
-             // aca trae un error, pero guarda en la db el registro
 
-            }else {
+            } else {
+                
              db.Cliente.create({
                     nombre: req.body.nombre,
                     apellido: req.body.apellido,
@@ -113,10 +112,9 @@ const usersController = {
                     updated_at: Date.now(),
                     deleted_at: Date.now(),
                 })
-
                 res.redirect('./login');
             }
-
+        })
     },
 
 
