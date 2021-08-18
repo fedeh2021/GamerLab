@@ -13,6 +13,7 @@ const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const storage = require("../middlewares/multerMiddleware")
+//const userLogged = require('../middlewares/userLoggedMiddleware')
 
 // JSON (borrar cuando esté lista la BDD)
 //const usersFilePath = path.join(__dirname, '../data/usersData.json');
@@ -25,10 +26,10 @@ const usersController = {
 
 /*** USER LOGIN ***/
     login: (req, res)=> {
-        db.Cliente.findAll()
-        .then(function(clientes) {
-            res.render ("login", {clientes})
-        })
+        //db.Cliente.findAll()
+       // .then(function(clientes) {
+            res.render ("login")
+       // })
     },
 
     checkLogin: (req, res)=> {
@@ -78,13 +79,13 @@ const usersController = {
             });
         }
 
-        let userInDb =  db.Cliente.findOne({
+        let userInDb =  db.Cliente.findAll({
                             where: {email: req.body.email}
                         })
 
-        .then(res => {
-
-            if (userInDb) {
+      // .then(res => {
+        //               if (!res || res.length ===0 ){
+            if (req.body.email === userInDb) {
                 
                 res.render('registro', {
                     errors: {
@@ -96,10 +97,8 @@ const usersController = {
                 
              // aca trae un error, pero guarda en la db el registro
 
-            }
-            else {
-
-                db.Cliente.create({
+            }else {
+             db.Cliente.create({
                     nombre: req.body.nombre,
                     apellido: req.body.apellido,
                     email: req.body.email,
@@ -117,9 +116,6 @@ const usersController = {
 
                 res.redirect('./login');
             }
-        })
-
-        .catch(console.log("ERROR"))
 
     },
 
