@@ -13,7 +13,7 @@ const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const storage = require("../middlewares/multerMiddleware")
-//const userLogged = require('../middlewares/userLoggedMiddleware')
+const userLogged = require('../middlewares/userLoggedMiddleware')
 
 // JSON (borrar cuando esté lista la BDD)
 //const usersFilePath = path.join(__dirname, '../data/usersData.json');
@@ -25,26 +25,68 @@ const storage = require("../middlewares/multerMiddleware")
 const usersController = {
 
 /*** USER LOGIN ***/
-    login: (req, res)=> {
-        //db.Cliente.findAll()
-       // .then(function(clientes) {
+    login: (req, res) => {
+        db.Cliente.findAll()
+       .then(function(clientes) {
             res.render ("login")
-       // })
+        })
     },
 
-    checkLogin: (req, res)=> {
-        let userToLogin =   db.Cliente.findOne({
+    checkLogin: (req, res) => {
+
+        db.Cliente.findOne({
+            where: {email: req.body.email}
+            })
+            
+            .then( user => {
+                    if (bcryptjs.compareSync(req.body.contrasena, user.contrasena)) {
+                        req.session.userLogged = user;
+                    }
+
+                    if (req.body.remember_user){
+                        res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
+                    }
+        
+                    return res.redirect('./profile') 
+
+                    return res.render('login', {
+                        errors: {
+                            email: {
+                                msg: 'Las contraseña es incorrecta'}}
+                            })    
+
+                    return res.render('login', {
+                        errors: {
+                            email: {
+                                msg: 'No se encuentra el email'
+                            }
+                        }
+                    })
+                })
+            },
+
+
+    /*
+
+        let userToLogin = db.Cliente.findOne({
                                 where: {email: req.body.email}
                             }) 
+        
+        console.log(userToLogin.nombre)
 
         if (userToLogin) {
+            
             let isOkThePassword = bcryptjs.compareSync(req.body.contrasena, userToLogin.contrasena)
+
             if (isOkThePassword) {
                 delete userToLogin.contrasena;
+
                 req.session.userLogged = userToLogin;
+
             if (req.body.remember_user){
                 res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
             }
+
             return res.redirect('./profile') }
             return res.render('login', {
             errors: {
@@ -59,7 +101,10 @@ const usersController = {
                 }
             }
         });
-        },
+    },
+
+    */
+
 
 /*** REGISTRO ***/
     registro: (req, res) => {

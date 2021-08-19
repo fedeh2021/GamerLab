@@ -48,11 +48,11 @@ router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', usersController.checkLogin);
 
 /*** REGISTRAR UN NUEVO USUARIO ***/
-router.get('/register', guestMiddleware ,usersController.registro);
+router.get('/register', guestMiddleware, usersController.registro);
 router.post('/register', uploadFile.single('imagen'), validations, usersController.checkRegistro);
 
 /*** VER TU INFORMACION Y EDITAR ***/ 
-router.get('/profile/', authMiddleware ,usersController.perfil);
+router.get('/profile/', authMiddleware, usersController.perfil);
 router.put('/profile/:id', usersController.update);
 
 /*** VER EL CARRITO ***/
