@@ -137,11 +137,14 @@ const productsController = {
 
     },
     search: function(req, res) {
+
         db.Producto.findAll({
             where: { nombre: {[Op.like]: '%' + req.query.keyword + '%'}}
-        }).then(productos => {
-            if (productos.length > 0) {
-            return res.status(200).json(productos);
+        })
+        
+        .then(productos => {
+            if (productos) {
+            return res.send(productos);
         }
         return res.status(200).json('No existen productos')
         })

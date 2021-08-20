@@ -34,6 +34,7 @@ router.post("/create", uploadFile.single('image'), productsController.checkCreac
 /*** ELIMINAR UN PRODUCTO ***/
 router.delete("/delete/:id", productsController.delete)
 
+router.get("/search", productsController.search)
 
 // ************ Export ************
 module.exports = router;

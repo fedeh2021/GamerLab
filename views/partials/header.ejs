@@ -13,15 +13,15 @@
         <div class="barra-derecha">
 
             <div class="searchbar">
-                <form class="search-form">
-                    <input type="text" id ="formulario" class="barra-buscadora" placeholder="Busca productos">
+                <form class="search-form" action="/products/search" method="GET">
+                    <input name="keyword" type="text" id ="formulario" class="barra-buscadora" placeholder="Busca productos">
                     <button class="search-button" id = "boton" type="submit">
                         <i class="fas fa-search fa-2x"></i>
                     </button> 
                 </form>
             </div>
+            
             <% if (locals.isLogged) { %>
-                
 
             <div class="barra-logeado">  
                 
@@ -30,18 +30,19 @@
                 <ul class="ul-opciones">
                     <li class="item-logeo"><a href="#!"> Hola <%= locals.userLogged.nombre %></a></li> 
 
-                    <li class="item-logeo"><a class="" href="/users/profile">Mi perfil</a></li>
+                        <li class="item-logeo"><a class="" href="/users/logout">Cerrar sesión</a></li>
+                    </ul>
+                </div> 
 
-                    <li class="item-logeo"><a class="" href="/users/logout">Cerrar sesión</a></li>
-                </ul>
-            </div> 
             <% } else { %>
-            <li><a href="/users/register"><i class="fas fa-sign-in-alt fa-2x"></i></a></li>
-            <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
-            
+
+                <li><a href="/users/register"><i class="fas fa-sign-in-alt fa-2x"></i></a></li>
+                <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
+                
             <% } %>
-            
-           <!-- <div id="carrito">
+
+    <!--      
+         <div id="carrito">
             <a href="/users/cart"><img src="/img/carrito-de-compras.png"class="nav-link dropdown-toggle img-fluid" height="70px"
                 width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false"></img></a>
@@ -61,8 +62,8 @@
                 <li><a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a></li>
                 <li><a href="/users/cart" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a></li>
             </div>
-        -->
             
+    -->  
 
         </div>  
 
@@ -87,26 +88,4 @@
     <script src="/js/compra.js"></script>
 
 
-    <!--BARRA BUSCADORA-->
-
-<script>
-    const db = require ("../database/models")
-    const productos = db.Producto
-    const formulario = document.querySelector("#formulario")
-    const boton = document.querySelector("#boton")
-    //const resultados = req.body.
-
-    const filtrar =  () => {
-       // console.log(formulario.value);
-       const texto = formulario.value.toLowerCase();
-       for (let producto of productos){
-           let nombre = producto.nombre.toLowerCase();
-           if(nombre.indexOf(texto) !== -1){
-
-           }
-       }
-    }
-
-    boton.addEventListener("click", filtrar)
-</script>
 </header>
