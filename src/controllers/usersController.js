@@ -31,7 +31,7 @@ const usersController = {
             res.render ("login", {clientes})
         })
     },
-
+/*
     checkLogin: (req, res) => {
 
         db.Cliente.findOne({
@@ -90,10 +90,10 @@ const usersController = {
                 })
             },
 
-
+*/
 
 /*** LOGIN FUNCIONA ***/
-/*
+
     checkLogin: (req, res) => {
 
         db.Cliente.findOne({
@@ -101,6 +101,12 @@ const usersController = {
             })
             
             .then( user => {
+                let contrasena = false
+                let mail = false
+
+                if (user){
+                    mail = true
+                    contrasena = true
                     if (bcryptjs.compareSync(req.body.contrasena, user.contrasena)) {
                         req.session.userLogged = user;
                     }
@@ -109,25 +115,19 @@ const usersController = {
                         res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
                     }
         
-                    return res.redirect('./profile') 
+                    return res.redirect('./profile')
+                 } else {
 
                     return res.render('login', {
                         errors: {
                             email: {
-                                msg: 'Las contraseña es incorrecta'}}
+                                msg: 'Las credenciales son incorrectas'}}
                             })    
-
-                    return res.render('login', {
-                        errors: {
-                            email: {
-                                msg: 'No se encuentra el email'
-                            }
                         }
                     })
-                })
-            },
+    },
 
-    */
+
 
 
 /*** REGISTRO ***/
