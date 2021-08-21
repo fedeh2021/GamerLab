@@ -144,7 +144,7 @@ const productsController = {
         
         .then(productos => {
             if (productos) {
-            return res.send(productos);
+            return res.render("productoBuscado", {productos});
         }
         return res.status(200).json('No existen productos')
         })
