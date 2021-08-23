@@ -20,7 +20,7 @@
         <h2 class="titulos">TODOS LOS PRODUCTOS</h2>
             </div>
             <div class="crear-producto-btn">
-                <% { %>
+                <% if (locals.isLogged == 0) { %>
                 <button><a href="/products/create">CREAR PRODUCTO</a></button>
                 <% } %>
             </div>
