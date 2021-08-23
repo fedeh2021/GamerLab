@@ -25,9 +25,12 @@ const productsController = {
 
 /*** LISTADO DE TODOS LOS PRODUCTOS ***/
     listadoProductos: (req, res) => {
-        db.Producto.findAll()
-        .then(function(productos){
-            return res.render("producto", {productos})
+        let pedidoProductos = db.Producto.findAll()
+        let pedidoClientes = db.Cliente.findAll()
+
+        Promise.all([pedidoProductos, pedidoClientes])
+        .then(function([productos, clientes]){
+            return res.render("producto", {productos, clientes})
         })
     },
 

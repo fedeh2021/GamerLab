@@ -19,11 +19,13 @@
             <div class="col-12">
         <h2 class="titulos">TODOS LOS PRODUCTOS</h2>
             </div>
+            <% if(clientes[i].rol == 1){ %> 
             <div class="crear-producto-btn">
-                <% { %>
                 <button><a href="/products/create">CREAR PRODUCTO</a></button>
-                <% } %>
             </div>
+                <% }else{ %>
+                <% } %>
+
     <div class="row">
     <% for(let i=0; i < productos.length; i++) { %> 
         <% if (productos[i].deleteable == 1 ) { %> 
