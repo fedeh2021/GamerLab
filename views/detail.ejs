@@ -11,14 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="css/sweetalert2.min.css">
 </head>
 <body>
     <%- include('./../views/partials/header') %>
     <main>
 
 <div class="product-container">
-    <div class="prod-box" data-id="<%=productos.id%>">
+    <div class="prod-box">
         <div class="prod-img-container">
             <div class="prod-big-img">
                 <img src="/img/<%=productos.imagen%>">
@@ -51,7 +50,7 @@
             </form>
             <div class="prod-buttons">
                 <div class="row-1">
-                   <a href="../views/carrito" class="prod-add-to-cart" id="agregar-carrito" >Agregar al carrito</a>
+                   <a href="" class="prod-add-to-cart" id="agregar-carrito" data-id="<%=productos.id%>" >Agregar al carrito</a>
                    <button class="prod-buy" href="/cart">Comprar</button>
                 </div>
                 <div class="row-2">
@@ -64,9 +63,8 @@
                 </div>
             </div>
         </div>
-        <script src="/js/carrito.js"></script>
+    <script src="/js/carrito.js"></script>
     <script src="/js/pedido.js"></script>
-    <script src="/js/compra.js"></script>
     </div>
 </div>
 </main>
