@@ -21,6 +21,7 @@
             </div>
             <% if(clientes[i].rol == 1){ %> 
             <div class="crear-producto-btn">
+                <% if (locals.isLogged == 0) { %>
                 <button><a href="/products/create">CREAR PRODUCTO</a></button>
             </div>
                 <% }else{ %>

@@ -17,7 +17,7 @@
         <h3 class="carrito-titulo">Carrito de compras</h3>
 
         <div class="contenedor-resumen">
-          <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
+    <!--      <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
                             <div class="col-12 col-md-10">
                                 <input type="text" class="form-control" id="cliente"
                                     placeholder="Ingresa nombre cliente" name="destinatario">
@@ -26,9 +26,9 @@
                               <label for="email" class="col-12 col-md-2 col-form-label h2">Correo :</label>
                               <div class="col-12 col-md-10">
                                   <input type="text" class="form-control" id="correo" placeholder="Ingresa tu correo" name="cc_to">
-                              </div>
+                            </div>
                           </div>
-
+ ---> 
            <div class="resumen">
 
                <ul>
@@ -37,17 +37,20 @@
 
                <ul class="datos">
                  <li>Subtotal</li>
-                 <li class="precio" id="subtotal">$25.000</li>
+                 <li class="precio" id="subtotal">$</li>
                </ul>
 
                <ul class="datos">
                 <li>Total del pedido</li>
-                <li class="precio" id="total">$25.000</li>
+                <li class="precio" id="total">$</li>
                </ul>
                
            </div>
 
              <hr class="divisor">
+             <div class="col-md-4 mb-2">
+              <a href="/" class="btn btn-info btn-block">Seguir comprando</a>
+          </div>
 
             <label for="descuento"></label>
             <input type="text" name="descuento" id="descuento" placeholder="Ingresar código de descuento" size="25">
@@ -55,7 +58,7 @@
             <div class="cuotas-texto-icono"><i class="fas fa-credit-card"><a href="#!" class="cuotas">Calculá las cuotas con tu medio de pago</a></i></div>
 
             <label for="finalizar-compra"></label>
-            <input type="button" id="procesar-compra" name="finalizar-compra" value="Finalizar compra" class="finalizar-compra">
+            <input type="submit" id="procesar-compra" name="finalizar-compra" value="Finalizar compra" class="finalizar-compra">
            
         </div>   
         <div class="contenedor-items" id="carrito">
@@ -89,9 +92,12 @@
 
               </div>
             </div>
-
-            <hr class="divisor">
-         <div class="contenedor-monitor">
+           <!-- <div class="row justify-content-center" id="loaders">
+              <img id="cargando" src="/img/cargando.gif" width="220">
+          </div>
+        -->
+          <hr class="divisor">
+       <!--  <div class="contenedor-monitor">
             <img src="/img/monitor.jpg"  class="monitor" alt="Monitor Gamer">
             <p class="monitor-datos">Gezatek Monitor Gamer LG 24GL6 24 </p>
 
@@ -113,11 +119,10 @@
                 <input type="button" value="Editar" name="editar" id="Editar">
                 <input type="button" value="Remover item" name="remover" id="remover">
             </div>
-            
+          --> 
         </div>
     <script src="/js/carrito.js"></script>
     <script src="/js/compra.js"></script>
-    <script src="/js/pedido.js"></script>
     </main>
     <%- include('./../views/partials/footer') %>
 </body>
