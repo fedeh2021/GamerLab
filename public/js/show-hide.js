@@ -3,7 +3,7 @@ const divList = document.querySelector("#carrito")
 
 
 toggleBtn.addEventListener("click", ()=>{
-    if(divList.style.display == "none"){
+    if(divList.style.display === "none"){
 
         divList.style.display = "block"
 
