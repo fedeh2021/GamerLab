@@ -15,11 +15,6 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const storage = require("../middlewares/multerMiddleware")
 const userLogged = require('../middlewares/userLoggedMiddleware')
 
-// JSON (borrar cuando esté lista la BDD)
-//const usersFilePath = path.join(__dirname, '../data/usersData.json');
-//const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-
 
 // ************ Controller ************
 const usersController = {
@@ -194,8 +189,22 @@ const usersController = {
 
 /*** UPDATE ***/
     update: (req, res)=>{
-            res.render("perfil", { user: req.session.userLogged }) 
-        }, 
+            db.Cliente.update({
+                nombre: req.body.name,
+                apellido: req.body.apellido,
+                imagen: req.file.filename,
+                cumpleanos:req.body.cumpleanos,
+                telefono: req.body.telefono, 
+                dni: req.body.dni,
+                telefono: req.body.telefono
+                   
+            }, {where:{
+                id:req.params.id
+                }}
+            )
+            res.redirect('/users/profile/' + req.params.id);  
+        },
+        
 
 /*** CARRITO ***/
     carrito: (req, res)=>{
