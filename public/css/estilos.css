@@ -761,6 +761,7 @@ a.btn{
     text-align: center;
     align-content: center;
     align-items: center;
+    font-size: 1rem;
 }
 
 .prod-content span{
@@ -1266,7 +1267,7 @@ text-decoration: none;
         align-content: left;
         justify-content:left;
         position: absolute;
-        right: 50%;
+        right: 57%;
         top: 30%;
     }
     .searchbar{
@@ -1309,6 +1310,21 @@ text-decoration: none;
     }
 }
 @media(min-width:1300px) {
+    .prod-description{
+        width: 30%;
+        margin-top: .5em;
+        margin-bottom: .2em;
+        font-size: 1.5em;
+        border-bottom: 2px solid black;
+        text-align: center;
+        align-items:flex-start;
+        align-content: left;
+        justify-content:left;
+        position: absolute;
+        right: 50%;
+        top: 30%;
+    }
+
     .barra-buscadora{
         position: relative;
         right: 30%;
