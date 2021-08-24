@@ -22,18 +22,14 @@
             <div class="prod-big-img">
                 <img src="/img/<%=productos.imagen%>">
             </div>
-            <div class="prod-small-img">
-                <img src="/img/<%=productos.imagen%>">
-                <img src="/img/<%=productos.imagen%>">
-                <img src="/img/<%=productos.imagen%>">
-            </div> 
         </div>
-        <div class="prod-description"><%=productos.descripcion%></div> 
+        
         <div class="prod-content">
             <p><%=productos.categorias.nombre%></p>
             <h3 class="prod-title"><%=productos.nombre%></h3>
-            <div class="prod-discount"><%=productos.descuento%>% OFF</div>
             <div class="prod-price">$<%=productos.precio_lista%></div>
+            <div class="prod-discount"><%=productos.descuento%>% OFF</div>            
+            <div class="prod-description"><%=productos.descripcion%></div> 
             <form action="">
                 <div class="prod-options">
                     <span>Elegí el color:</span>

@@ -19,12 +19,11 @@
             <div class="col-12">
         <h2 class="titulos">TODOS LOS PRODUCTOS</h2>
             </div>
-            <% if(clientes[i].rol == 1){ %> 
+            <% if(clientes.rol == 1){ %> 
             <div class="crear-producto-btn">
-                <% if (locals.isLogged == 0) { %>
-                <button><a href="/products/create">CREAR PRODUCTO</a></button>
+              <button><a href="/products/create">CREAR PRODUCTO</a></button>
             </div>
-                <% }else{ %>
+            <% }else{ %>
                 <% } %>
 
     <div class="row">
