@@ -193,10 +193,10 @@ const usersController = {
                 nombre: req.body.name,
                 apellido: req.body.apellido,
                 imagen: req.file.filename,
+                email: req.body.email,
                 cumpleanos:req.body.cumpleanos,
                 telefono: req.body.telefono, 
-                dni: req.body.dni,
-                telefono: req.body.telefono
+                dni: req.body.dni
                    
             }, {where:{
                 id:req.params.id

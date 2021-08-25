@@ -1109,7 +1109,7 @@ text-decoration: none;
         justify-content:left;
         position: absolute;
         right: 55%;
-        top: 35%;
+        top: auto;
     }
     .prod-content {
         width: 50%;
@@ -1247,7 +1247,7 @@ text-decoration: none;
         justify-content:left;
         position: absolute;
         right: 55%;
-        top: 35%;
+        top: auto;
     }
     .prod-content input {
         width: 100px;
@@ -1276,7 +1276,7 @@ text-decoration: none;
         justify-content:left;
         position: absolute;
         right: 57%;
-        top: 30%;
+        top: auto;
     }
     .searchbar{
         position: relative;
@@ -1330,7 +1330,7 @@ text-decoration: none;
         justify-content:left;
         position: absolute;
         right: 50%;
-        top: 30%;
+        top: auto;
     }
 
     .barra-buscadora{

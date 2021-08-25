@@ -16,7 +16,7 @@
     <%- include('./../views/partials/header') %>
     <main>
 
-<div class="product-container">
+<div class="product-container" id="lista-productos">
     <div class="prod-box">
         <div class="prod-img-container">
             <div class="prod-big-img">
@@ -47,7 +47,7 @@
             <div class="prod-buttons">
                 <div class="row-1">
                   <!-- <a href="#" class="prod-add-to-cart agregar-carrito">Agregar al carrito</a>-->
-                   <a href="" class="prod-edit agregar-carrito" data-id="<%=productos.id%>" href="/cart">Comprar</a>
+                   <a href="" class="prod-edit agregar-carrito" data-id="<%=productos.id%>">Comprar</a>
                 </div>
                 <% if (locals.isLogged == 1) { %>
                 <div class="row-2">
