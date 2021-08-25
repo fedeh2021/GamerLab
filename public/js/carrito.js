@@ -5,19 +5,19 @@ let Carrito = class {
         e.preventDefault();
         //Delegado para agregar al carrito
         if(e.target.classList.contains('agregar-carrito')){
-            const producto = e.target.parentElement.parentElement;
+            const producto = e.target.closest('.prod-box');
             //Enviamos el producto seleccionado para tomar sus datos
             this.leerDatosProducto(producto);
         }
     }
 
     //Leer datos del producto
-    leerDatosProducto(productos){
+    leerDatosProducto(producto){
         const infoProducto = {
-            imagen : productos.querySelector('img').src,
-            titulo: productos.querySelector('h3').textContent,
-            precio: productos.querySelector('.prod-price div').textContent,
-            id: productos.querySelector('a').getAttribute('data-id'),
+            imagen : producto.querySelector('img').src,
+            titulo: producto.querySelector('h3').textContent,
+            precio: producto.querySelector('.prod-price').textContent,
+            id: producto.querySelector('a').getAttribute('data-id'),
             cantidad: 1
         }
         let productosLS;
@@ -50,8 +50,8 @@ let Carrito = class {
             <td>
                 <img src="${producto.imagen}" width=100>
             </td>
-            <td>${producto.nombre}</td>
-            <td>${producto.precio_lista}</td>
+            <td>${producto.titulo}</td>
+            <td>${producto.precio}</td>
             <td>
                 <a href="#" class="borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
             </td>
