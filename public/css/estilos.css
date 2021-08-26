@@ -235,6 +235,9 @@ main{
   }
   #carrito{
     display: none;
+    z-index: 1;
+    position: absolute;
+    right: 5%;
 }
 
 
@@ -285,13 +288,12 @@ main{
 a.btn{
     cursor:pointer;
     display:inline-block;
-    border:2;
-    font-weight: 300;
-    padding: 3px 3px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 5% 0;
     color:#fff;
-    font-size: 12px;
-    border:1px solid #fff;
-    margin-bottom: 15px; 
+    margin-bottom: 5%; 
+
 }
 
 .btn:hover{
@@ -569,6 +571,27 @@ a.btn{
     margin-top: 4vh;
     justify-content: center;
     align-items: center;
+}
+.table{
+    background-color: #fff;
+    border-radius: 10%;
+}
+.btn-primary{
+    background-color: #28aee2;
+    width: 50%;
+    margin-top: 5%;
+    border-radius: 10%;
+}
+
+.btn-danger{
+    background-color: #9b0083;
+    width: 50%;
+    padding: 5% 0;
+    border-radius: 10%;
+}
+.opciones-carrito{
+    background-color: #fff;
+    border-radius: 5%;
 }
 
 
@@ -1058,6 +1081,27 @@ text-decoration: none;
     width: 8%;
     height: 60%;;
 }
+.table{
+    background-color: #fff;
+    border-radius: 10%;
+}
+.btn-primary{
+    background-color: #28aee2;
+    width: 50%;
+    margin-top: 5%;
+    border-radius: 10%;
+}
+
+.btn-danger{
+    background-color: #9b0083;
+    width: 50%;
+    padding: 5% 0;
+    border-radius: 10%;
+}
+.opciones-carrito{
+    background-color: #fff;
+    border-radius: 5%;
+}
 
 
 }
@@ -1211,6 +1255,27 @@ text-decoration: none;
         color: #010b17;
         display: inline
     }
+    .table{
+        background-color: #fff;
+        border-radius: 10%;
+    }
+    .btn-primary{
+        background-color: #28aee2;
+        width: 50%;
+        margin-top: 5%;
+        border-radius: 10%;
+    }
+
+    .btn-danger{
+        background-color: #9b0083;
+        width: 50%;
+        padding: 5% 0;
+        border-radius: 10%;
+    }
+    .opciones-carrito{
+        background-color: #fff;
+        border-radius: 5%;
+    }
     
 }
 
@@ -1258,6 +1323,27 @@ text-decoration: none;
     }
     .icono-burger {
         display: none;
+    }
+    .table{
+        background-color: #fff;
+        border-radius: 10%;
+    }
+    .btn-primary{
+        background-color: #28aee2;
+        width: 50%;
+        margin-top: 5%;
+        border-radius: 10%;
+    }
+
+    .btn-danger{
+        background-color: #9b0083;
+        width: 50%;
+        padding: 5% 0;
+        border-radius: 10%;
+    }
+    .opciones-carrito{
+        background-color: #fff;
+        border-radius: 5%;
     }
 }
 @media(min-width:1200px) {
