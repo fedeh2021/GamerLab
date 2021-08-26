@@ -989,7 +989,19 @@ text-decoration: none;
     width:10%;
     height: 15%;
 }
-
+.barra-logeado{
+    display: flex;
+    width: 100%;
+    margin-top: 10%;
+}
+.ul-opciones{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+.ul-opciones li{
+    padding: 0 5%;
+}
 
 /*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*/
 
@@ -1058,10 +1070,12 @@ text-decoration: none;
     list-style-type: none;
     margin-top: 20%;
     text-align: center;
+    position: relative;
+    bottom:25%;
 }
 
 .items-barra-logeo li{
-    margin:0 5%;
+    margin:0 10%;
 }
 .ul-opciones{
     display: flex;
