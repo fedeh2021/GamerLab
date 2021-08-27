@@ -873,18 +873,19 @@ form .prod-buy{
 }
 
 .prod-edit{
-    background-color: #28aee2;
-    border: 2px solid #28aee2;
-    color:#000;
+    background-color: #010b17;
+    color:#fff;
     border-radius: 4px;
-    height: 5%;
+    height: 10%;
     margin-right: 2%;
+    padding: 10%;
+    font-weight: 400;
+    font-size: 1.5rem;
 }
 
 .prod-edit:hover {
-    background-color: #1b90be;
-    color:#000;
-    border: 2px solid #1b90be;
+    background-color: #fff;
+    color:#010b17;
 }
 #prod-delete{
     width: 100%;
@@ -893,24 +894,23 @@ form .prod-buy{
     margin-bottom: 0;
     margin-top: 0;
     border:1px solid #fff;
+    
+    font-weight: 400;
+    font-size: 1.5rem;
 }
 .prod-delete{
-    background-color: #9b0083;
-    border-style: solid ;
+    background-color: #010b17;
     border-radius: 4px;
-    border: 2px solid #9b0083;
-}
-form.form-prod-delete {
-    background-color: #9b0083;
-    border: 2px solid #9b0083;
-    border-radius: 4px;
-    margin: 0%;
-    padding: 0%;
+    color: #Fff;
+    border: none;
+    font-weight: 400;
+    font-size: 1.5rem;
+
 }
 
 .prod-delete:hover {
-    background-color: #880a75;
-    border: 2px solid #880a75;
+    background-color: #fff;
+    color:#010b17;
 }
 
 /* FORMULARIOS *//* FORMULARIOS *//* FORMULARIOS */
@@ -1049,6 +1049,11 @@ text-decoration: none;
 
 .prod-buttons {
     font-size: 2.4em;
+    display: flex;
+    flex-direction: row;
+}
+.prod-buttons div{
+    margin: 0 5%;
 }
 .imagenavatar{
     width: 30%;
