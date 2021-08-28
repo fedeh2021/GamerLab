@@ -28,7 +28,8 @@ router.post('/register', uploadFile.single('imagen'), validations, usersControll
 
 /*** VER TU INFORMACION Y EDITAR ***/ 
 router.get('/profile/', authMiddleware,usersController.perfil);
-router.put('/profile/:id', usersController.update);
+router.get('/profile/:id', usersController.editarPerfil)
+router.put('/profile/:id', uploadFile.single('imagen'), usersController.update);
 
 /*** VER EL CARRITO ***/
 router.get('/cart', usersController.carrito);

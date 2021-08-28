@@ -184,11 +184,21 @@ const usersController = {
 
 /*** PERFIL ***/
     perfil: (req, res) => {
-        return res.render("perfil", { user: req.session.userLogged }) 
-        },     
+        db.Cliente.findAll()
+        .then(function(user){
+            return res.render('perfil', {user: req.session.userLogged})
+        })
+        //return res.render("perfil", { user: req.session.userLogged });
+},  
+        editarPerfil: (req, res) => {
+        db.Cliente.findByPk(req.params.id)
+        .then((user)=>{
+        return res.render('edicionPerfil', {user})
+        })
+        },
 
 /*** UPDATE ***/
-    update: (req, res)=>{
+    update: (req, res)=>{ 
             db.Cliente.update({
                 nombre: req.body.name,
                 apellido: req.body.apellido,

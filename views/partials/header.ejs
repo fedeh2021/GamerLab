@@ -40,7 +40,7 @@
                 <div class="items-barra-logeo">
                     <li><a href="/users/register"><i class="fas fa-sign-in-alt fa-2x"></i></a></li>
                     <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
-                    <li><button class="icono-carrito"><i class="fas fa-shopping-cart" onclick="return confirm('Para ingresar a tu carrito debes iniciar sesión o registrarte')"></i></button></li>
+                    <li><button class="icono-carrito"><i class="fas fa-shopping-cart" onclick="return Swal.fire('Para ingresar a tu carrito debes iniciar sesión o registrarte')"></i></button></li>
                 
             <% } %>
 
@@ -61,7 +61,7 @@
             </table>
             <div class="opciones-carrito">
                 <li><a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a></li>
-                <li><a href="/users/cart" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a></li>
+                <li><a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a></li>
             </div>    
         </div>
       </div>  

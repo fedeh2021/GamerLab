@@ -15,11 +15,6 @@ const { Op } = require("sequelize");
 const { response } = require('express');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-// JSON (borrar cuando esté lista la BDD)
-// const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-
 // ************ Controller ************
 const productsController = {
 
