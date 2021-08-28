@@ -830,73 +830,16 @@ a.btn{
     font-size: 1.4em;
     margin-top: 1.5em;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    margin-left: 10%;
 }
-.row-1{
-    display: flex;
-    flex-direction: row;
+.prod-buttons a{
+    margin-left:2%;
 }
-.row-2{
-    display: flex;
-    flex-direction: row;
-    margin-top: 5%;
-}
-.prod-add-to-cart {
-    background-color: #28aee2;
-    border: 2px solid #28aee2;
-    border-radius: 4px;
-    margin-right: 2%;
-    color:#000;
-}
-.prod-add-to-cart:hover {
-    background-color: #1b90be;
-    border: 2px solid #1b90be;
-    color:#000;
-    height: 5%;
-}
-
-.prod-buy {
-    background-color: #9b0083;
-    border: 2px solid #9b0083;
-    border-radius: 4px;
+.form-prod-delete{
+    max-width: 28%;
     
-}
-
-form .prod-buy{
-    font-size: 1rem;
-}
-
-.prod-buy:hover {
-    background-color: #880a75;
-    border: 2px solid #880a75;
-}
-
-.prod-edit{
-    background-color: #010b17;
-    color:#fff;
-    border-radius: 4px;
-    height: 10%;
-    margin-right: 2%;
-    padding: 10%;
-    font-weight: 400;
-    font-size: 1.5rem;
-}
-
-.prod-edit:hover {
-    background-color: #fff;
-    color:#010b17;
-}
-#prod-delete{
-    width: 100%;
-    padding: 4%;
-    font-size: 1.4em;
-    margin-bottom: 0;
-    margin-top: 0;
-    border:1px solid #fff;
-    
-    font-weight: 400;
-    font-size: 1.5rem;
 }
 .prod-delete{
     background-color: #010b17;
@@ -905,7 +848,23 @@ form .prod-buy{
     border: none;
     font-weight: 400;
     font-size: 1.5rem;
+    padding: 8%;
 
+}
+
+.prod-edit{
+    background-color: #010b17;
+    color:#fff;
+    border-radius: 4px;
+    height: 10%;
+    margin-right: 2%;
+    padding: 2%;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.prod-edit:hover {
+    background-color: #fff;
+    color:#010b17;
 }
 
 .prod-delete:hover {
@@ -1002,6 +961,16 @@ text-decoration: none;
 .ul-opciones li{
     padding: 0 5%;
 }
+.boton-editar{
+    margin-top: 5%;
+}
+
+
+
+
+
+
+
 
 /*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*//*MEDIA QUERIES*/
 
@@ -1052,8 +1021,8 @@ text-decoration: none;
     display: flex;
     flex-direction: row;
 }
-.prod-buttons div{
-    margin: 0 5%;
+.prod-delete{
+    margin-bottom: 40%;
 }
 .imagenavatar{
     width: 30%;
@@ -1121,7 +1090,10 @@ text-decoration: none;
     background-color: #fff;
     border-radius: 5%;
 }
-
+.prod.prod-buttons{
+    display: flex;
+    align-items: center;
+}
 
 }
 
@@ -1132,11 +1104,11 @@ text-decoration: none;
         width: 40%;
     }
     .items-barra-logeo{
-    width: 20%;
-    display: flex;
-    flex-direction: row;
-    margin-top: 0;
-}
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+    }
     #carrito{
         display: none;
     }
@@ -1234,7 +1206,6 @@ text-decoration: none;
     .main-header-top-bar{ 
         justify-content: space-around;
     }
-
     
     .searchbar{
         position: relative;
@@ -1295,10 +1266,10 @@ text-decoration: none;
         background-color: #fff;
         border-radius: 5%;
     }
-    
+   
 }
 
-@media(min-width:1200px) {
+@media(min-width:1080px) {
     .prod-box {
         max-width: 1080px;
     }
@@ -1364,6 +1335,23 @@ text-decoration: none;
         background-color: #fff;
         border-radius: 5%;
     }
+    .form-prod-delete{
+     /*   max-width: 10%;
+        position: absolute;
+        top:54%;
+        right:29%;*/
+    }
+    .prod-delete{
+        background-color: #010b17;
+        border-radius: 4px;
+        color: #Fff;
+        border: none;
+        font-weight: 400;
+        font-size: 1.5rem;
+        padding: 25%;
+     /*  margin-left:800%;*/
+    
+    }
 }
 @media(min-width:1200px) {
     .product-container{
@@ -1421,6 +1409,21 @@ text-decoration: none;
         color: #010b17;
         display: inline
     }
+   /* .form-prod-delete{
+        max-width: 10%;
+        position: absolute;
+    }*/
+    .prod-delete{
+        background-color: #010b17;
+        border-radius: 4px;
+        color: #Fff;
+        border: none;
+        font-weight: 400;
+        font-size: 1.5rem;
+        padding: 25%;
+      /*  margin-left:800%;*/
+    
+    }
 }
 @media(min-width:1300px) {
     .prod-description{
@@ -1459,5 +1462,21 @@ text-decoration: none;
         border: none;
         color: #666666;
         cursor: pointer;
+    }
+    .form-prod-delete{
+      /*  max-width: 10%;
+        position: absolute;
+        bottom:-10%;*/
+    }
+    .prod-delete{
+        background-color: #010b17;
+        border-radius: 4px;
+        color: #Fff;
+        border: none;
+        font-weight: 400;
+        font-size: 1.5rem;
+        padding: 13%;
+        /*margin-left:500%;*/
+    
     }
 }
