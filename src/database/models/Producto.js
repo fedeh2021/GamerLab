@@ -55,6 +55,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull:false
         }
     }
+
     const config = {
         tablename: 'productos',
         timestamps: false,
@@ -65,10 +66,12 @@ module.exports = (sequelize, dataTypes) => {
     const Producto = sequelize.define(alias,cols,config);
     
     Producto.associate = function (models) {
+        
         Producto.belongsTo( models.categorias, {
           as: "categorias",
           foreignKey: "categoria_fk"
         });
+
         Producto.belongsToMany( models.Cliente, {
             as: "Cliente",
             through: "pedidos",

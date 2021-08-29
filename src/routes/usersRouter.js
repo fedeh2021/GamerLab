@@ -16,6 +16,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const uploadFile = require('../middlewares/multerMiddleware');
 
+
 // ************ Views ************
 
 /*** LOGIN DE USUARIO EXISTENTE ***/

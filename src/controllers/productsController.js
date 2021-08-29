@@ -15,8 +15,10 @@ const { Op } = require("sequelize");
 const { response } = require('express');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+
 // ************ Controller ************
 const productsController = {
+
 
 /*** LISTADO DE TODOS LOS PRODUCTOS ***/
     listadoProductos: (req, res) => {
@@ -30,14 +32,6 @@ const productsController = {
     },
 
     index:(req,res) =>{
-    /*
-        db.Producto.findAll()
-        .then(function(productos) {
-            res.render ("producto", {productos})
-        })
-    },*/
-
-    // SEGUNDA OPCION INDEX 
         db.Producto.findAll({include: [{association: 'productos'}, {association: 'categorias'}]}) 
         .then((productos) => {
         let listadoProductos = [];
@@ -56,6 +50,16 @@ const productsController = {
         res.render("index", {productos: listadoProductos})
     })},
 
+    // SEGUNDA OPCION INDEX (se puede borrar !?)
+        /*
+        db.Producto.findAll()
+        .then(function(productos) {
+            res.render ("producto", {productos})
+        })
+    },
+    */
+
+
 /*** DETALLE DE PRODUCTO ***/
     detalleProductos: (req, res) => {        
         db.Producto.findByPk(req.params.id, {
@@ -65,6 +69,7 @@ const productsController = {
             res.render("detail", {productos, categorias})
         })
     },
+
 
 /*** CREATE Y STORE ***/
     creacionProducto:(req, res) => {
@@ -130,10 +135,9 @@ const productsController = {
             id:req.params.id
             }}
         )
-        
         res.redirect("/");
-
     },
+
     search: function(req, res) {
 
         db.Producto.findAll({
@@ -147,7 +151,6 @@ const productsController = {
         return res.status(200).json('No existen productos')
         })
     }
-
 };
 
 

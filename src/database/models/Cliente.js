@@ -61,19 +61,23 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         }
     }
+
     const config = {
         tablename: 'clientes',
         timestamps: false,
         underscored: true,
         camelCase: false
     }
+
     const Cliente = sequelize.define(alias, cols, config);
 
     Cliente.associate = function (models) {
+        
         Cliente.belongsTo( models.Envio, {
           as: "envios",
           foreignKey: "envio_fk"
         });
+
         Cliente.belongsToMany( models.Producto, {
             as: "productos",
             through: "pedidos",
