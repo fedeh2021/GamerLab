@@ -238,6 +238,7 @@ main{
     z-index: 1;
     position: absolute;
     right: 5%;
+    
 }
 
 
@@ -1094,6 +1095,10 @@ text-decoration: none;
     display: flex;
     align-items: center;
 }
+#carrito{
+    right:10%;
+    top:30%;
+}
 
 }
 
@@ -1111,6 +1116,8 @@ text-decoration: none;
     }
     #carrito{
         display: none;
+        top:40%;
+        left: 20%;
     }
     .avatarpequeño{
         width: 20%;
