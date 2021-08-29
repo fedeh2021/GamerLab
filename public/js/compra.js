@@ -21,8 +21,6 @@ function cargarEventos() {
 
     carrito.addEventListener('change', (e) => { compra.obtenerEvento(e) });
     carrito.addEventListener('keyup', (e) => { compra.obtenerEvento(e) });
-
-
 }
 
 function procesarCompra() {
@@ -38,6 +36,7 @@ function procesarCompra() {
             window.location = "index.ejs";
         })
     }
+
     else if (cliente.value === '' || correo.value === '') {
         Swal.fire({
             type: 'error',
@@ -46,7 +45,8 @@ function procesarCompra() {
             showConfirmButton: false,
             timer: 2000
         })
-    }
+    } 
+    
     else {
         
         //aqui se coloca el user id generado en el emailJS
@@ -89,9 +89,6 @@ function procesarCompra() {
                 });
 
             return false;
-
         });
-
     }
 }
-

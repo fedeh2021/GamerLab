@@ -49,15 +49,18 @@ module.exports = (sequelize, dataTypes) => {
         Pedido.belongsTo(models.Factura, {   
             as: "facturas",
             foreignKey: "factura_fk"
-             });
-        /*Pedido.belongsToMany (models.Cliente, {
-         / as: "clientes",
-          through: "pedidos",
-          foreignKey: "producto_fk",
-          otherKey: "cliente_fk",
-          timestamps: false
-        })
-    */}
+            });
+
+        /*
+        Pedido.belongsToMany (models.Cliente, {
+            as: "clientes",
+            through: "pedidos",
+            foreignKey: "producto_fk",
+            otherKey: "cliente_fk",
+            timestamps: false
+            })
+        */
+    }
 
     return Pedido;
 }

@@ -14,6 +14,7 @@ const db = require("../database/models")
 	} {
 		res.locals.isLogged = false;
 	}
+	
 	if (userFromCookie) {
 			req.session.userLogged = userFromCookie;
 	}

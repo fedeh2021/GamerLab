@@ -13,6 +13,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull:false
         }
     }
+    
     const config = {
         tablename: 'facturas',
         timestamps: false,

@@ -21,8 +21,8 @@
     <h1 class="titulo-formulario">EDICIÓN DE PERFIL</h1>
 
     <div class="formulario-producto">
-        <label>Imagen del usuario: </label>
-        <input type="file" name="image" class="usuario" value="<%=user.imagen%>" id="foto-producto">
+        <label for="file">Imagen del usuario: </label>
+        <input type="file" value="<%=user.imagen%>" name="image" class="usuario" placeholder="foto" id="foto-producto">
     </div>
 
     <div class="formulario-producto">
@@ -32,7 +32,7 @@
     
     <div class="formulario-producto">
         <label>Apellido del usuario:</label>
-        <input type="text" id="formulario-text" name="apellido"value='<%=user.apellido%>'></input>
+        <input type="text" id="formulario-text" name="apellido" value='<%=user.apellido%>'></input>
     </div>
 
     <div class="formulario-producto">

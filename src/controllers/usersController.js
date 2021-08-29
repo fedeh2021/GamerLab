@@ -26,75 +26,13 @@ const usersController = {
             res.render ("login", {clientes})
         })
     },
-/*
-    checkLogin: (req, res) => {
 
-        db.Cliente.findOne({
-            where: {email: req.body.email}
-            })
-            
-            
-            .then( user => {
-
-                let contrasena = false
-                let mail = false
-
-
-                if (user){
-                    mail = true
-
-                    console.log("ERROR MAIL")
-
-                    if (bcryptjs.compareSync(req.body.contrasena, user.contrasena)) {
-
-                        console.log("ERROR CONTRASENA")
-
-                        req.session.userLogged = user;
-                        contrasena = true
-
-                        if (req.body.remember_user){
-                            res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
-                        }
-
-                    } 
-                
-                    }
-            
-                    console.log(contrasena)
-                    console.log(mail)
-
-
-                if (contrasena == true && mail == true) {
-
-                    console.log("ERROR contra")
-
-                    res.redirect('users/profile') 
-                } {
-                    res.render('login', {
-                        errors: {
-                            email: {
-                                msg: 'Credenciales incorrectas'
-                            }
-                        }
-                    })
-
-                    console.log("ERROR")
-                }
-
-
-                })
-            },
-
-*/
 
 /*** LOGIN FUNCIONA ***/
-
     checkLogin: (req, res) => {
-
         db.Cliente.findOne({
             where: {email: req.body.email}
             })
-            
             .then( user => {
                 let contrasena = false
                 let mail = false
@@ -111,18 +49,62 @@ const usersController = {
                     }
         
                     return res.redirect('./profile')
-                 } else {
+
+                } else {
 
                     return res.render('login', {
                         errors: {
                             email: {
                                 msg: 'Las credenciales son incorrectas'}}
-                            })    
-                        }
-                    })
+                    })    
+                }
+            })
     },
+    
 
+/* SEGUNDA OPCION CHECK LOGIN (se puede borrar !?)
+    checkLogin: (req, res) => {
+        db.Cliente.findOne({
+            where: {email: req.body.email}
+            })
+            .then( user => {
+                let contrasena = false
+                let mail = false
 
+                if (user){
+                    mail = true
+                    console.log("ERROR MAIL")
+
+                    if (bcryptjs.compareSync(req.body.contrasena, user.contrasena)) {
+                        console.log("ERROR CONTRASENA")
+                        req.session.userLogged = user;
+                        contrasena = true
+
+                        if (req.body.remember_user){
+                            res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
+                        }
+                    } 
+                }
+
+                console.log(contrasena)
+                console.log(mail)
+            
+                if (contrasena == true && mail == true) {
+                    console.log("ERROR contra")
+                    res.redirect('users/profile') 
+                } {
+                    res.render('login', {
+                        errors: {
+                            email: {
+                                msg: 'Credenciales incorrectas'
+                            }
+                        }
+            })
+            console.log("ERROR")
+        }
+        })
+    },
+*/
 
 
 /*** REGISTRO ***/
@@ -134,7 +116,6 @@ const usersController = {
     },
 
     checkRegistro: (req, res) => {
-
         const resultValidation = validationResult(req);
         
         if (resultValidation.errors.length > 0) {
@@ -143,7 +124,6 @@ const usersController = {
                 oldData: req.body
             });
         }
-
 
         db.Cliente.count({
                         where: {email: req.body.email}
@@ -188,21 +168,23 @@ const usersController = {
         .then(function(user){
             return res.render('perfil', {user: req.session.userLogged})
         })
-        //return res.render("perfil", { user: req.session.userLogged });
-},  
-        editarPerfil: (req, res) => {
+        //return res.render("perfil", { user: req.session.userLogged }); (se puede borrar !?)
+    },  
+
+    editarPerfil: (req, res) => {
         db.Cliente.findByPk(req.params.id)
         .then((user)=>{
         return res.render('edicionPerfil', {user})
         })
-        },
+    },
+
 
 /*** UPDATE ***/
     update: (req, res)=>{ 
             db.Cliente.update({
                 nombre: req.body.name,
                 apellido: req.body.apellido,
-                imagen: req.file.filename,
+                imagen: req.files.filename,
                 email: req.body.email,
                 cumpleanos:req.body.cumpleanos,
                 telefono: req.body.telefono, 
@@ -213,13 +195,14 @@ const usersController = {
                 }}
             )
             res.redirect('/users/profile/' + req.params.id);  
-        },
+    },
         
 
 /*** CARRITO ***/
     carrito: (req, res)=>{
             res.render("carrito") 
-        },
+    },
+
 
 /*** CERRAR SESION ***/
     logout: (req, res) => {

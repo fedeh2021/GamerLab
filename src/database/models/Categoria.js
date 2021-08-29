@@ -24,6 +24,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255)
         }
     }
+    
     const config = {
       tablename: 'categorias',
       timestamps: false,

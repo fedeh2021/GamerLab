@@ -1,5 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
+
     const alias = 'Envio'
+
     const cols = {
         id: {
             type: dataTypes.SMALLINT(6).UNSIGNED,
@@ -35,15 +37,18 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false   
         }
     }
+
     const config = {
         tablename: 'envios',
         timestamps: false,
         underscored: true,
         camelCase: false
     }
+
     const Envio = sequelize.define(alias, cols, config);
 
     Envio.associate = function (models){
+        
         Envio.hasMany( models.Cliente, {
           as: "clientes",
           foreignKey: "envio_fk"

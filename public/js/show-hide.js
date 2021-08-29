@@ -7,7 +7,7 @@ toggleBtn.addEventListener("click", ()=>{
 
         divList.style.display = "block"
 
-    }else{
+    } else {
         divList.style.display = "none"
     }
 })
