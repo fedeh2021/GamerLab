@@ -98,14 +98,11 @@ const productsController = {
 
 
 /*** EDIT Y UPDATE DE UN PRODUCTO***/
-    edicionProducto:(req, res) => {
-        let pedidoProducto = db.Producto.findByPk(req.params.id);
-        let pedidoCategorias = db.categorias.findAll();
+    edicionProducto:async (req, res) => {
+        let productos = await db.Producto.findByPk(req.params.id)
+        let categorias = await db.categorias.findAll();
 
-        Promise.all([pedidoProducto, pedidoCategorias])
-        .then(function([productos, categorias]){
-            res.render ("edicionProducto", {productos, categorias})
-        })
+            return res.render ("edicionProducto", {productos, categorias})
     },
  
     checkEdicionProducto:(req, res) => {
@@ -122,8 +119,7 @@ const productsController = {
         }, {where:{
             id:req.params.id
             }}
-        )
-        res.redirect('/products/detail/' + req.params.id);  
+        ).then(function(){res.redirect('/products/detail/' + req.params.id)})
     },
 
 

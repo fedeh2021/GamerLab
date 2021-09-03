@@ -24,7 +24,7 @@ function cargarEventos() {
 }
 
 function procesarCompra() {
-    e.preventDefault();
+   // e.preventDefault();
     if (compra.obtenerProductosLocalStorage().length === 0) {
         Swal.fire({
             type: 'error',
@@ -33,7 +33,7 @@ function procesarCompra() {
             showConfirmButton: false,
             timer: 2000
         }).then(function () {
-            window.location = "index.ejs";
+            window.location = "/";
         })
     }
 

@@ -1421,14 +1421,13 @@ text-decoration: none;
         border-radius: 5%;
     }
 
-    .form-prod-delete{
-     /* 
+ /*   .form-prod-delete{
+    
         max-width: 10%;
         position: absolute;
         top:54%;
         right:29%;
     */
-    }
 
     .prod-delete{
         background-color: #010b17;
@@ -1562,12 +1561,12 @@ text-decoration: none;
         cursor: pointer;
     }
 
-    .form-prod-delete{
-    /*  max-width: 10%;
+    /* .form-prod-delete{
+     max-width: 10%;
         position: absolute;
         bottom:-10%;
-    */
-    }
+   
+    } */
 
     .prod-delete{
         background-color: #010b17;

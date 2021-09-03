@@ -199,14 +199,15 @@ let Carrito = class {
                 timer: 2000
             })
         } else {
-            location.href = "carrito.ejs";
+            location.href = "/users/cart";
         }
     }
 
     //Calcular montos
     calcularTotal(){
-        let productosLS;
-        let total = 0, subtotal = 0;
+        let productosLS = null;
+        let total = 0; 
+        let subtotal = 0;
         productosLS = this.obtenerProductosLocalStorage();
         for(let i = 0; i < productosLS.length; i++){
             let element = Number(productosLS[i].precio * productosLS[i].cantidad);
@@ -214,9 +215,10 @@ let Carrito = class {
             
         }
         
-        document.getElementById('subtotal').innerHTML = "$ " + subtotal;
+        let subtotalvar = document.getElementById('subtotal');
+        subtotalvar.innerHTML = "$ " + subtotal;
         
-        document.getElementById('total').value = "$ " + total.toFixed(2);
+        document.getElementById('total').innerHTML = "$ " + total.toFixed(2);
     }
 
     obtenerEvento(e) {
