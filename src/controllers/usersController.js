@@ -153,8 +153,7 @@ const usersController = {
                     imagen: req.file.filename,
                     envio_fk: null,
                     created_at: Date.now(),
-                    updated_at: Date.now(),
-                    deleted_at: Date.now(),
+                    updated_at: 0,
                 })
                 res.redirect('./login');
             }
@@ -184,11 +183,12 @@ const usersController = {
             db.Cliente.update({
                 nombre: req.body.name,
                 apellido: req.body.apellido,
-                imagen: req.files.filename,
+                //imagen: req.file.filename,
                 email: req.body.email,
                 cumpleanos:req.body.cumpleanos,
                 telefono: req.body.telefono, 
-                dni: req.body.dni
+                dni: req.body.dni,
+                updated_at: Date.now(),
                    
             }, {where:{
                 id:req.params.id

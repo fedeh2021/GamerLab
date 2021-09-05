@@ -20,10 +20,23 @@
         
     <h1 class="titulo-formulario">EDICIÓN DE PERFIL</h1>
 
+
+    <div class="profile-pic">
+        <label class="label" for="file">
+          <span></span>
+          <span>Editar imagen</span>
+        </label>
+        <input type="file" name="image"  id="foto-producto" onchange="loadFile(event)"/>
+        <img src="/img/avatars/<%=user.imagen%>" id="output" width="200" />
+    </div>
+
+<!--
     <div class="formulario-producto">
         <label for="file">Imagen del usuario: </label>
-        <input type="file" value="<%=user.imagen%>" name="image" class="usuario" placeholder="foto" id="foto-producto">
+        <img src="/img/avatars/<%=user.imagen%>" class="editarImagen">
+        <input type="file" name="image" class="usuario" placeholder="foto" id="foto-producto">
     </div>
+-->
 
     <div class="formulario-producto">
         <label>Nombre del usuario:</label>
@@ -56,9 +69,15 @@
     </div>
 
     <button type="submit" class="formulario-boton">Modificar perfil</button>
+    
 </form>
+
+
+
+<script src="/js/perfil.js"></script>
 
 </main>
 <%- include('./../views/partials/footer') %>
+
 </body>
 </html>
