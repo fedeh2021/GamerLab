@@ -199,8 +199,11 @@ const usersController = {
         
 
 /*** CARRITO ***/
-    carrito: (req, res)=>{
-            res.render("carrito") 
+    carrito: (req, res) => {
+        db.Producto.findAll()
+       .then(function(productos) {
+            res.render ("carrito", {productos})
+        })
     },
 
 

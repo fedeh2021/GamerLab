@@ -2,7 +2,7 @@ let Carrito = class {
 
     //Añadir producto al carrito
     comprarProducto(e){
-        e.preventDefault();
+        //e.preventDefault();
 
         //Delegado para agregar al carrito
         if(e.target.classList.contains('agregar-carrito')){
@@ -67,7 +67,7 @@ let Carrito = class {
 
     //Eliminar el producto del carrito en el DOM
     eliminarProducto(e){
-        e.preventDefault();
+        e.Default();
         let producto, productoID;
         if(e.target.classList.contains('borrar-producto')){
             e.target.parentElement.parentElement.remove();
@@ -215,8 +215,7 @@ let Carrito = class {
             
         }
         
-        let subtotalvar = document.getElementById('subtotal');
-        subtotalvar.innerHTML = "$ " + subtotal;
+        document.getElementById('subtotal').innerHTML = "$ " + subtotal;
         
         document.getElementById('total').innerHTML = "$ " + total.toFixed(2);
     }
