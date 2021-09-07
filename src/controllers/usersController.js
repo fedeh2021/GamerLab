@@ -37,19 +37,17 @@ const usersController = {
                 if (user){
                     mail = true
                     contrasena = true
-                    if (bcryptjs.compareSync(req.body.contrasena, user.contrasena)) {
+                    let isOkThePassword = bcryptjs.compareSync(req.body.contrasena, user.contrasena);
+                    if(isOkThePassword){
+                        delete user.contrasena;
                         req.session.userLogged = user;
-                    }
 
                     if (req.body.remember_user){
                         res.cookie('userEmail', req.body.email, { maxAge: 1000 * 3600})
                     }
-        
                     return res.redirect('./profile')
 
-                } else {
-
-                    return res.render('login', {
+                } return res.render('login', {
                         errors: {
                             email: {
                                 msg: 'Las credenciales son incorrectas'}}

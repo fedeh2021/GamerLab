@@ -156,7 +156,7 @@ let Carrito = class {
                 </td>
                 <td id='subtotales'>${producto.precio * producto.cantidad}</td>
                 <td>
-                    <a href="#!" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
+                    <a href="#!" class="borrar-producto fas fa-times-circle"  data-id="${producto.id}"></a>
                 </td>
             `;
             listaCompra.appendChild(row);
@@ -212,10 +212,9 @@ let Carrito = class {
         for(let i = 0; i < productosLS.length; i++){
             let element = Number(productosLS[i].precio * productosLS[i].cantidad);
             total = total + element;
-            
         }
         
-        document.getElementById('subtotal').innerHTML = "$ " + subtotal;
+        
         
         document.getElementById('total').innerHTML = "$ " + total.toFixed(2);
     }
