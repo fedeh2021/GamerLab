@@ -15,9 +15,17 @@
 <body>
     <%- include('./../views/partials/header') %>
 <main>
-        <div>
-            <img class="banner" src="/img/omen.jpg" alt="HP Omen Gaming">
-        </div>
+    <div id="slider">
+        <ul id="slideWrap"> 
+            <li><img src="/img/kunpapa.jpg" alt="" width="720" height="300"></li>
+            <li><img src="/img/lolchamp.jpg" alt=""></li>
+            <li><img src="/img/superpc.png" alt=""></li>
+            <li><img src="/img/nvi.jpg" alt=""></li>
+        </ul>
+        <a id="prev" href="#!">&#8810;</a>
+        <a id="next" href="#!">&#8811;</a>
+    </div>
+       
         
 
     <div c.lass="container products-wrapper" id="lista-productos">
@@ -45,6 +53,7 @@
                 <% } %> 
         </div>
     <script src="/js/show-hide.js"></script>
+    <script src="/js/slideshow.js"></script>
 
         <section class="noticia">
             <h3 class="noticias">NOTICIAS</h3>
@@ -57,5 +66,6 @@
     </main>
     
     <%- include('./../views/partials/footer') %>
+    
 </body>
 </html>

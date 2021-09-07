@@ -67,7 +67,7 @@ let Carrito = class {
 
     //Eliminar el producto del carrito en el DOM
     eliminarProducto(e){
-        e.Default();
+        e.preventDefault();
         let producto, productoID;
         if(e.target.classList.contains('borrar-producto')){
             e.target.parentElement.parentElement.remove();
@@ -156,7 +156,7 @@ let Carrito = class {
                 </td>
                 <td id='subtotales'>${producto.precio * producto.cantidad}</td>
                 <td>
-                    <a href="#" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
+                    <a href="#!" class="borrar-producto fas fa-times-circle" style="font-size:30px" data-id="${producto.id}"></a>
                 </td>
             `;
             listaCompra.appendChild(row);
