@@ -443,6 +443,7 @@ a.btn{
 
 .contenedor-resumen{
     width: 90vw;
+    height: 90vh;
     background-color: #143663;
     display: block;
     margin: auto;
@@ -525,35 +526,6 @@ a.btn{
     margin: auto;
     background-color: #143663;
     padding: 10px;
-}
-
-.teclado{
-    width: 15vw;
-    height: auto;
-    display: inline-block;
-    box-shadow: rgba(0, 0, 0, 0.5) 1px 5px 20px;
-}
-
-.teclado-datos{
-    display: inline-block;
-    color:#fff;
-    font-weight: 200;
-    margin-left: 0.5vw;
-}
-
-.monitor-datos{
-    display: inline;
-    color:#fff;
-    font-weight: 200;
-    margin-left: 0.5vw;
-}
-
-.monitor{
-    margin-left: 2vw;
-    width: 15vw;
-    height: auto;
-    display: inline-block;
-    box-shadow: rgba(0, 0, 0, 0.5) 1px 5px 20px;
 }
 
 .item-titulo{
@@ -1578,6 +1550,11 @@ text-decoration: none;
     /*  margin-left:800%; 
     */
     }
+
+
+
+    
+    
 }
 
 @media(min-width:1300px) {
