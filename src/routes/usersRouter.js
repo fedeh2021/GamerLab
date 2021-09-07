@@ -3,9 +3,6 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-const { body } = require('express-validator');
-
-
 // ************ Controller Require ************
 const usersController = require('../controllers/usersController');
 

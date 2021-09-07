@@ -3,16 +3,13 @@ const express = require('express');
 const router = express.Router();
 const path = require ("path");
 
-const multer = require ("multer");
-
-
 // ************ Controller Require ************
 const productsController = require("../controllers/productsController");
 
 
 // ************ Middlewares ************
 const uploadFile = require ("../middlewares/imageMiddleware");
-
+const validations = require('../middlewares/validateProductMiddleware');
 
 // ************ Views ************
 
@@ -29,7 +26,7 @@ router.put("/edit/:id", uploadFile.single('image'), productsController.checkEdic
 
 /*** CREAR UN NUEVO PRODUCTO ***/
 router.get("/create", productsController.creacionProducto);
-router.post("/create", uploadFile.single('image'), productsController.checkCreacionProducto); 
+router.post("/create", uploadFile.single('image'), validations, productsController.checkCreacionProducto); 
  
 /*** ELIMINAR UN PRODUCTO ***/
 router.delete("/delete/:id", productsController.delete)

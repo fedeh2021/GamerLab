@@ -2,11 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 
-
 // ************ Require DATABASE ************
 const db = require("../database/models")
-//const User = require('../models2/User')
-
 
 // ************ otros Require's ************
 const bcryptjs = require('bcryptjs');
@@ -167,7 +164,6 @@ const usersController = {
         .then(function(user){
             return res.render('perfil', {user: req.session.userLogged})
         })
-        //return res.render("perfil", { user: req.session.userLogged }); (se puede borrar !?)
     },  
 
     editarPerfil: (req, res) => {
