@@ -181,6 +181,9 @@ body{
 	outline: inherit;
 }
 
+#cargando{
+    display: none;
+}
 
 
 /*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*//*MAIN*/
