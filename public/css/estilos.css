@@ -610,10 +610,11 @@ a.btn{
     align-content: center;
     display: flex;
 }
-.usuario,.contraseña,.cumpleaños,.email {
+.usuario{
     margin-bottom: 2vw;
     justify-content: center;
     display: flex;
+    width: 100%;
 }
 
 .usuariologin i {
@@ -903,9 +904,7 @@ a.btn{
     color: #666666
 }
 
-.formulario-text, #formulario-text{
-    width: 100%;
-}
+
 
 .crear-producto-btn{
     box-shadow: rgba(103, 150, 177, 0.733) 0px 7px 20px 0px;
