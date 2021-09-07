@@ -15,44 +15,44 @@
 <%- include('./../views/partials/header') %>
 
 <body>
-    <form action="/products/create" method="POST" class="formulario-prod" enctype="multipart/form-data">
+    <form action="/products/create" name="formulario" method="POST" class="formulario-prod" enctype="multipart/form-data" onsubmit="return validar();">
         
     <h1 class="titulo-formulario">CREACIÓN DE PRODUCTO</h1>
 
     <div class="formulario-producto">
-        <label>Imagen del producto:</label>
-        <input type="file" name="image" class="usuario" id="foto-producto">
+        <label for="file">Imagen del producto:</label>
+        <input type="file" name="image" class="usuario" id="image">
     </div>
 
     <div class="formulario-producto">
         <label>Nombre del producto:</label>
-        <input type="text" name="name" class="name" placeholder="Nombre del producto" id="formulario-text">
+        <input type="text" name="name" id="name" class="usuario" placeholder="Nombre del producto">
     </div>    
     
     <div class="formulario-producto">
         <label>Descripción:</label>
-        <textarea rows="4" cols="40" name="description" placeholder="description" id="formulario-text"></textarea>
+        <textarea rows="4" cols="40" name="description" id="description" class="usuario" placeholder="description" ></textarea>
     </div>
 
     <div class="formulario-producto">
         <label>Precio:</label>
-        <input type="text" name="price" class="price" placeholder="$" id="formulario-text">
+        <input type="text" name="price" id="price" class="usuario" placeholder="$">
     </div>
 
     <div class="formulario-producto">
         <label>Descuento:</label>
-        <input type="text" name="discount" class="discount" placeholder="%" id="formulario-text">
+        <input type="text" name="discount" id="discount" class="usuario" placeholder="%" >
     </div>
 
     <div class="formulario-producto">
         <label>Stock:</label>
-        <input type="number" name="stock" class="stock" id="formulario-text">
+        <input type="number" name="stock" id="stock" class="usuario">
     </div>
 
 
     <div class="formulario-producto">
-        <label for="categoria">Categoría del producto:</label>
-            <select id="categoria" name="category" class="formulario-text">
+      <label for="categoria">Categoría del producto:</label>
+            <select id="categoria" name="category" id="category" class="usuario">
                 <% for (let i=0; i < categorias.length ; i++) { %>
                     <option value="<%=categorias[i].id%>">
                     <%=categorias[i].nombre%>
@@ -64,7 +64,7 @@
 
     <button type="submit" class="formulario-boton">Crear producto</button>
 </form>
-
+<script src="/js/validar.js"></script>
 </main>
 <%- include('./../views/partials/footer') %>
 </body>
