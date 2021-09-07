@@ -1,90 +1,69 @@
-
 <header class=main-header>
     <nav class="main-header-top-bar">
-         
         <div class="barra-izquierda">
-
             <a href="/"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
-
-            <a class="icono-burger"><i class="fas fa-bars fa-10x"></i></a>
-                        
+            <a class="icono-burger"><i class="fas fa-bars fa-10x"></i></a>          
         </div>
         
         <div class="barra-derecha">
-
             <div class="searchbar">
                 <form class="search-form" action="/products/search" method="GET">
                     <input name="keyword" type="text" id ="formulario" class="barra-buscadora" placeholder="Busca productos">
                     <button class="search-button" id = "boton" type="submit">
                         <i class="fas fa-search fa-2x"></i>
                     </button> 
-                </form>
+                </form>                
             </div>
             
-            <% if (locals.isLogged) { %>
-
+        <% if (locals.isLogged) { %>
             <div class="barra-logeado">  
-                
                 <img src="/img/avatars/<%=locals.userLogged.imagen %>" style="border-radius: 100%" class="avatarpequeño">
-                
-                <ul class="ul-opciones">
-                    <li><a href="/users/profile"> Hola <%= locals.userLogged.nombre %></a></li> 
-
-                    <li><a class="" href="/users/logout">Cerrar sesión</a></li>
-
-                    <li type="button" class= "icono-carrito"><i class="fas fa-shopping-cart"></i></li>
-                </ul>
+                    <ul class="ul-opciones">
+                        <li><a href="/users/profile"> Hola <%= locals.userLogged.nombre %></a></li> 
+                        <li><a class="" href="/users/logout">Cerrar sesión</a></li>
+                        <li type="button" class= "icono-carrito"><i class="fas fa-shopping-cart"></i></li>
+                    </ul>
              
+        <% } else { %>
+            <div class="items-barra-logeo">
+                <li><a href="/users/register"><i class="fas fa-sign-in-alt fa-2x"></i></a></li>
+                <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
+                <li><button class="icono-carrito"><i class="fas fa-shopping-cart" onclick="return Swal.fire('Para ingresar a tu carrito debes iniciar sesión o registrarte')"></i></button></li>
+        <% } %>
 
-            <% } else { %>
-                <div class="items-barra-logeo">
-                    <li><a href="/users/register"><i class="fas fa-sign-in-alt fa-2x"></i></a></li>
-                    <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
-                    <li><button class="icono-carrito"><i class="fas fa-shopping-cart" onclick="return Swal.fire('Para ingresar a tu carrito debes iniciar sesión o registrarte')"></i></button></li>
-                
-            <% } %>
+                <div id="carrito">  
+                    <table id="lista-carrito" class="table">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>                                    
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
 
-         
-         <div id="carrito">  
-            <table id="lista-carrito" class="table">
-                <thead>
-                    <tr>
-                        <th>Imagen</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        
-                    </tr>
-
-                    
-                </thead>
-                <tbody></tbody>
-            </table>
-            <div class="opciones-carrito">
-                <li><a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a></li>
-                <li><a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a></li>
-            </div>    
-        </div>
-      </div>  
-     </div>       
-    
-
+                    <div class="opciones-carrito">
+                        <li><a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a></li>
+                        <li><a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a></li>
+                    </div>    
+                </div>
+            </div>  
+            </div>       
         </div>  
-
     </nav>
 
     <div class="main-header-bottom-bar">
-
-    <ul class="menu-productos1">
-        <li><a href="/products/producto" category="all" class="category_item">Todos los productos</a></li>
-        <li><a href="#!" category="notebooks" class="category_item">Notebooks</a></li>
-        <li><a href="#!" category="monitores" class="category_item">Monitores</a></li>
-        <li><a href="#!" category="teclados-mouses" class="category_item">Teclados y mouses</a></li>
-        <li><a href="#!" category="audios" class="category_item">Audio</a></li>
-        <li><a href="#!" category="placas" class="category_item">Placa de video</a></li>
-        <li><a href="#!" category="pc" class="category_item">Armá tu PC</a></li>
-        <li><a href="#!" category="sillas-escritorios" class="category_item">Sillas y escritorios</a></li>
-     </ul>
-
+        <ul class="menu-productos1">
+            <li><a href="/products/producto" category="all" class="category_item">Todos los productos</a></li>
+            <li><a href="#!" category="notebooks" class="category_item">Notebooks</a></li>
+            <li><a href="#!" category="monitores" class="category_item">Monitores</a></li>
+            <li><a href="#!" category="teclados-mouses" class="category_item">Teclados y mouses</a></li>
+            <li><a href="#!" category="audios" class="category_item">Audio</a></li>
+            <li><a href="#!" category="placas" class="category_item">Placa de video</a></li>
+            <li><a href="#!" category="pc" class="category_item">Armá tu PC</a></li>
+            <li><a href="#!" category="sillas-escritorios" class="category_item">Sillas y escritorios</a></li>
+        </ul>
     </div>
     
     <script src="/js/show-hide.js"></script>
