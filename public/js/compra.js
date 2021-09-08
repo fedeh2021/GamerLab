@@ -24,7 +24,7 @@ function cargarEventos() {
 }
 
 function procesarCompra() {
-   // e.preventDefault();
+   //e.preventDefault();
     if (compra.obtenerProductosLocalStorage().length === 0) {
         Swal.fire({
             type: 'error',
@@ -37,31 +37,31 @@ function procesarCompra() {
         })
     }
 
-    else if (cliente.value === '' || correo.value === '') {
-        Swal.fire({
-            type: 'error',
-            title: 'Oops...',
-            text: 'Ingrese todos los campos requeridos',
-            showConfirmButton: false,
-            timer: 2000
-        })
-    } 
+    //else if (cliente.value === '' || correo.value === '') {
+      //  Swal.fire({
+        //    type: 'error',
+          //  title: 'Oops...',
+           // text: 'Ingrese todos los campos requeridos',
+            //showConfirmButton: false,
+            //timer: 2000
+       // })
+    //} 
     
     else {
         
         //aqui se coloca el user id generado en el emailJS
-        (function () {
-            emailjs.init("user_CEozz2F39lJJOLF5mJiDA");
-        })();
+      //  (function () {
+        //    emailjs.init("user_CEozz2F39lJJOLF5mJiDA");
+        //})();
 
-        var myform = $("form#procesar-pago");
+        //var myform = $("form#procesar-pago");
 
-        myform.submit( (event) => {
-            event.preventDefault();
+       // myform.submit( (event) => {
+         //   event.preventDefault();
 
             // Change to your service ID, or keep using the default service
-            var service_id = "default_service";
-            var template_id = "template_3SA9LsqQ";
+           // var service_id = "default_service";
+            //var template_id = "template_3SA9LsqQ";
 
             const cargandoGif = document.querySelector('#cargando');
             cargandoGif.style.display = 'block';
@@ -89,6 +89,6 @@ function procesarCompra() {
                 });
 
             return false;
-        });
+        //});
     }
 }
