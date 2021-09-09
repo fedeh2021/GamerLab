@@ -14,16 +14,13 @@ module.exports = (sequelize, dataTypes) => {
         },
         created_at: {
             type: dataTypes.DATE, 
-            
         },
         updated_at: {
             type: dataTypes.DATE, 
-            
         },
         deleted_at: {
             type: dataTypes.DATE,
             defaultValue: true
-            
         },
         nombre: {
             type: dataTypes.STRING(255),
@@ -32,7 +29,6 @@ module.exports = (sequelize, dataTypes) => {
         imagen: {
             type: dataTypes.STRING(500),
             allowNull: false
-            
         },
         descripcion: {
             type: dataTypes.STRING(255), 
