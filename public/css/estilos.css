@@ -1589,10 +1589,10 @@ text-decoration: none;
         width: 1200px;
         height: 400px;
         margin: auto;
-      
         overflow: hidden;
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
       }
+      
     #slider ul {
         position: relative;
         list-style: none;
@@ -1637,6 +1637,64 @@ text-decoration: none;
       #slider #prev:hover, #slider #next:hover {
         background-color: rgba(0, 0, 0, 0.5);
         text-shadow: 0;
+      }
+
+      #slider ul li img {
+        animation: fadeIn 5s;
+        -webkit-animation: fadeIn 5s;
+        -moz-animation: fadeIn 5s;
+        -o-animation: fadeIn 5s;
+        -ms-animation: fadeIn 5s;
+      }
+
+      #slider ul li img{
+          
+          animation:sliderZoomEffect 25s linear infinite;
+        }
+
+      @keyframes sliderZoomEffect{
+        
+        0%{
+            transform:scale(0.75)
+        }
+        25%{
+            transform:scale(0.90)
+        }
+        50%{
+            transform:scale(1.05)
+        }
+        75%{
+            transform:scale(0.9)
+        }
+        100%{
+            transform:scale(0.75)
+        }
+        
+    }
+
+      @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+      
+      @-moz-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+      
+      @-webkit-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+      
+      @-o-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+      
+      @-ms-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
       }
       
 
