@@ -1,57 +1,102 @@
 <header class=main-header>
+  
+    <div class="topnav">
+        <a href="/" class="active"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
+            
+        <!-- Navigation links (hidden by default) --> <!-- FALTA COMPLETAR VISTAS POR CATEGORIA --> 
+        <div id="myLinks">
+            <a href="#">Todos los productos</a>
+            <a href="#">Notebooks</a>
+            <a href="#">Monitores</a>
+            <a href="#">Teclados y mouses</a>
+            <a href="#">Audio</a>
+            <a href="#">Placa de video</a>
+            <a href="#">Armá tu PC</a>
+            <a href="#">Sillas y escritorios</a>
+        </div>
+            
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fas fa-bars fa-10x"></i>
+        </a>
+    </div>
+
+
+
     <nav class="main-header-top-bar">
+
         <div class="barra-izquierda">
             <a href="/"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
-            <a class="icono-burger"><i class="fas fa-bars fa-10x"></i></a>          
         </div>
-        
-        <div class="barra-derecha">
-            <div class="searchbar">
-                <form class="search-form" action="/products/search" method="GET">
-                    <input name="keyword" type="text" id ="formulario" class="barra-buscadora" placeholder="Busca productos">
-                    <button class="search-button" id = "boton" type="submit">
-                        <i class="fas fa-search fa-2x"></i>
-                    </button> 
-                </form>                
+
+    <div class="search-bar">
+        <div class="searchbar">
+            <form class="search-form" action="/products/search" method="GET">
+                <input name="keyword" type="text" id ="formulario" class="barra-buscadora" placeholder="Busca productos">
+                <button class="search-button" id = "boton" type="submit">
+                    <i class="fas fa-search fa-2x"></i>
+                </button> 
+            </form>                
+        </div>
+    </div>    
+
+<!--
+        <div class="wrap">
+            <div class="search">
+               <input type="text" class="searchTerm" placeholder="What are you looking for?">
+               <button type="submit" class="searchButton">
+                 <i class="fa fa-search"></i>
+              </button>
             </div>
-            
-        <% if (locals.isLogged) { %>
-            <div class="barra-logeado">  
-                <img src="/img/avatars/<%=locals.userLogged.imagen %>" style="border-radius: 100%" class="avatarpequeño">
-                    <ul class="ul-opciones">
-                        <li><a href="/users/profile"> Hola <%= locals.userLogged.nombre %></a></li> 
-                        <li><a class="" href="/users/logout">Cerrar sesión</a></li>
-                        <li type="button" class= "icono-carrito"><i class="fas fa-shopping-cart"></i></li>
-                    </ul>
-             
-        <% } else { %>
-            <div class="items-barra-logeo">
-                <li><a href="/users/register"><i class="fas fa-sign-in-alt fa-2x"></i></a></li>
-                <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
-                <li><button class="icono-carrito"><i class="fas fa-shopping-cart" onclick="return Swal.fire('Para ingresar a tu carrito debes iniciar sesión o registrarte')"></i></button></li>
-        <% } %>
+        </div>
+-->
 
-                <div id="carrito">  
-                    <table id="lista-carrito" class="table">
-                        <thead>
-                            <tr>
-                                <th>Imagen</th>                                    
-                                <th>Nombre</th>
-                                <th>Precio</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
 
-                    <div class="opciones-carrito">
-                        <li><a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a></li>
-                        <li><a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a></li>
-                    </div>    
+        <div class="barra-derecha">
+
+            <% if (locals.isLogged) { %>
+                <div class="barra-logeado">  
+                    <img src="/img/avatars/<%=locals.userLogged.imagen %>" style="border-radius: 100%" class="avatarpequeño">
+                        <ul class="ul-opciones">
+                            <li><a href="/users/profile"> Hola, <%= locals.userLogged.nombre %></a></li> 
+                            <li><a class="" href="/users/logout">Cerrar sesión</a></li>
+                            <li type="button" class= "icono-carrito"><i class="fas fa-shopping-cart"></i></li>
+                        </ul>
                 </div>
-            </div>  
-            </div>       
+                
+            <% } else { %>
+                <div class="items-barra-logeo">
+                    <li><a href="/users/register"><i class="fas fa-sign-in-alt fa-2x"></i></a></li>
+                    <li><a href="/users/login"><i class="fas fa-user-circle fa-2x "></i></a></li>
+                    <li><button class="icono-carrito"><i class="fas fa-shopping-cart" onclick="return Swal.fire('Para ingresar a tu carrito debes iniciar sesión o registrarte')"></i></button></li>
+               </div>
+            <% } %>
+
+            <div id="carrito">  
+                <table id="lista-carrito" class="table">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>                                    
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <div class="opciones-carrito">
+                    <li><a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a></li>
+                    <li><a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar Compra</a></li>
+                </div>    
+            </div>
         </div>  
     </nav>
+
+
+
+
+
+
 
     <div class="main-header-bottom-bar">
         <ul class="menu-productos1">
@@ -66,5 +111,9 @@
         </ul>
     </div>
     
+
+
+
     <script src="/js/show-hide.js"></script>
+    <script src="/js/burger.js"></script>
 </header>

@@ -8,12 +8,24 @@ function validar(){
     category = document.getElementById("category").value;
     
 
-    if(name === "" || description === "" || price === "" || stock === "" || discount === "" || category === ""){
-        alert("todos los campos son obligatorios");
+    if(name === "" || description === "" || price === "" || stock === "" || discount === "" || category === "" ){
+        Swal.fire("Todos los campos son obligatorios");
         return false;
     }
     else if(name.length>25){
-        alert("el nombre es muy largo");
+        alert("El nombre es muy largo");
         return false;
     }
+    else if(description.length>500){
+        alert("La descripcion es muy larga");
+        return false;
+    }
+
+  //  image = document.getElementById('image');
+   //if (!image.files) { 
+     //  console.error("This browser doesn't seem to support the `files` property of file inputs.");
+   // } else {
+     // var file = input.files[0];
+       // console.log("File " + file.name + " is " + file.size + " bytes in size");
+   // }
 }
