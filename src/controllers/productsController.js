@@ -14,6 +14,7 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const { response } = require('express');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { validationResult } = require('express-validator');
 
 
 // ************ Controller ************
@@ -49,16 +50,6 @@ const productsController = {
         
         res.render("index", {productos: listadoProductos})
     })},
-
-    // SEGUNDA OPCION INDEX (se puede borrar !?)
-        /*
-        db.Producto.findAll()
-        .then(function(productos) {
-            res.render ("producto", {productos})
-        })
-    },
-    */
-
 
 /*** DETALLE DE PRODUCTO ***/
     detalleProductos: (req, res) => {        

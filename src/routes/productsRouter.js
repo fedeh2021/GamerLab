@@ -9,7 +9,7 @@ const productsController = require("../controllers/productsController");
 
 // ************ Middlewares ************
 const uploadFile = require ("../middlewares/imageMiddleware");
-const validations = require('../middlewares/validateProductMiddleware');
+//const validations = require('../middlewares/validateProductMiddleware');
 
 // ************ Views ************
 
@@ -26,7 +26,7 @@ router.put("/edit/:id", uploadFile.single('image'), productsController.checkEdic
 
 /*** CREAR UN NUEVO PRODUCTO ***/
 router.get("/create", productsController.creacionProducto);
-router.post("/create", uploadFile.single('image'), validations, productsController.checkCreacionProducto); 
+router.post("/create", uploadFile.single('image'), productsController.checkCreacionProducto); 
  
 /*** ELIMINAR UN PRODUCTO ***/
 router.delete("/delete/:id", productsController.delete)
