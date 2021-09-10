@@ -55,51 +55,6 @@ const usersController = {
                 }
             })
     },
-    
-
-/* SEGUNDA OPCION CHECK LOGIN (se puede borrar !?)
-    checkLogin: (req, res) => {
-        db.Cliente.findOne({
-            where: {email: req.body.email}
-            })
-            .then( user => {
-                let contrasena = false
-                let mail = false
-
-                if (user){
-                    mail = true
-                    console.log("ERROR MAIL")
-
-                    if (bcryptjs.compareSync(req.body.contrasena, user.contrasena)) {
-                        console.log("ERROR CONTRASENA")
-                        req.session.userLogged = user;
-                        contrasena = true
-
-                        if (req.body.remember_user){
-                            res.cookie('userEmail', req.body.email, { maxAge: 1000 * 120})
-                        }
-                    } 
-                }
-
-                console.log(contrasena)
-                console.log(mail)
-            
-                if (contrasena == true && mail == true) {
-                    console.log("ERROR contra")
-                    res.redirect('users/profile') 
-                } {
-                    res.render('login', {
-                        errors: {
-                            email: {
-                                msg: 'Credenciales incorrectas'
-                            }
-                        }
-            })
-            console.log("ERROR")
-        }
-        })
-    },
-*/
 
 
 /*** REGISTRO ***/

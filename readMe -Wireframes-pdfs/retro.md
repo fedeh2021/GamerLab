@@ -37,7 +37,7 @@ Tambien nos ayudó organizarnos con mayor anticipación, esto generó que lo res
 Este sprint tuvo unos ultimos dias intensos en los cuales, gracias a muchos mensajes en Whatsapp y a varias llamadas de Discord, pudimos resolver todos los inconvenientes que se nos presentaron. Es muy destacable el compañerismo del grupo en ayudar cuando alguien no puede resolver errores y en estar más activos cuando algún miembro no puede conectarse.  
 Entrando en la recta final del proyecto todo es mas complejo y detallista, trabajando en grupo, con buena comunicación y con predisposición hemos podido y vamos a seguir resolviendo todos las trabas que se nos presenten.
 
---SEPTIMO SPRINT (09/2021)
+-- SÉPTIMO SPRINT (09/2021)
 
 Este sprint nos dio más dias para prepararlo y resolverlo, combinando con mejorar detalles pendientes de sprints anteriores. Con varias llamadas de videoconferencia, pudimos ir avanzando y resolviendo los inconvenientos que fueron apareciendo.
 Estamos llegando al final del proyecto y es importante cada detalle, para lograr el mejor resultado posible.

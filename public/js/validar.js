@@ -7,7 +7,6 @@ function validar(){
     discount = document.getElementById("discount").value;
     category = document.getElementById("category").value;
     
-
     if(name === "" || description === "" || price === "" || stock === "" || discount === "" || category === "" ){
         Swal.fire("Todos los campos son obligatorios");
         return false;
