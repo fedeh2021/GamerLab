@@ -33,6 +33,8 @@ router.delete("/delete/:id", productsController.delete)
 
 router.get("/search", productsController.search)
 
+router.get("/categoria/:id", productsController.categorias);
+
 
 // ************ Export ************
 module.exports = router;

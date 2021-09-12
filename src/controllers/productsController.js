@@ -139,6 +139,17 @@ const productsController = {
         }
         return res.status(200).json('No existen productos')
         })
+    },
+
+    categorias: async (req, res) => {
+        let productos = await db.Producto.findAll({
+                        where: {categoria_fk: req.params.id}
+                        })
+        let categorias = await db.categorias.findOne({
+                        where: {id: req.params.id}
+                        });
+
+            return res.render ("categoria", {productos, categorias})
     }
 };
 
