@@ -96,21 +96,26 @@ const productsController = {
             return res.render ("edicionProducto", {productos, categorias})
     },
  
-    checkEdicionProducto:(req, res) => {
-        db.Producto.update({
-            nombre: req.body.name,
-            imagen: req.file.filename,
-            descripcion:req.body.description,
-            precio_lista: req.body.price,
-            descuento: req.body.discount,
-            categoria_fk: req.body.category,
-            updated_at: Date.now(),
-            deleteable: 1,
-            stock: req.body.stock
+    checkEdicionProducto:async(req, res) => {
+
+        let producto = await db.Producto.findOne({
+            where: {id:req.params.id}
+            })
+            .then( db.Producto.update({
+                        nombre: req.body.name,
+                        descripcion:req.body.description,
+                        precio_lista: req.body.price,
+                        descuento: req.body.discount,
+                        categoria_fk: req.body.category,
+                        updated_at: Date.now(),
+                        deleteable: 1,
+                        stock: req.body.stock,
+                        imagen: (req.file? req.file.filename : db.Producto.imagen)
 
         }, {where:{
             id:req.params.id
-            }}
+            }})
+        
         ).then(function(){res.redirect('/products/detail/' + req.params.id)})
     },
 
