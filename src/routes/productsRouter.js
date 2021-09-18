@@ -35,6 +35,8 @@ router.get("/search", productsController.search)
 
 router.get("/categoria/:id", productsController.categorias);
 
+/***API***/
+router.get("/api", productsController.list)
 
 // ************ Export ************
 module.exports = router;

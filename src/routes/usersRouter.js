@@ -35,6 +35,9 @@ router.get('/cart', usersController.carrito);
 /*** CERRAR SESION ***/
 router.get('/logout',usersController.logout)
 
+/*** APIS RUTAS ***/
+router.get ("/", usersController.count)
+router.get ("/:id", usersController.user)
 
 // ************ Export ************
 module.exports = router;

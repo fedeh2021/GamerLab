@@ -155,6 +155,25 @@ const productsController = {
                         });
 
             return res.render ("categoria", {productos, categorias})
+    },
+
+    /** APIS **/
+
+    list: async (req, res) =>{  //no funciona aun
+        let productos = await db.Producto.findAll({
+            where: {categoria_fk: req.params.id}
+            })
+        let categorias = await db.categorias.findOne({
+            where: {id: req.params.id}
+            })
+            
+        .then(productos, categorias => {
+            return res.status(200).json({
+                count: productos.length,
+                countByCategory: categorias.length,
+                products: productos
+            })
+        })
     }
 };
 

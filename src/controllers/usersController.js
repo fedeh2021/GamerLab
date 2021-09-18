@@ -161,7 +161,31 @@ const usersController = {
         res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/')
+    },
+
+    /***API***/
+
+    count: (req,res) => {
+        db.Cliente.findAll()
+        .then(clientes => {
+            return res.status(200).json({
+                count: clientes.length,
+                users:clientes
+            })
+        })
+    },
+   
+    user: (req, res) => {
+        db.Cliente.findByPk(req.params.id)
+        .then(user => {
+            return res.status(200).json({
+                data: user,
+                status:200
+            })
+        })
     }
+
+
 }
 
 
