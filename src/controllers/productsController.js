@@ -174,6 +174,28 @@ const productsController = {
                 products: productos
             })
         })
+    },
+
+    categories: (req, res) => {
+        db.categorias.findAll()
+        .then(categorias => {
+            return res.status(200).json({
+                count: categorias.length,
+                categories:categorias
+            })
+        })
+    },
+
+    productoTotal: (req, res) => {
+        db.Producto.findByPk(req.params.id, {
+            include: [{association: "categorias"}, {association: "Cliente"}]
+        })
+        .then(product => {
+            return res.status(200).json({
+                data: product,
+                status:200
+            })
+        })
     }
 };
 
