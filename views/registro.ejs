@@ -43,7 +43,7 @@
 
             <div class="control-formulario">
                 <label>Dirección de email:</label>
-                <input id="email" type="email" name="email" class="usuario <%= locals.errors && errors.email ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.email : null %>" placeholder="email">
+                <input id="email" type="email" name="email" class="usuario <%= locals.errors && errors.email ? 'is-invalid' : null %>"value="<%= locals.oldData ? oldData.email : null %>" placeholder="ejemplo@email.com">
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger">
                     <%= errors.email.msg %>

@@ -18,6 +18,9 @@ const mainController =
         .then(function(productos) {
             res.render ("index", {productos})
         })
+    },
+    contact: (req,res) => {
+        res.render("contact");
     }
 }
 

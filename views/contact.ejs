@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerLab</title>
+    <link rel="icon" type="./img/png" href="./img/logoGL.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
+</head>
+<body>
+    <%- include('./../views/partials/header') %>
+    <main>    
+        
+        <div c.lass="container products-wrapper" id="lista-productos">
+            <div class="col-12">
+                <h3 class="titulos">¡Seguinos!</h3>
+            </div>
+
+        <h3>Política de cambios y devoluciones</h3>
+        <p>“Los cambios o devoluciones pueden realizarse en cualquier día y horario de atención al público. En el caso de productos no perecederos tales devoluciones o cambios podrán efectuarse dentro de los treinta (30) días corridos posteriores a la operación, salvo que el comercio establezca un plazo mayor.
+            Al momento de efectuarse el cambio o la devolución de productos no perecederos, en caso de existir un saldo a favor del consumidor, el establecimiento está obligado a entregar un comprobante que refleje dicho saldo o su equivalente en dinero en efectivo, a elección del comercio. El comprobante tendrá una vigencia de noventa (90) días corridos desde su emisión, salvo que el comercio establezca un plazo mayor. Ley 3281“.</p>
+        
+        <h3>Formas de pago</h3>
+        <i class="far fa-credit-card"></i><p>Tarjetas de crédito: VISA - AMEX</p><p>Tarjetas de débito: VISA</p><p>MercadoPago - MODO</p>
+        
+        <h3>Sobre nosotros</h3>
+        <p>Nuestro sitio se basa en una tienda que vende artículos relacionados con el mundo del gaming y el streaming. Los productos ofrecidos son principalmente tecnológicos, aunque también hay artículos de mobiliario, como mesas y escritorios especiales para este tipo de disciplinas.
+            Es una marca que recién comienza en el país pero que apuesta fuerte a la nueva tendencia de los jóvenes con los deportes digitales y el streaming, tan impulsado por redes sociales como Yyoutube o Twich.
+        </p>
+        
+        <form method="POST" action="#" class="formulario-registro" enctype="multipart/form-data">
+            <h3>Trabaja con nosotros</h3>
+        <div class="control-formulario">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" placeholder="Nombre">
+                <div class="text-danger">
+                </div>
+        </div>
+        <div class="control-formulario">
+            <label>Dirección de email:</label>
+            <input id="email" type="email" name="email" placeholder="ejemplo@email.com">
+                <div class="text-danger">
+                </div>
+        </div>
+        <div class="control-formulario">
+            <label>Adjunta CV:</label>
+            <input type="file" class="usuario">
+                <div class="text-danger">
+                </div>
+        </div>
+
+        <button type="submit" class="boton-formulario">Enviar</button>
+        </form>
+
+        <h3>Sucursales</h3>
+        <p>Av.Callao 1820, CABA</p>
+
+        </div>
+    </main>
+    <script src="/js/sweetalert2.min.js"></script>
+    <%- include('./../views/partials/footer') %>
+    
+</body>
+</html>

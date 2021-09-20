@@ -12,6 +12,8 @@ const mainController = require("../controllers/mainController");
 /*** HOME PAGE ***/
 router.get('/', mainController.index);
 
+router.get('/contact', mainController.contact);
+
 
 // ************ Export ************
 module.exports = router;
