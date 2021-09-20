@@ -11,11 +11,11 @@ function validar(){
         Swal.fire("Todos los campos son obligatorios");
         return false;
     }
-    else if(name.length>25){
+    else if(name.length>35){
         alert("El nombre es muy largo");
         return false;
     }
-    else if(description.length>500){
+    else if(description.length>50000){
         alert("La descripcion es muy larga");
         return false;
     }
