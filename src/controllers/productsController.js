@@ -159,38 +159,100 @@ const productsController = {
 
     /** APIS **/
 
-    list: async (req, res) =>{  //no funciona aun
-        let productos = await db.Producto.findAll({
-            where: {categoria_fk: req.params.id}
-            })
-        let categorias = await db.categorias.findOne({
-            where: {id: req.params.id}
-            })
+    /* //VERSION 01 ORIGINAL
+
+    list: async (req, res) =>{ 
+
+        let productos = await db.Producto.findAll()
+
+        let categorias = await db.categorias.findAll()
             
         .then(productos, categorias => {
             return res.status(200).json({
                 count: productos.length,
-                countByCategory: categorias.length,
+                countByCategory: categorias.length, //variable por fuera e importamos
                 products: productos
             })
         })
     },
+
+    
+    //VERSION 02 DOS SUB APIS
+
+    listProd: (req, res) => {  //no funciona aun
+
+        let productos = db.Producto.findAll()
+            .then(productos => {
+                return res.status(200).json({
+                    count: productos.length,
+                    products: productos
+                })
+            })
+    },
+
+    listCat: (req, res) => { 
+        let categorias = db.categorias.findAll()
+                             .then(categorias => {
+                                for (let i = 0; i < categorias.length ; i++){
+                                    //console.log(clientes.length, i)
+                                    let cantProd = cantProd++;
+                                }
+                            })      
+        
+                            .then(categorias => {
+                                return res.status(200).json({
+                                    countCat: categorias.length,
+                                    categories: categorias, //countByCategory: categorias.length, //variable por fuera e importamos
+                                })
+                            })
+                        },
+
+    
+    //VERSION 03 VERSION ORIGINAL + FOR CATEGORIAS
+
+    list: async (req, res) => {  //no funciona aun
+
+        let productos = await db.Producto.findAll()
+        
+        let categorias = await db.categorias.findAll()
+
+                               .then(categorias => {
+                                for (let i = 0; i < categorias.length ; i++){
+                                    //console.log(clientes.length, i)
+                                    let cantProd = cantProd++;
+                                }
+                            })      
+            
+                            .then(productos, categorias => {
+                                return res.status(200).json({
+                                    count: productos.length,
+                                    countCat: categorias.length,
+                                    categories: categorias, //countByCategory: categorias.length, //variable por fuera e importamos
+                                    products: productos
+                                })
+                            })
+                        },
+                    
+*/
 
     categories: (req, res) => {
         db.categorias.findAll()
         .then(categorias => {
             return res.status(200).json({
                 count: categorias.length,
-                categories:categorias
+                categories: categorias
             })
         })
     },
 
     productoTotal: (req, res) => {
         db.Producto.findByPk(req.params.id, {
-            include: [{association: "categorias"}, {association: "Cliente"}]
+            include: [{association: "categorias"}, {association: "Cliente"}] // en la asociacion cliente falta sacar la contrasena
         })
         .then(product => {
+
+           //product.Cliente.contrasena = null // (No funciona)
+
             return res.status(200).json({
                 data: product,
                 status:200

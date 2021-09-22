@@ -168,9 +168,15 @@ const usersController = {
     count: (req,res) => {
         db.Cliente.findAll()
         .then(clientes => {
+
+            for (let i = 0; i < clientes.length ; i++){
+                //console.log(clientes.length, i)
+                clientes[i].contrasena = null
+            }
+
             return res.status(200).json({
                 count: clientes.length,
-                users:clientes
+                users: clientes
             })
         })
     },
@@ -178,10 +184,14 @@ const usersController = {
     user: (req, res) => {
         db.Cliente.findByPk(req.params.id)
         .then(user => {
+
+            user.contrasena = null
+            
             return res.status(200).json({
                 data: user,
                 status:200
             })
+    
         })
     }
 

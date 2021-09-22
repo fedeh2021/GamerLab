@@ -36,8 +36,8 @@ router.get('/cart', usersController.carrito);
 router.get('/logout',usersController.logout)
 
 /*** APIS RUTAS ***/
-router.get ("/", usersController.count)
-router.get ("/:id", usersController.user)
+router.get ("/api", usersController.count)
+router.get ("/api/:id", usersController.user)
 
 // ************ Export ************
 module.exports = router;
