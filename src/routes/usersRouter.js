@@ -37,7 +37,7 @@ router.get('/logout',usersController.logout)
 
 /*** APIS RUTAS ***/
 router.get ("/api", usersController.count)
-router.get ("/api/:id", usersController.user)
+router.get ("/api/:id", usersController.users)
 
 // ************ Export ************
 module.exports = router;
