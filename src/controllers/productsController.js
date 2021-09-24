@@ -247,14 +247,11 @@ const productsController = {
 
     productoTotal: (req, res) => {
         db.Producto.findByPk(req.params.id, {
-            include: [{association: "categorias"}, {association: "Cliente"}] // en la asociacion cliente falta sacar la contrasena
+            include: [{association: "categorias"}]
         })
-        .then(product => {
-
-           //product.Cliente.contrasena = null // (No funciona)
-
+        .then(producto => {
             return res.status(200).json({
-                data: product,
+                data: producto,
                 status:200
             })
         })

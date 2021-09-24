@@ -175,13 +175,14 @@ const usersController = {
             }
 
             return res.status(200).json({
-                count: clientes.length,
-                users: clientes
+                total: clientes.length,
+                data: clientes,
+                status: 200
             })
         })
     },
    
-    user: (req, res) => {
+    users: (req, res) => {
         db.Cliente.findByPk(req.params.id)
         .then(user => {
 
