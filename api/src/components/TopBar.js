@@ -32,7 +32,7 @@ function TopBar() {
                 </a>
             </li>
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <div className="topbar-divider d-none d-sm-block"></div>
 
         
             <li className="nav-item dropdown no-arrow">
