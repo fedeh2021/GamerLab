@@ -208,32 +208,73 @@ const productsController = {
                         },
 
     
-    //VERSION 03 VERSION ORIGINAL + FOR CATEGORIAS
+            OTRA FORMA
 
-    list: async (req, res) => {  //no funciona aun
+                    .then(categorias => {
+                        for (let i = 0; i < categorias.length ; i++){
+                                console.log(clientes.length, i)
+                           let cantProd = cantProd++;
+                        }
+                    })     
+
+              .then(productos, categorias => {
+                return res.status(200).json({
+                    count: productos.length,
+                    countCat: categorias.length,
+                    categories: categorias, //countByCategory: categorias.length, //variable por fuera e importamos
+                    products: productos
+                })
+            })
+
+            */
+
+    //VERSION 03 VERSION ORIGINAL + FOR CATEGORIAS //no funciona aun
+
+    list: async (req, res) => {  
 
         let productos = await db.Producto.findAll()
         
-        let categorias = await db.categorias.findAll()
+        let categorias = await db.categorias.findAll() 
 
-                               .then(categorias => {
-                                for (let i = 0; i < categorias.length ; i++){
-                                    //console.log(clientes.length, i)
-                                    let cantProd = cantProd++;
-                                }
-                            })      
-            
-                            .then(productos, categorias => {
-                                return res.status(200).json({
-                                    count: productos.length,
-                                    countCat: categorias.length,
-                                    categories: categorias, //countByCategory: categorias.length, //variable por fuera e importamos
-                                    products: productos
-                                })
-                            })
-                        },
+        let prodCant = []
+            // este for arma un array que tiene de propiedades los nombres de las categorias que vienen de la db
+                for(categoria of categorias){
+                    prodCant.push({
+                        id: categoria.id,
+                        nombre: categoria.nombre,
+                        cantidad: 0
+                    })
+                }
+
+        let prods = []
+                for(producto of productos){
+                    prods.push({
+                        idCat: producto.categoria_fk,
+                        id: producto.id,
+                        nombre: producto.nombre,
+                    })
+                }
+
+        for (let i = 0; i < prodCant.length; i++) {
+            for (let y = 0; y < prods.length; y++) {
+                if (prodCant[i].id == prods[y].idCat){
+                    prodCant[i].cantidad += 1
+                }
+            }
+        }
+
+            Promise.all([productos, categorias])
+                .then( (values) => {
+                    return res.status(200).json({
+                        countProd: productos.length,
+                        products: productos,
+                        countCat: categorias.length,
+                        categories: categorias, 
+                        countByCategory: prodCant,
+                    })
+                })
+    },
                     
-*/
 
     categories: (req, res) => {
         db.categorias.findAll()
@@ -247,7 +288,7 @@ const productsController = {
 
     productoTotal: (req, res) => {
         db.Producto.findByPk(req.params.id, {
-            include: [{association: "categorias"}, {association: "Cliente"}] // en la asociacion cliente falta sacar la contrasena
+            include: [{association: "categorias"}]
         })
         .then(product => {
 

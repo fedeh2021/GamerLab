@@ -269,6 +269,10 @@ main{
     display: block;
 }
 
+.color-carrito{
+    color: white
+}
+
 #carrito{
     display: none;
     z-index: 1;
@@ -276,6 +280,8 @@ main{
     right: 5%;
     
 }
+
+
 
 
 /*MAIN - NOTICIAS*//*MAIN - NOTICIAS*//*MAIN - NOTICIAS*//*MAIN - NOTICIAS*/
