@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/css/sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -56,17 +58,14 @@
                 <h2 class="perfil" id="telefono">Teléfono: </h2>
                     <p><%= user.telefono %></p>
                 </div>
-            <!--
-            <div class="datoperfil">
-            <h2 class="perfil">Contraseña: </h2>
-             <p><%= // user.contrasena %></p>
-            </div>
-            -->
+            
             <a class="prod-edit boton-editar" href="/users/profile/<%=user.id%>">Editar perfil</a>
         </section>
     </div>
     
-
+    <script src="/js/sweetalert2.min.js"></script>
+    <script src="/js/carrito.js"></script>
+    <script src="/js/pedido.js"></script>
 </main>
 
 <%- include('./../views/partials/footer') %>
