@@ -175,7 +175,9 @@ const usersController = {
             }
 
             return res.status(200).json({
-                total: clientes.length,
+                total: {
+                    totalUsers: clientes.length
+                    },
                 data: clientes,
                 status: 200
             })

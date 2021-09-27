@@ -20,9 +20,9 @@ class AmountProductsDb extends Component {
         console.log("me monte")
         this.traerApi()
     }
+    
     traerApi(){
         this.apiCall("http://localhost:3077/products/api", this.mostrarData)
-
     }
 
     mostrarData = (data) => {
@@ -44,9 +44,7 @@ class AmountProductsDb extends Component {
                                 <div className="h5 mb-0 font-weight-bold text-gray-800">{
                 this.state.products.map((product, i) => {
                     return (
-                        <li key={i}>
-                            <h3>{product.countProd}</h3>
-                        </li>
+                            <h5 key={i}>{product.id}</h5>
                     )
                 })
             }</div>
