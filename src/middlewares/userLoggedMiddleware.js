@@ -4,13 +4,12 @@ const db = require("../database/models")
 
  function userLoggedMiddleware(req, res, next) { 
 	res.locals.isLogged = false;
-	let emailInCookie = req.cookies.userEmail; //traer la cookie para iniciar automaticamente
+	//cambie esto
+	let emailInCookie = req.cookies.user; //traer la cookie para iniciar automaticamente
 	let userFromCookie = null;
 
 	if (emailInCookie) {
-		userFromCookie = db.Cliente.findAll({
-			where: {email: emailInCookie}
-		})
+		userFromCookie = db.Cliente.findByPk(emailInCookie)
 	} {
 		res.locals.isLogged = false;
 	}

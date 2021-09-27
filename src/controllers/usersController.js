@@ -1,4 +1,3 @@
-// ************ Require's ************
 const fs = require('fs');
 const path = require('path');
 
@@ -33,21 +32,28 @@ const usersController = {
             .then( user => {
                 let contrasena = false
                 let mail = false
-
                 if (user){
                     mail = true
-                    contrasena = true
                     let isOkThePassword = bcryptjs.compareSync(req.body.contrasena, user.contrasena);
                     if(isOkThePassword){
-                        delete user.contrasena;
-                        req.session.userLogged = user;
-
-                    if (req.body.remember_user){
-                        res.cookie('userEmail', req.body.email, { maxAge: 1000 * 3600})
-                    }
-                    return res.redirect('./profile')
-
-                } return res.render('login', {
+                        contrasena = true
+                        req.session.userLogged = user.id;
+                        if (req.body.remember_user != undefined){
+                            req.session.userLogged = user.id;
+                            res.cookie('user', user.id, { maxAge: 1000 * 3600})
+                            res.redirect('/users/profile')
+                        } else {
+                            res.redirect('/users/profile')
+                        }
+                    } else {
+                        res.render('login', {
+                            errors: {
+                                email: {
+                                    msg: 'Las credenciales son incorrectas'}}
+                        })    
+                    }   
+                } else {
+                    res.render('login', {
                         errors: {
                             email: {
                                 msg: 'Las credenciales son incorrectas'}}
@@ -112,10 +118,11 @@ const usersController = {
 
 
 /*** PERFIL ***/
-    perfil: (req, res) => {
-        db.Cliente.findAll()
-        .then(function(user){
-            return res.render('perfil', {user: req.session.userLogged})
+    perfil: async (req, res) => {
+        let user = await req.session.userLogged
+        db.Cliente.findByPk(user)
+        .then((user) => {
+            res.render('perfil', {user: user})
         })
     },  
 
