@@ -41,3 +41,9 @@ app.use("/products", productsRouter);
 app.listen(process.env.PORT || 3077, () =>{
     console.log("servidor corriendo")
 });
+
+//CORS
+const cors = require('cors');
+app.use(cors({
+    origin: ['http://localhost:3077']
+}));
