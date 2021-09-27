@@ -1,7 +1,38 @@
-
 import '../assets/css/app.css';
+import React, {Component} from "react";
 
-function CategoriesDb() {
+
+class CategoriesDb extends Component {
+    constructor(){
+        super()
+        this.state = {
+            categories: []
+        }
+    }
+
+    apiCall(url, consecuencia){
+        fetch(url)
+        .then(response => response.json())
+        .then(data => consecuencia(data))
+        .catch(error => console.log(error))
+    }
+
+    componentDidMount(){
+        console.log("me monte")
+        this.traerApi()
+    }
+    traerApi(){
+        this.apiCall("http://localhost:3077/products/api/categories", this.mostrarData)
+
+    }
+    mostrarData = (data) => {
+        this.setState(
+            {
+                categories: data.categories
+            }
+        )
+    }
+    render(){
   return (
             <div className="col-lg-6 mb-4">						
             <div className="card shadow mb-4">
@@ -13,7 +44,15 @@ function CategoriesDb() {
                         <div className="col-lg-6 mb-4">
                             <div className="card bg-info text-white shadow">
                                 <div className="card-body">
-                                    Category 01
+                                {
+                this.state.categories.map((categorie, i) => {
+                    return (
+                        <li key={i}>
+                            <h3>{categorie.nombre}</h3>
+                        </li>
+                    )
+                })
+            }
                                 </div>
                             </div>
                         </div>
@@ -57,6 +96,7 @@ function CategoriesDb() {
             </div>
         </div>
   );
+}
 }
 
 export default CategoriesDb;

@@ -1,13 +1,11 @@
-
 import '../assets/css/app.css';
 import React, {Component} from "react"
 
-
 class AmountProductsDb extends Component {
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
         this.state = {
-            products: ""
+            products: []
         }
     }
 
@@ -23,14 +21,14 @@ class AmountProductsDb extends Component {
         this.traerApi()
     }
     traerApi(){
-        this.apiCall("/products/api", this.mostrarData)
+        this.apiCall("http://localhost:3077/products/api", this.mostrarData)
 
     }
 
     mostrarData = (data) => {
         this.setState(
             {
-                products: data.countProd
+                products: data.products
             }
         )
     }
@@ -43,7 +41,15 @@ class AmountProductsDb extends Component {
                         <div className="row no-gutters align-items-center">
                             <div className="col mr-2">
                                 <div className="text-xs font-weight-bold text-primary text-uppercase mb-1"> Products in Data Base</div>
-                                <div className="h5 mb-0 font-weight-bold text-gray-800">{this.props.products}</div>
+                                <div className="h5 mb-0 font-weight-bold text-gray-800">{
+                this.state.products.map((product, i) => {
+                    return (
+                        <li key={i}>
+                            <h3>{product.countProd}</h3>
+                        </li>
+                    )
+                })
+            }</div>
                             </div>
                             <div className="col-auto">
                                 <i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -53,7 +59,7 @@ class AmountProductsDb extends Component {
                 </div>
             </div>
   );
-}
+  }
 }
 
 export default AmountProductsDb;

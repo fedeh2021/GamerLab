@@ -5,12 +5,16 @@ const methodOverride = require('method-override');
 const cookies = require('cookie-parser');
 const session = require('express-session');
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
-
 const app = express();
 
 const router = require("./src/routes/mainRouter");
 const usersRouter = require("./src/routes/usersRouter");
 const productsRouter = require ("./src/routes/productsRouter")
+//CORS
+const cors = require ("cors")
+app.use(cors({
+    origin: "http://localhost:3000"
+}))
 
 app.use(session({ secret: "es secreto", resave: false, saveUninitialized: false}))
 app.use(cookies());
@@ -22,7 +26,6 @@ app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
 // view engine setup
 //app.set('views', path.resolve(__dirname, './views'));
 //app.set('views', path.join(__dirname + '/views'));
@@ -42,10 +45,3 @@ app.listen(process.env.PORT || 3077, () =>{
     console.log("servidor corriendo")
 });
 
-//CORS
-const cors = require ("cors")
-app.use(cors({
-    origin: "http://localhost:3000"
-}))
-
-app.get
