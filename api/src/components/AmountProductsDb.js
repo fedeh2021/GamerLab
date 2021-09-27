@@ -23,7 +23,7 @@ class AmountProductsDb extends Component {
         this.traerApi()
     }
     traerApi(){
-        this.apiCall("http://localhost:3077/products/api", this.mostrarData)
+        this.apiCall("/products/api", this.mostrarData)
 
     }
 

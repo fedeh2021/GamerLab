@@ -43,7 +43,9 @@ app.listen(process.env.PORT || 3077, () =>{
 });
 
 //CORS
-const cors = require('cors');
+const cors = require ("cors")
 app.use(cors({
-    origin: ['http://localhost:3077']
-}));
+    origin: "http://localhost:3000"
+}))
+
+app.get
