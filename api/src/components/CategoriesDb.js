@@ -47,7 +47,7 @@ class CategoriesDb extends Component {
                         <div className="col-lg-6 mb-4">
                             <div className="card bg-info text-white shadow">
                                 <div className="card-body" key={i}>
-                                   <h5>{categorie.nombre}</h5>
+                                   <h5 key={i}>{categorie.nombre}</h5>
                                 </div>
                             </div>
                         </div>

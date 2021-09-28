@@ -28,7 +28,7 @@ class AmountUsersDb extends Component {
     mostrarData = (data) => {
         this.setState(
             {
-                users: data.data
+                users: data.total
             }
         )
     }
@@ -45,11 +45,8 @@ class AmountUsersDb extends Component {
                         <div className="h5 mb-0 font-weight-bold text-gray-800">
                            
                            {
-                                this.state.users.map((users, i) => {
-                                    return (
-                                        <h5 key={i}>{users.id}</h5>
-                                    )
-                                })
+                                <h5>{this.state.users.totalUsers}</h5>
+                                   
                             }
                            
                                     
