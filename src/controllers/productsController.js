@@ -158,78 +158,7 @@ const productsController = {
     },
 
     /** APIS **/
-
-    /* //VERSION 01 ORIGINAL
-
-    list: async (req, res) =>{ 
-
-        let productos = await db.Producto.findAll()
-
-        let categorias = await db.categorias.findAll()
-            
-        .then(productos, categorias => {
-            return res.status(200).json({
-                count: productos.length,
-                countByCategory: categorias.length, //variable por fuera e importamos
-                products: productos
-            })
-        })
-    },
-
     
-    //VERSION 02 DOS SUB APIS
-
-    listProd: (req, res) => {  //no funciona aun
-
-        let productos = db.Producto.findAll()
-            .then(productos => {
-                return res.status(200).json({
-                    count: productos.length,
-                    products: productos
-                })
-            })
-    },
-
-    listCat: (req, res) => { 
-        let categorias = db.categorias.findAll()
-                             .then(categorias => {
-                                for (let i = 0; i < categorias.length ; i++){
-                                    //console.log(clientes.length, i)
-                                    let cantProd = cantProd++;
-                                }
-                            })      
-        
-                            .then(categorias => {
-                                return res.status(200).json({
-                                    countCat: categorias.length,
-                                    categories: categorias, //countByCategory: categorias.length, //variable por fuera e importamos
-                                })
-                            })
-                        },
-
-    
-            OTRA FORMA
-
-                    .then(categorias => {
-                        for (let i = 0; i < categorias.length ; i++){
-                                console.log(clientes.length, i)
-                           let cantProd = cantProd++;
-                        }
-                    })     
-
-              .then(productos, categorias => {
-                return res.status(200).json({
-                    count: productos.length,
-                    countCat: categorias.length,
-                    categories: categorias, //countByCategory: categorias.length, //variable por fuera e importamos
-                    products: productos
-                })
-            })
-
-            */
-
-    //VERSION 03 VERSION ORIGINAL + FOR CATEGORIAS //no funciona aun
-
     list: async (req, res) => {  
 
         let productos = await db.Producto.findAll()

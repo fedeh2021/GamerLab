@@ -158,8 +158,35 @@ const usersController = {
         ).then(function(){res.redirect('/users/profile/' + req.params.id)})
               
     },
-    editarPassword: (req, res) => {
-        res.render('editarPassword');
+
+/*** EDITAR PASSWORD ***/
+    editarPassword: async (req, res) => {
+        let user = await db.Cliente.findByPk(req.params.id)
+
+            return res.render ("editarPassword", {user})
+    },
+
+
+    checkEditarPassword: async (req, res) => {
+        
+        let user = await db.Cliente.findOne({
+            where: {id:req.params.id}
+            })
+
+        .then( user => {
+            if (user.contrasena == bcryptjs.hashSync(req.body.contrasena, 10)){
+
+                db.Cliente.update({
+                contrasena: bcryptjs.hashSync(req.body.nuevaContrasena, 10)       
+            }, {where:{
+                id:req.params.id
+                }
+            })}
+        })
+
+        .then(function(){res.redirect('/users/profile/' + req.params.id)})
+
+        // res.render('editarPassword');
     },
         
 
