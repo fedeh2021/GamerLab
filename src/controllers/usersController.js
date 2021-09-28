@@ -124,6 +124,9 @@ const usersController = {
         .then((user) => {
             res.render('perfil', {user: user})
         })
+        .catch((e) => {
+            res.send(e)
+        })
     },  
 
     editarPerfil: (req, res) => {
@@ -165,7 +168,7 @@ const usersController = {
 
 /*** CERRAR SESION ***/
     logout: (req, res) => {
-        res.clearCookie('userEmail');
+        res.clearCookie('user');
         req.session.destroy();
         res.redirect('/')
     },

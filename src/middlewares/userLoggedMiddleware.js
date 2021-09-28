@@ -2,26 +2,46 @@
 
 const db = require("../database/models")
 
- function userLoggedMiddleware(req, res, next) { 
+ async function userLoggedMiddleware(req, res, next) { 
+	let sessionUserId = await req.session.userLogged
+	let sessionUser = null
 	res.locals.isLogged = false;
-	//cambie esto
-	let emailInCookie = req.cookies.user; //traer la cookie para iniciar automaticamente
-	let userFromCookie = null;
 
-	if (emailInCookie) {
-		userFromCookie = db.Cliente.findByPk(emailInCookie)
-	} {
-		res.locals.isLogged = false;
+	let emailInCookie = req.cookies.user; 
+	let cookieUser = null;
+
+	if(sessionUserId){
+		//si hay un usuario en session (solo tengo el id) traigo de la db todos los otros datos y los almaceno en sessionUser
+		sessionUser = await db.Cliente.findByPk(sessionUserId)
+	} else if (emailInCookie){
+		//si hay un usuario en session (solo tengo el id) traigo de la db todos los otros datos y los almaceno en cookieUser
+		cookieUser = await db.Cliente.findByPk(emailInCookie)
+	} 
+
+	if(sessionUser){
+		// si encontro el usuario, hago que las variables de locals contengan todos los datos del usuario para poder renderizarlos en el header
+		res.locals.isLogged = sessionUser;
+		res.locals.userLogged = sessionUser;  
+	} else if(cookieUser){
+		// si encontro el usuario, hago que las variables de locals contengan todos los datos del usuario para poder renderizarlos en el header
+		res.locals.isLogged = cookieUser;
+		res.locals.userLogged = cookieUser;  
 	}
+
+	// if (emailInCookie) {
+	// 	userFromCookie = await db.Cliente.findByPk(emailInCookie)
+	// } else if(sessionUser) {
+	// 	res.locals.isLogged = sessionUser;
+	// }
 	
-	if (userFromCookie) {
-			req.session.userLogged = userFromCookie;
-	}
+	// if (userFromCookie) {
+	// 		req.session.userLogged = emailInCookie;
+	// }
 
-	if (req.session.userLogged) {
-			res.locals.isLogged = true;
-			res.locals.userLogged = req.session.userLogged;  //pasa de la session a una variale local
-	}
+	// if (req.session.userLogged) {
+	// 		res.locals.isLogged = sessionUser;
+	// 		res.locals.userLogged = sessionUser;  
+	// }
 
 	next();
 }
