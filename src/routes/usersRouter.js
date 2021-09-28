@@ -22,12 +22,13 @@ router.post('/login', usersController.checkLogin);
 
 /*** REGISTRAR UN NUEVO USUARIO ***/
 router.get('/register', guestMiddleware ,usersController.registro);
-router.post('/register', uploadFile.single('imagen'), validations, usersController.checkRegistro);
+router.post('/register', uploadFile.single('image'), validations, usersController.checkRegistro);
 
 /*** VER TU INFORMACION Y EDITAR ***/ 
 router.get('/profile/', authMiddleware,usersController.perfil);
-router.get('/profile/:id', usersController.editarPerfil)
-router.put('/profile/:id', uploadFile.single('imagen'), usersController.update);
+router.get('/profile/:id', usersController.editarPerfil);
+router.put('/profile/password/:id', usersController.editarPassword);
+router.put('/profile/:id', uploadFile.single('image'), usersController.update);
 
 /*** VER EL CARRITO ***/
 router.get('/cart', usersController.carrito);
