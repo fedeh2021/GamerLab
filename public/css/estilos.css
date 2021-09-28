@@ -957,10 +957,6 @@ text-decoration: none;
 
 
 /*****PERFIL VISTA*****/
-.imagenavatar{
-    width: 80%;
-    height: 80%;
-}
 
 .avatarpequeño{
     display: none;
@@ -1189,10 +1185,7 @@ text-decoration: none;
         margin-bottom: 40%;
     }
 
-    .imagenavatar{
-        width: 30%;
-        height: 60%;
-    }
+    
 
     .items-barra-logeo{
         display:flex;

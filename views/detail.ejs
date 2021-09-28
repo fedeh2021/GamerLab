@@ -44,7 +44,7 @@
             <div class="prod-buttons">
                    <a href="" class="prod-edit agregar-carrito" data-id="<%=productos.id%>">Comprar</a>
                 
-                <% if (locals.isLogged == 1) { %>
+                <% if (locals.isLogged.rol == 1) { %>
 
                    <a class="prod-edit" href="/products/edit/<%=productos.id%>">Editar</a>
                    <form action="/products/delete/<%=productos.id%>?_method=DELETE" class="form-prod-delete" method="POST" onsubmit="return confirm('¿Estas Seguro que queres borrar?')">

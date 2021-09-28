@@ -12,7 +12,7 @@ module.exports = [
 	body('dni').notEmpty().withMessage('Tenes que escribir tu dni'),
 	body('fecha_nacimiento').notEmpty().withMessage('Tenes que elegir una fecha de cumpleaños'),
 	body('telefono').notEmpty().withMessage('Tenes que escribir tu teléfono'),
-	body('imagen').custom((value, { req }) => {
+	body('image').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif','jpeg'];
 

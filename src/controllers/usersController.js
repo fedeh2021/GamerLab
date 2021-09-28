@@ -138,22 +138,28 @@ const usersController = {
 
 
 /*** UPDATE ***/
-    update: (req, res)=>{ 
-            db.Cliente.update({
+    update: async (req, res)=>{ 
+        let cliente = await db.Cliente.findOne({
+            where: {id: req.params.id}
+        })
+        .then( db.Cliente.update({
                 nombre: req.body.name,
                 apellido: req.body.apellido,
-                //imagen: req.file.filename,
+                image: (req.file? req.file.filename: db.Cliente.image),
                 email: req.body.email,
-                cumpleanos:req.body.cumpleanos,
+                fecha_nacimiento:req.body.fecha_nacimiento,
                 telefono: req.body.telefono, 
                 dni: req.body.dni,
                 updated_at: Date.now(),
                    
             }, {where:{
                 id:req.params.id
-                }}
-            )
-            res.redirect('/users/profile/' + req.params.id);  
+                }})
+        ).then(function(){res.redirect('/users/profile/' + req.params.id)})
+              
+    },
+    editarPassword: (req, res) => {
+        res.render('editarPassword');
     },
         
 

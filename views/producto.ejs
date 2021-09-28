@@ -20,7 +20,7 @@
             <div class="col-12">
         <h2 class="titulos">TODOS LOS PRODUCTOS</h2>
             </div>
-            <% if(locals.isLogged == 1){ %> 
+            <% if(locals.isLogged.rol == 1){ %> 
             <div class="crear-producto-btn">
               <button><a href="/products/create">CREAR PRODUCTO</a></button>
             </div>

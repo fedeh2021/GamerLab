@@ -20,12 +20,12 @@ const db = require("../database/models")
 
 	if(sessionUser){
 		// si encontro el usuario, hago que las variables de locals contengan todos los datos del usuario para poder renderizarlos en el header
-		res.locals.isLogged = sessionUser;
-		res.locals.userLogged = sessionUser;  
+		res.locals.isLogged = sessionUser.dataValues;
+		res.locals.userLogged = sessionUser.dataValues;  
 	} else if(cookieUser){
 		// si encontro el usuario, hago que las variables de locals contengan todos los datos del usuario para poder renderizarlos en el header
-		res.locals.isLogged = cookieUser;
-		res.locals.userLogged = cookieUser;  
+		res.locals.isLogged = cookieUser.dataValues;
+		res.locals.userLogged = cookieUser.dataValues;  
 	}
 
 	// if (emailInCookie) {

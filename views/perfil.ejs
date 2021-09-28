@@ -25,8 +25,12 @@
 
             <h1 class="titulos">TU PERFIL</h1>
 
-           <div class="datoperfil">
-                <img src="/img/avatars/<%=user.imagen %>" class="imagenavatar" >
+            <div class="profile-pic">
+                <label class="label" for="file">
+                  <span></span>
+                </label>
+                <input type="file" name="imagen" id="foto-producto" />
+                <img src="/img/avatars/<%=user.imagen%>" id="output" width="200" />
             </div>
             
             <div class="datoperfil">
@@ -60,6 +64,8 @@
                 </div>
             
             <a class="prod-edit boton-editar" href="/users/profile/<%=user.id%>">Editar perfil</a>
+            <a class="prod-edit boton-editar" href="/users/profile/password/<%=user.id%>">Editar contraseña</a>
+
         </section>
     </div>
     
