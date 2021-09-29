@@ -145,7 +145,7 @@ const usersController = {
         .then( db.Cliente.update({
                 nombre: req.body.name,
                 apellido: req.body.apellido,
-                image: (req.file? req.file.filename: db.Cliente.image),
+                imagen: (req.file? req.file.filename: db.Cliente.image),
                 email: req.body.email,
                 fecha_nacimiento:req.body.fecha_nacimiento,
                 telefono: req.body.telefono, 
@@ -173,15 +173,19 @@ const usersController = {
             where: {id:req.params.id}
             })
 
-        .then( user => {
-            if (user.contrasena == bcryptjs.hashSync(req.body.contrasena, 10)){
+        .then( cliente => {
+            let contrasenaInput = req.body.contrasena
+            let contrasenaBdd = cliente.contrasena
+
+            if (bcryptjs.compareSync(contrasenaInput, contrasenaBdd) == true){
 
                 db.Cliente.update({
                 contrasena: bcryptjs.hashSync(req.body.nuevaContrasena, 10)       
             }, {where:{
                 id:req.params.id
                 }
-            })}
+            })
+            .then(function(){res.redirect('/users/profile/' + req.params.id)})}
         })
 
         .then(function(){res.redirect('/users/profile/' + req.params.id)})
