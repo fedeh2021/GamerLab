@@ -41,3 +41,8 @@ Entrando en la recta final del proyecto todo es mas complejo y detallista, traba
 
 Este sprint nos dio más dias para prepararlo y resolverlo, combinando con mejorar detalles pendientes de sprints anteriores. Con varias llamadas de videoconferencia, pudimos ir avanzando y resolviendo los inconvenientos que fueron apareciendo.
 Estamos llegando al final del proyecto y es importante cada detalle, para lograr el mejor resultado posible.
+
+--OCTAVO SPRINT (09/2021)
+
+Este sprint es el último antes de la exposición final, nos costo resolverlo, ya que, junto con él teniamos que resolver todas las cuestiones pendientes de sprints anteriores para presentar el proyecto lo más cercano al ideal posible.
+Creemos que aunque haya cosas para mejorar, el sitio está muy bueno, muy completo y mejor de lo que imaginamos en un comienzo.

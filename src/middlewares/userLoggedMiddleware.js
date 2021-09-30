@@ -28,21 +28,6 @@ const db = require("../database/models")
 		res.locals.userLogged = cookieUser.dataValues;  
 	}
 
-	// if (emailInCookie) {
-	// 	userFromCookie = await db.Cliente.findByPk(emailInCookie)
-	// } else if(sessionUser) {
-	// 	res.locals.isLogged = sessionUser;
-	// }
-	
-	// if (userFromCookie) {
-	// 		req.session.userLogged = emailInCookie;
-	// }
-
-	// if (req.session.userLogged) {
-	// 		res.locals.isLogged = sessionUser;
-	// 		res.locals.userLogged = sessionUser;  
-	// }
-
 	next();
 }
 
