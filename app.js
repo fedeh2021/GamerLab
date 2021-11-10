@@ -21,7 +21,6 @@ app.use(cookies());
 app.use(userLoggedMiddleware);
 
 app.use(express.static(path.resolve(__dirname, "./public")));
-//app.use(express.static(path.join(__dirname + "/public")));
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
@@ -31,9 +30,6 @@ app.use(express.json());
 //app.set('views', path.join(__dirname + '/views'));
 
 app.set('view engine', 'ejs');
-
-/*ESTRUCTURA DE NUESTROS SPRINTS PREVIOS*/ 
-//app.use(express.static(__dirname + "/public"));
 
 //VISTAS
 app.use("/", router);
@@ -45,3 +41,10 @@ app.listen(process.env.PORT || 3077, () =>{
     console.log("servidor corriendo")
 });
 
+
+// SDK de Mercado Pago
+const mercadopago = require ('mercadopago');
+// Agrega credenciales
+mercadopago.configure({
+  access_token: 'PROD_ACCESS_TOKEN'
+});
