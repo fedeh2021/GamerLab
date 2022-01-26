@@ -35,6 +35,11 @@ router.get("/search", productsController.search)
 
 router.get("/categoria/:id", productsController.categorias);
 
+/*** VER EL CARRITO ***/
+
+router.get('/cart', productsController.carrito);
+router.post("/cart", productsController.pagar)
+
 /***API***/
 router.get("/api", productsController.list)
 router.get("/api/categories", productsController.categories)

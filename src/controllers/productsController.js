@@ -1,12 +1,15 @@
 // ************ Require's ************
 const fs = require('fs');
 const path = require('path');
-
+const mercadopago = require('mercadopago')
 
 // ************ Require DATABASE ************
 const db = require ("../database/models")
 const uploadFile = require ("../middlewares/imageMiddleware");
 
+mercadopago.configure({
+    access_token: 'APP_USR-327784668252270-111502-2ac20dc1d5088b2e30bb07d2bfef4cbf-672708481'
+})
 
 // ************ otros Require's ************
 const { inflateRaw } = require('zlib');
@@ -15,6 +18,7 @@ const { Op } = require("sequelize");
 const { response } = require('express');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const { validationResult } = require('express-validator');
+const { preferences } = require('mercadopago');
 
 
 // ************ Controller ************
@@ -157,6 +161,46 @@ const productsController = {
             return res.render ("categoria", {productos, categorias})
     },
 
+    /*** CARRITO ***/
+    carrito: (req, res) => {
+        db.Producto.findAll()
+       .then(function(productos) {
+            res.render ("carrito", {productos})
+        })
+    },
+    pagar: (req, res) => {
+        let productos = [];
+        const compra = [req.body.title];
+        const precio = req.body.price;
+        const cantidad = req.body.quantity;
+        if(compra[0].length > 1){
+        for (let i = 0; i < compra[0].length; i++) {
+        productos.push({
+            title: compra[0][i],
+            unit_price: parseInt(precio[i]),
+            quantity: parseInt(cantidad[i])
+        })
+        }
+    }else {productos.push({
+        title: compra[0],
+        unit_price: parseInt(precio),
+        quantity: parseInt(cantidad)
+    })}
+       let preference = {
+        items: productos,
+        back_urls: {
+            success: "http://localhost:3077/",
+            failure: "http://localhost:3077/products/cart",
+            pending: "http://localhost:3077/products/cart"
+        }
+    }
+    mercadopago.preferences.create(preference)
+    .then(function (response) {
+      res.redirect(response.body.init_point);
+    }).catch(function (error) {
+      console.log(error);
+    });
+},
     /** APIS **/
 
     list: async (req, res) => {  

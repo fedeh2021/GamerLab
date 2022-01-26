@@ -162,6 +162,19 @@ let Carrito = class {
             listaCompra.appendChild(row);
         });
     }
+    productoCompra(){
+        let productosLS;
+        productosLS = this.obtenerProductosLocalStorage();
+        productosLS.forEach(function (producto){
+        const prod = document.createElement('h1');
+        prod.innerHTML=`
+        <input type="hidden" name="title" value="${producto.titulo}">
+        <input type="hidden" name="price" value="${producto.precio}">
+        <input type="hidden" name="quantity" value="${producto.cantidad}">
+        `
+        productosPagar.appendChild(prod)
+    }
+    )};
 
     //Eliminar producto por ID del LS
     eliminarProductoLocalStorage(productoID){
@@ -199,7 +212,7 @@ let Carrito = class {
                 timer: 2000
             })
         } else {
-            location.href = "/users/cart";
+            location.href = "/products/cart";
         }
     }
 

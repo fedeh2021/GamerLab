@@ -33,9 +33,6 @@ router.put('/profile/:id', uploadFile.single('image'), usersController.update);
 router.get('/profile/password/:id', usersController.editarPassword);
 router.put('/profile/password/:id', usersController.checkEditarPassword);
 
-/*** VER EL CARRITO ***/
-router.get('/cart', usersController.carrito);
-
 /*** CERRAR SESION ***/
 router.get('/logout',usersController.logout)
 

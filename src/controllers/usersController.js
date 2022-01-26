@@ -192,16 +192,6 @@ const usersController = {
 
         // res.render('editarPassword');
     },
-        
-
-/*** CARRITO ***/
-    carrito: (req, res) => {
-        db.Producto.findAll()
-       .then(function(productos) {
-            res.render ("carrito", {productos})
-        })
-    },
-
 
 /*** CERRAR SESION ***/
     logout: (req, res) => {

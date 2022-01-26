@@ -4,12 +4,14 @@ const carrito = document.getElementById('carrito-vista');
 const procesarCompraBtn = document.getElementById('procesar-compra');
 const cliente = document.getElementById('name');
 const correo = document.getElementById('email');
+const productosPagar = document.querySelector("#productosPagar");
 
 
 cargarEventos();
 
 function cargarEventos() {
     document.addEventListener('DOMContentLoaded', compra.leerLocalStorageCompra());
+    document.addEventListener('DOMContentLoaded', compra.productoCompra())
 
     //Eliminar productos del carrito
     carrito.addEventListener('click', (e) => { compra.eliminarProducto(e) });
