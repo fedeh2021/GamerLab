@@ -4,6 +4,7 @@ const path = require("path");
 const methodOverride = require('method-override');
 const cookies = require('cookie-parser');
 const session = require('express-session');
+const errors = require('http-errors');
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 const app = express();
 
@@ -32,6 +33,10 @@ app.set('view engine', 'ejs');
 app.use("/", router);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+app.get("*", function(req, res){
+    res.render("error");
+    res.statusCode = 404;
+});
 
 //SERVER
 app.listen(process.env.PORT || 3077, () =>{
