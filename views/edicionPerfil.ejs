@@ -1,5 +1,5 @@
 <%- include('./../views/partials/head') %>
-<script> const title = document.getElementById('title'); title.textContent = 'Gamerlab - Editá tu perfil';</script>
+<script> const title = document.getElementById('title'); title.textContent = 'Gamerlab - Editando perfil de <%=user.nombre%>';</script>
 <body>
     <%- include('./../views/partials/header') %>
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST" class="formulario-prod" enctype="multipart/form-data">

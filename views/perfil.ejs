@@ -1,5 +1,5 @@
 <%- include('./../views/partials/head') %>
-<script> const title = document.getElementById('title'); title.textContent = 'Gamerlab - Tu perfil';</script>
+<script> const title = document.getElementById('title'); title.textContent = 'Gamerlab - <%= user.nombre %>';</script>
 
 <body>
     <%- include('./../views/partials/header') %>
@@ -9,7 +9,7 @@
     <div class="formulario-registro" >
         <section class="perfil-box">
 
-            <h1 class="titulos">TU PERFIL</h1>
+            <h1 class="titulos">¡Hola, <%=user.nombre%>!</h1>
 
             <div class="profile-pic">
                 <label class="label" for="file">

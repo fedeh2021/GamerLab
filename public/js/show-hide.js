@@ -1,7 +1,7 @@
 const toggleBtn = document.querySelector(".icono-carrito")
 const divList = document.querySelector("#carrito")
 
-toggleBtn.addEventListener("mouseout", ()=>{
+toggleBtn.addEventListener("mouseover", ()=>{
     if(divList.style.display === "none"){
 
         divList.style.display = "block"

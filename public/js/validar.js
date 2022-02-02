@@ -1,4 +1,5 @@
 function validar(){
+    const form = document.getElementById("form")
     var name,description, price,stock, discount,category, expresion;
     name = document.getElementById("name").value;
     description = document.getElementById("description").value;
@@ -27,4 +28,8 @@ function validar(){
      // var file = input.files[0];
        // console.log("File " + file.name + " is " + file.size + " bytes in size");
    // }
-}
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+    })
+
+  }
