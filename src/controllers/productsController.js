@@ -8,7 +8,7 @@ const db = require ("../database/models")
 const uploadFile = require ("../middlewares/imageMiddleware");
 
 mercadopago.configure({
-    access_token: 'APP_USR-327784668252270-111502-2ac20dc1d5088b2e30bb07d2bfef4cbf-672708481'
+    access_token: 'TEST-7981699841755847-110420-ad392e2f2bdfedcb717ef283f96d0fac-138454843'
 })
 
 // ************ otros Require's ************
