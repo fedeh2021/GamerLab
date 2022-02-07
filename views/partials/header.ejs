@@ -3,7 +3,6 @@
     <div class="topnav">
         <a href="/" class="active"><img src="/img/logoGamerLabBlanco.png" class="logo" alt="Logo GamerLab"></a>
             
-        <!-- Navigation links (hidden by default) --> <!-- FALTA COMPLETAR VISTAS POR CATEGORIA --> 
         <div id="myLinks">
             <a href="/products/producto">Todos los productos</a>
             <a href="/products/categoria/1">Notebooks</a>
@@ -20,7 +19,6 @@
             <i class="fas fa-bars fa-10x"></i>
         </a>
     </div>
-
 
 
     <nav class="main-header-top-bar">
@@ -45,7 +43,7 @@
 
             <% if (locals.isLogged) { %>
                 <div class="barra-logeado">  
-                    <img src="/img/avatars/<%=locals.userLogged.imagen %>" style="border-radius: 100%" class="avatarpequeño">
+                    <img src="/img/avatars/<%=locals.userLogged.imagen %>" style="width: 30%; height: 80px;" class="avatarpequeño">
                         <ul class="ul-opciones">
                             <li><a href="/users/profile"> Hola, <%= locals.userLogged.nombre %></a></li> 
                             <li><a class="" href="/users/logout">Cerrar sesión</a></li>
@@ -81,11 +79,6 @@
     </nav>
 
 
-
-
-
-
-
     <div class="main-header-bottom-bar">
         <ul class="menu-productos1">
             <li><a href="/products/producto" category="all" class="category_item">Todos los productos</a></li>
@@ -100,8 +93,8 @@
     </div>
     
 
-
-
     <script src="/js/show-hide.js"></script>
     <script src="/js/burger.js"></script>
+    <script src="/js/carrito.js"></script>
+    
 </header>
