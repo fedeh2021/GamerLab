@@ -1,5 +1,12 @@
 <%- include('./../views/partials/head') %>
 <script> const title = document.getElementById('title'); title.textContent = 'Gamerlab - Carrito';</script>
+<script> 
+    var timer =
+    setTimeout(function(){
+        location.reload()
+    },5000);    
+        clearTimeout()
+    </script>
 
 <body>
     <%- include('./../views/partials/header') %>
@@ -33,7 +40,7 @@
                                 </tr>
                             </table>
             </div>                            
-            <form action="/products/cart" method="POST">           
+            <form action="/products/checkout" method="POST">           
                 <div id="productosPagar">
                  </div>  
                         <div class="row justify-content-between">
