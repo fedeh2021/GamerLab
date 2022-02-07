@@ -8,7 +8,7 @@ const db = require ("../database/models")
 const uploadFile = require ("../middlewares/imageMiddleware");
 
 mercadopago.configure({
-    access_token: 'TEST-7981699841755847-110420-ad392e2f2bdfedcb717ef283f96d0fac-138454843'
+    access_token: 'APP_USR-327784668252270-111502-2ac20dc1d5088b2e30bb07d2bfef4cbf-672708481'
 })
 
 // ************ otros Require's ************
@@ -170,19 +170,19 @@ const productsController = {
     },
     pagar: (req, res) => {
         let productos = [];
-        const compra = [req.body.title];
+        const compra = req.body.title;
         const precio = req.body.price;
         const cantidad = req.body.quantity;
         if(compra[0].length > 1){
-        for (let i = 0; i < compra[0].length; i++) {
+        for (let i = 0; i < compra.length; i++) {
         productos.push({
-            title: compra[0][i],
+            title: compra[i],
             unit_price: parseInt(precio[i]),
             quantity: parseInt(cantidad[i])
         })
         }
     }else {productos.push({
-        title: compra[0],
+        title: compra,
         unit_price: parseInt(precio),
         quantity: parseInt(cantidad)
     })}
