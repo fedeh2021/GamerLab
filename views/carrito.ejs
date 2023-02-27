@@ -1,12 +1,6 @@
 <%- include('./../views/partials/head') %>
 <script> const title = document.getElementById('title'); title.textContent = 'Gamerlab - Carrito';</script>
-<script> 
-    var timer =
-    setTimeout(function(){
-        location.reload()
-    },5000);    
-        clearTimeout()
-    </script>
+<script> var timer = setTimeout(function(){location.reload()},5000);</script>
 
 <body>
     <%- include('./../views/partials/header') %>
@@ -39,7 +33,11 @@
                                     <!-- <th scope="col"></th> -->
                                 </tr>
                             </table>
-            </div>                            
+            </div>   
+            
+
+            <h1 class="titulos">¡Hola, <%=user%>!</h1>
+            
             <form action="/products/checkout" method="POST">           
                 <div id="productosPagar">
                  </div>  
@@ -68,6 +66,12 @@
     <script src="/js/sweetalert2.min.js"></script>
     <script src="/js/mensaje.js"></script>
     <script src="/js/carrito.js"></script>
+    <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('user_MnY2Z0HI5JeA38GRhwSEk')
+</script>
     <script src="/js/compra.js"></script>
     </main>
     <%- include('./../views/partials/footer') %>

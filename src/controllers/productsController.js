@@ -6,6 +6,8 @@ const mercadopago = require('mercadopago')
 // ************ Require DATABASE ************
 const db = require ("../database/models")
 const uploadFile = require ("../middlewares/imageMiddleware");
+const userLogged = require('../middlewares/userLoggedMiddleware')
+
 
 mercadopago.configure({
     access_token: 'APP_USR-327784668252270-111502-2ac20dc1d5088b2e30bb07d2bfef4cbf-672708481'
@@ -162,10 +164,17 @@ const productsController = {
     },
 
     /*** CARRITO ***/
-    carrito: (req, res) => {
+    carrito: async (req, res) => {
+        let user = await req.session.userLogged
+
+        db.Cliente.findOne({where: {user: user}})
+        
+        
+            
+        
         db.Producto.findAll()
        .then(function(productos) {
-            res.render ("carrito", {productos})
+            res.render ("carrito", {productos, user})
         })
     },
     pagar: (req, res) => {

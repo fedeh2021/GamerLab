@@ -86,7 +86,6 @@ const usersController = {
                         })
             .then(count => {
                 if (count != 0) {
-
                 res.render('registro', {
                     errors: {
                         email: {
@@ -94,7 +93,6 @@ const usersController = {
                     }},
                     oldData: req.body
                 })
-
             } else {
                 
              db.Cliente.create({
@@ -122,7 +120,7 @@ const usersController = {
         let user = await req.session.userLogged
         db.Cliente.findByPk(user)
         .then((user) => {
-            res.render('perfil', {user: user})
+            res.render('perfil', {user})
         })
         .catch((e) => {
             res.send(e)
@@ -166,9 +164,7 @@ const usersController = {
             return res.render ("editarPassword", {user})
     },
 
-
     checkEditarPassword: async (req, res) => {
-        
         let user = await db.Cliente.findOne({
             where: {id:req.params.id}
             })
@@ -190,7 +186,6 @@ const usersController = {
 
         .then(function(){res.redirect('/users/profile/' + req.params.id)})
 
-        // res.render('editarPassword');
     },
 
 /*** CERRAR SESION ***/
@@ -207,7 +202,6 @@ const usersController = {
         .then(clientes => {
 
             for (let i = 0; i < clientes.length ; i++){
-                //console.log(clientes.length, i)
                 clientes[i].contrasena = null
             }
 
@@ -224,20 +218,14 @@ const usersController = {
     users: (req, res) => {
         db.Cliente.findByPk(req.params.id)
         .then(user => {
-
             user.contrasena = null
-            
             return res.status(200).json({
                 data: user,
                 status:200
             })
-    
         })
     }
-
-
 }
-
 
 // ************ Export ************
 module.exports = usersController;
